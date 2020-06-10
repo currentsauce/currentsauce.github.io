@@ -1,2 +1,3 @@
-name: Current Sauce: A blog of miscellaneous electronics and hackery!
+name: Hank Quinlan, Horrible Cop
 markdown: kramdown
+permalink: /blog/:year/:month/:day/:title
