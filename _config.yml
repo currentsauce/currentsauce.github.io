@@ -1,3 +1,0 @@
-name: "Current Sauce: A blog of miscellaneous electronics and hackery!"
-markdown: kramdown
-permalink: /blog/:year/:month/:day/:title
