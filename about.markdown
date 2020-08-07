@@ -1,6 +1,7 @@
 ---
 layout: page
-title: About
+title: Current Sauce
+subtitle: About this site...
 permalink: /about/
 ---
 
