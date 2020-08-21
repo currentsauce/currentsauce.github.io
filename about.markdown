@@ -5,15 +5,9 @@ subtitle: About this site...
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+Hello there! I'm James. I'm a 29 year old Electronic Engineer in Manchester UK.
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
+Over the years, I have learnt a lot from various sources on the internet. I've always said that i'd like to create a website of my own to blog about the things that I do, as i'd like to try help others out in the same way I have been helped out. So, this is that website!
 
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
+Why Current Sauce? I love a good pun! It's a play on words between an electrical current source, and fruity currant sauce. Truthfully, this is the best that I could come up with! :')
 
-
-[jekyll-organization]: https://github.com/jekyll
