@@ -3,6 +3,7 @@ layout: page
 title: Current Sauce
 subtitle: About this site...
 permalink: /about/
+hide_footer: true
 ---
 
 Hello there! I'm James. I'm a 29 year old Electronic Engineer in Manchester UK.
