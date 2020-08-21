@@ -4,6 +4,7 @@
 
 layout: page
 title: Current Sauce
-subtitle:
+subtitle: Hello!
+hide_footer: true
 ---
-HELLO
+Work in progress.....
