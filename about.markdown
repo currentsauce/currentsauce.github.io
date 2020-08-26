@@ -6,7 +6,7 @@ permalink: /about/
 hide_footer: true
 ---
 
-Hello there! I'm James. I'm a 29 year old Electronic Engineer in Manchester UK.
+Hello there! I'm James. I'm a 29 year old Electronic Engineer in Manchester, UK.
 
 Over the years, I have learnt a lot from various sources on the internet. I've always said that i'd like to create a website of my own to blog about the things that I do, as i'd like to try help others out in the same way I have been helped out. So, this is that website!
 
