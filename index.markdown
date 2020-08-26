@@ -3,8 +3,8 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: page
-title: Current Sauce
-subtitle: Hello!
+title: Home
+subtitle: Hello there!
 hide_footer: true
 ---
 Work in progress.....

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Current Sauce
+title: About
 subtitle: About this site...
 permalink: /about/
 hide_footer: true
