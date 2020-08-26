@@ -12,3 +12,4 @@ Over the years, I have learnt a lot from various sources on the internet. I've a
 
 Why Current Sauce? I love a good pun! It's a play on words between an electrical current source, and fruity currant sauce. Truthfully, this is the best that I could come up with! :')
 
+I launched this website in August 2020 amidst the COVID-19 pandemic, what a time to be creative!

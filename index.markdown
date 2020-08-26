@@ -7,4 +7,6 @@ title: Home
 subtitle: Hello there!
 hide_footer: true
 ---
-Work in progress.....
+Hi there, Welcome to my website!
+
+Check out my blog posts here.
