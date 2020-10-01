@@ -10,7 +10,7 @@ Hello there!
 
 Over the years, I have learnt a lot from various sources on the internet. I've always said that i'd like to create a website of my own to blog about the things that I do, as i'd like to try help others out in the same way I have been helped out. So, this is that website!
 
-Why Current Sauce? I love a good pun! It's a play on words between an electrical current source, and fruity currant sauce. Truthfully, this is the best that I could come up with! :rofl:
+Why Current Sauce? I love a good pun! It's a play on words between an electrical current source, and fruity currant sauce. Truthfully, this is the best that I could come up with!
 
 I launched this website in August 2020 amidst the COVID-19 pandemic, what a time to be creative!
 
