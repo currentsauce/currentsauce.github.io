@@ -26,6 +26,6 @@ So I eventually settled on using Jekyll, which super convenient as I can host th
 
 
 
-
+---
 [^1]: Okay, I'll admit that when I was 14 I learnt HTML 4 and made some okay to shambolic websites. I'm not wanting to go there again.
 [^2]: I know i'd get frustrated with it too. I wrote my 3rd year dissertation in *LaTeX* and it was wonderful. Ah, memories.
