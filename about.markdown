@@ -1,7 +1,7 @@
 ---
 layout: page
 title: About
-subtitle: So you want to know more, huh! :grinning:
+subtitle: So you want to know more, huh!
 permalink: /about/
 hide_footer: true
 ---
