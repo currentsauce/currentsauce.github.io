@@ -39,6 +39,16 @@ remote_theme: chrisrhymes/bulma-clean-theme
 
 plugins:
   - jekyll-feed
+  
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      author: "James"
+      layout: post
+      show_sidebar: true
 
 #livereload: true
 
