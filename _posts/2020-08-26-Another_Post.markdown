@@ -8,4 +8,3 @@ hide_footer: true
 This is a second post. I am going to add pictures to it...
 
 ![logo](/logos/main.png)
-Format: ![Alt Text](url)
