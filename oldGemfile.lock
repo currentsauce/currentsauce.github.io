@@ -15,7 +15,7 @@ GEM
       jekyll-paginate (~> 1.1)
       jekyll-seo-tag (~> 2.5)
       jekyll-sitemap (~> 1.2)
-      kramdown (~> 2.3.0)
+      kramdown (~> 1.17)
       rouge (~> 3.3)
     coffee-script (2.4.1)
       coffee-script-source
