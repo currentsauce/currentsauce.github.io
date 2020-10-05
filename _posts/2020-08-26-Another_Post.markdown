@@ -4,5 +4,6 @@ title:  "This is another post"
 date:   2020-08-26 21:41:00 +0100
 categories: blog
 hide_footer: true
+gallery: example_gallery
 ---
 This is a second post. I am trying to get picture adding technique nailed.
