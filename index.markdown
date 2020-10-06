@@ -5,7 +5,7 @@
 layout: page
 title: Home
 subtitle: Hello there!
-hide_footer: true
+hide_footer: false
 ---
 Hi there, Welcome to my website!
 
