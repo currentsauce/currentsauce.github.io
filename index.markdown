@@ -9,4 +9,4 @@ hide_footer: false
 ---
 Hi there, Welcome to my website!
 
-Check out my blog posts here.
+Check out my blog posts.
