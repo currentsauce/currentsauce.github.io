@@ -6,6 +6,7 @@ permalink: /about/
 hide_footer: true
 hero_image: /assets/heros/AboutHero.png
 image: /assets/heros/AboutHero.png
+hero_darken: true
 ---
 9.20
 
