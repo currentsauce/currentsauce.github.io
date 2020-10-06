@@ -5,11 +5,9 @@ subtitle: So you want to know more, huh!
 permalink: /about/
 hide_footer: true
 hero_image: /heros/AboutHero.png
-hero_height: is-large
-hero_darken: false
 image: /heros/AboutHero.png
 ---
-9.17
+9.20
 
 Hello there! 
 
