@@ -4,8 +4,8 @@ title: About
 subtitle: So you want to know more, huh!
 permalink: /about/
 hide_footer: true
-hero_image: /blog_images/heros/AboutHero.png
-image: /blog_images/heros/AboutHero.png
+hero_image: /blog_images/a_page_heros/AboutHero.png
+image: /blog_images/a_page_heros/AboutHero.png
 hero_darken: true
 ---
 
