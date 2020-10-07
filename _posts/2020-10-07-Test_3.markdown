@@ -8,7 +8,9 @@ hide_footer: true
 ---
 This is a third post. I am trying to get picture adding technique nailed.
 
-{% include image.html SmallImg="https://via.placeholder.com/400x225"
-            max-width="200px" LargeImg="https://via.placeholder.com/1200x675" 
-            alt="Jekyll logo"
-            caption="This is the Jekyll logo." %}
+{% include image.html 
+SmallImg="https://via.placeholder.com/400x225" max-width="200px" 
+LargeImg="https://via.placeholder.com/1200x675" 
+alt="Jekyll logo"
+caption="This is the Jekyll logo." 
+%}
