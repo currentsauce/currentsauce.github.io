@@ -3,6 +3,8 @@ layout: post
 title:  "Restoration of a 1981 Garrard Turntable"
 date:   2020-10-07 21:00:00 +0100
 categories: blog
+hero_image: /blog_images/_heros/garrard.jpg
+image: /blog_images/_heros/garrard.jpg
 
 ---
 
