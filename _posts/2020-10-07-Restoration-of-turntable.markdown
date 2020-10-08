@@ -14,8 +14,7 @@ I've always loved vinyl records! I remember my first time - I was around 10 year
 
 The Garrard DD-450
 ------------------
-
-qwe
+This turntable belonged to my Uncle and he gave it me when he got rid of his hifi system. Sadly, it's been sat in my mum and dad's garrage for the last 10-15 years, and despite avoiding damage from serious flooding, it is in a sorry state:
 
 {% include image.html 
 SmallImg="/blog_images/garrard/s01.jpg" max-width="300px" 
@@ -23,6 +22,19 @@ LargeImg="/blog_images/garrard/01.jpg"
 alt="Old turntable"
 caption="This turntable has seen better days." 
 %}
+
+From what I've read online, this isn't a massively loved turntable, as it was released towards the end of Garrard's time. Despite this, I couldn't see why it couldn't be a nice turntable - it certainly has to be better than some of the modern junk you can buy that call themselved *turntables*. It's a Direct-Drive type, and has an anti-skate tonearm with balancing, to allow the correct tracking force to be applied.
+
+Removing the base reveals the lovely innards. As it's semi-automatic, you can see a belt that takes the rotation of the disk to the semi-automatic  mechanism (semi-automatic basically means that it will return the tonearm to its rest once the record is at the end. There is also a button to activate this yourself mid-play).
+
+{% include image.html 
+SmallImg="/blog_images/garrard/s03.jpg" max-width="300px" 
+LargeImg="/blog_images/garrard/03.jpg" 
+alt="Old turntable"
+caption="The inside is remarkably much cleaner than the outside." 
+%}
+
+A little cleaning of the inside and it is good as new. 
 
 ---
 [^1]: Lost count of the amount of people that are amazed that you can play a vinyl record with a £5/£10/£20 note :joy:
