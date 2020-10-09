@@ -7,6 +7,7 @@ title: Home
 subtitle: Hello there!
 hide_footer: false
 hero_image: /blog_images/a_page_heros/IndexHero.jpg
+hero_darken: true
 ---
 Hi there, welcome to Current Sauce, my new website!
 ---------------------------------------------------
