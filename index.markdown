@@ -7,6 +7,8 @@ title: Home
 subtitle: Hello there!
 hide_footer: false
 ---
-Hi there, Welcome to my website!
+Hi there, welcome to Current Sauce, my new website!
+---------------------------------------------------
+This is all about my electronics projects, hacks and tinkerings, with perhaps a sprinkling of other interesting topics too. 
 
-Check out my blog posts.
+Check out my blog posts [/blog](here!)
