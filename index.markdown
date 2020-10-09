@@ -6,6 +6,7 @@ layout: page
 title: Home
 subtitle: Hello there!
 hide_footer: false
+hero_image: /blog_images/a_page_heros/IndexHero.jpg
 ---
 Hi there, welcome to Current Sauce, my new website!
 ---------------------------------------------------
