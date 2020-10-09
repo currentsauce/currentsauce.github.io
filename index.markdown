@@ -11,4 +11,4 @@ Hi there, welcome to Current Sauce, my new website!
 ---------------------------------------------------
 This is all about my electronics projects, hacks and tinkerings, with perhaps a sprinkling of other interesting topics too. 
 
-Check out my blog posts [/blog](here!)
+Check out my blog posts [here!](/blog)
