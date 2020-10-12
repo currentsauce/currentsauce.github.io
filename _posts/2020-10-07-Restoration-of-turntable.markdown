@@ -51,7 +51,7 @@ alt="Removed tonearm"
 caption="The tonearm removed. Quite dirty and the wires seem a bit naff now." 
 %}
 
-I am replacing all of the audio cable with new in this restoration, however I need to keep the original headshell and it's connector. I believe this is known as an *ADC Type* headshell connector, and is difficult to obtain. This headshell and it's connector seem fine.
+I am replacing all of the audio cable with new in this restoration, however I need to keep the original headshell and it's connector. I believe this is known as an *ADC Type* headshell connector, and is difficult to obtain. This headshell and its connector seem fine.
 
 {% include image.html 
 SmallImg="/blog_images/garrard/s10.jpg" max-width="300px" 
@@ -72,6 +72,33 @@ SmallImg="/blog_images/garrard/s12.jpg" max-width="300px"
 LargeImg="/blog_images/garrard/12.jpg" 
 alt="The tonearm grounding clip, halfway removed here"
 caption="The tonearm grounding clip, halfway removed here" 
+%}
+
+To replace the wire in the tonearm, i'm using Silk wrapped [Litz Wire](https://en.wikipedia.org/wiki/Litz_wire). It has the seal or approval from internet audiophiles for this purpose, and I have some scrap wire that is perfect for this. The biggest concern is the successful soldering of it, since it comprises of lots of thin enamel coated strands. I've found that the best way of soldering this, is to first remove some of the silk wrapping (it uncurls itself off if you pull it) and then using a hot soldering iron with large tip at 400°C tin the end with a nice blob of solder; the enamel will bubble away and the solder will tin the strands nicely. Be sure to check the resistance of each piece though, and definitely give your tip a good clean with *wet sponge* in between every use!
+
+{% include image.html 
+SmallImg="/blog_images/garrard/s13.jpg" max-width="300px" 
+LargeImg="/blog_images/garrard/13.jpg" 
+alt="Check out that tinning!"
+caption="Check out that tinning!" 
+%}
+
+Then solder to the original headshell connector.
+
+{% include image.html 
+SmallImg="/blog_images/garrard/s14.jpg" max-width="300px" 
+LargeImg="/blog_images/garrard/14.jpg" 
+alt="Looking promising. Heatshrink is always important."
+caption="Looking promising. Heatshrink is always important." 
+%}
+
+After giving the tonearm assembly parts a good clean, the next thing is to carefully thread the four wires through the tonearm, along with the grounding clip with its new wire. Once threaded through, the tonearm assembly was reinstalled. The wires then carefully routed into the turntable enclosure, and soldered onto the original terminals.
+
+{% include image.html 
+SmallImg="/blog_images/garrard/s15.jpg" max-width="300px" 
+LargeImg="/blog_images/garrard/15.jpg" 
+alt="Rerouted wires"
+caption="Wires rerouted and soldered in place" 
 %}
 
 
