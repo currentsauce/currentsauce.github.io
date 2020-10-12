@@ -20,33 +20,62 @@ This turntable belonged to my Uncle and he gave it me when he got rid of his hif
 {% include image.html 
 SmallImg="/blog_images/garrard/s01.jpg" max-width="300px" 
 LargeImg="/blog_images/garrard/01.jpg" 
-alt="Old turntable"
+alt="The old dusty turntable"
 caption="This turntable has seen better days." 
 %}
 
 From what I've read online, this isn't a massively loved turntable, as it was released towards the end of Garrard's time. Despite this, I couldn't see why it couldn't be a nice turntable - it certainly has to be better than some of the modern junk you can buy that call themselved *turntables*. It's a Direct-Drive type, and has an anti-skate tonearm with balancing, to allow the correct tracking force to be applied.
 
-Removing the base reveals the lovely innards. As it's semi-automatic, you can see a belt that takes the rotation of the disk to the semi-automatic  mechanism (semi-automatic basically means that it will return the tonearm to its rest once the record is at the end. There is also a button to activate this yourself mid-play).[^2]
+Removing the base reveals the lovely innards. As it's semi-automatic, you can see a belt that takes the rotation of the disk to the semi-automatic  mechanism (semi-automatic basically means that it will return the tonearm to its rest once the record is at the end. There is also a button to activate this yourself mid-play).
 
 {% include image.html 
 SmallImg="/blog_images/garrard/s03.jpg" max-width="300px" 
 LargeImg="/blog_images/garrard/03.jpg" 
-alt="Old turntable"
+alt="Inside the turntable"
 caption="The inside is remarkably much cleaner than the outside." 
 %}
 
-A little cleaning of the inside and it is good as new. [^3]
+A little cleaning and air blasting of the inside and it is good as new. Thankfully, the mechanical parts are sound as a pound and don't need any attention. I removed the mains cable from the transformer, and removed the tonearm completely.
 
 {% include image.html 
 SmallImg="/blog_images/garrard/s06.jpg" max-width="300px" 
 LargeImg="/blog_images/garrard/06.jpg" 
-alt="Old turntable"
+alt="Faston connectors soldered in place"
 caption="I've never seen faston connectors soldered like this before!" 
+%}
+
+{% include image.html 
+SmallImg="/blog_images/garrard/s08.jpg" max-width="300px" 
+LargeImg="/blog_images/garrard/08.jpg" 
+alt="Removed tonearm"
+caption="The tonearm removed. Quite dirty and the wires seem a bit naff now." 
+%}
+
+I am replacing all of the audio cable with new in this restoration, however I need to keep the original headshell and it's connector. I believe this is known as an *ADC Type* headshell connector, and is difficult to obtain. This headshell and it's connector seem fine.
+
+{% include image.html 
+SmallImg="/blog_images/garrard/s10.jpg" max-width="300px" 
+LargeImg="/blog_images/garrard/10.jpg" 
+alt="The ADC Headshell Connector on the tonearm"
+caption="The ADC Headshell Connector on the tonearm" 
+%}
+
+{% include image.html 
+SmallImg="/blog_images/garrard/s11.jpg" max-width="300px" 
+LargeImg="/blog_images/garrard/11.jpg" 
+alt="Connector pins from the headshell."
+caption="Connector pins from the headshell." 
+%}
+
+{% include image.html 
+SmallImg="/blog_images/garrard/s12.jpg" max-width="300px" 
+LargeImg="/blog_images/garrard/12.jpg" 
+alt="The tonearm grounding clip, halfway removed here"
+caption="The tonearm grounding clip, halfway removed here" 
 %}
 
 
 ---
 [^1]: Footnote 1
-[^2]: Footnote 2
-[^3]: Footnote 3
+
 
