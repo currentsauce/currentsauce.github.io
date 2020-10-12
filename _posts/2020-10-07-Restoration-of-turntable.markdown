@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Restoration of a 1981 Garrard DD-450 Turntable"
-date:   2020-10-08 21:00:00 +0100
+date:   2020-10-12 21:00:00 +0100
 categories: blog
 hero_image: /blog_images/a_page_heros/garrard.jpg
 hero_darken: true
@@ -101,6 +101,61 @@ alt="Rerouted wires"
 caption="Wires rerouted and soldered in place" 
 %}
 
+I tidied up the wires inside with some zip-ties, as it was all a ratsnest. The original strobe LED seemed very dim, so this was replaced with an LED that was in my odds-n-sods. 
+
+{% include image.html 
+SmallImg="/blog_images/garrard/s18.jpg" max-width="300px" 
+LargeImg="/blog_images/garrard/18.jpg" 
+alt="Tidy insides"
+caption="The inside looks so neat and tidy now!" 
+%}
+
+Last thing is the external cables. I made up a new audio cables using:
+- 7/0.2mm Screened cable
+- Gold plated RCA connectors (one white, one red surprisingly!)
+- Length of green/yellow wire liberated from a IEC mains lead
+- Fork crimp
+- Black braid sheath 8mm diameter
+- Black braid sheath 6mm diameter
+
+{% include image.html 
+SmallImg="/blog_images/garrard/s20.jpg" max-width="300px" 
+LargeImg="/blog_images/garrard/20.jpg" 
+alt="New audio cable with phono grounding"
+caption="New audio cable with phono grounding" 
+%}
+
+{% include image.html 
+SmallImg="/blog_images/garrard/s19.jpg" max-width="300px" 
+LargeImg="/blog_images/garrard/19.jpg" 
+alt="New audio cable fitted"
+caption="New audio cable fitted" 
+%}
+
+Finally, the last thing to do is fit a brand new (*modern*) cartridge and stylus. Theres so many options on the market, I settled on something that isn't too expensive, yet will give above average performance; [Audio Technica AT-VM95E](https://amzn.to/2SP1DCs), it has an elliptical tip, which is preferred over a conical one for better sonic recreation.
+
+{% include image.html 
+SmallImg="/blog_images/garrard/s23.jpg" max-width="300px" 
+LargeImg="/blog_images/garrard/23.jpg" 
+alt="New audio cartridge and stylus fitted"
+caption="New audio cartridge and stylus fitted" 
+%}
+
+And that's it completed! And it sounds *fanstastic!!* I'm so pleased with it. It's so cool that this turntable is playing music that post-dates it by 40 years!
+
+{% include image.html 
+SmallImg="/blog_images/garrard/s21.jpg" max-width="300px" 
+LargeImg="/blog_images/garrard/21.jpg" 
+alt="Back into service"
+caption="Back into service" 
+%}
+
+{% include image.html 
+SmallImg="/blog_images/garrard/s22.jpg" max-width="300px" 
+LargeImg="/blog_images/garrard/22.jpg" 
+alt="My Setup"
+caption="This setup is an Onkyo A-9211, with Q-Acoustic 2020i Bookshelf speakers on Soundstyle Z2 speaker stands." 
+%}
 
 ---
 [^1]: Footnote 1
