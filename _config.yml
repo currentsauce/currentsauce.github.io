@@ -51,6 +51,9 @@ defaults:
       layout: post
       show_sidebar: true
 
+disqus:
+    shortname: currentsauce
+    
 #livereload: true
 
 # Exclude from processing.
