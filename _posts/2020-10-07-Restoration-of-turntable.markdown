@@ -132,7 +132,7 @@ alt="New audio cable fitted"
 caption="New audio cable fitted" 
 %}
 
-Finally, the last thing to do is fit a brand new (*modern*) cartridge and stylus. Theres so many options on the market, I settled on something that isn't too expensive, yet will give above average performance; [Audio Technica AT-VM95E](https://amzn.to/2SP1DCs), it has an elliptical tip, which is preferred over a conical one for better sonic recreation.
+Finally, the last thing to do is fit a brand new (*modern*) cartridge and stylus. Theres so many options on the market, I settled on something that isn't too expensive, yet will give above average performance; [Audio Technica AT-VM95E](https://amzn.to/2SP1DCs), it has an elliptical tip, which is preferred over a conical one for better sound reproduction.
 
 {% include image.html 
 SmallImg="/blog_images/garrard/s23.jpg" max-width="300px" 
