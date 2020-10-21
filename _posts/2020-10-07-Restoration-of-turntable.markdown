@@ -71,10 +71,10 @@ caption="Connector pins from the headshell."
 SmallImg="/blog_images/garrard/s12.jpg" max-width="300px" 
 LargeImg="/blog_images/garrard/12.jpg" 
 alt="The tonearm grounding clip, halfway removed here"
-caption="The tonearm grounding clip, halfway removed here" 
+caption="The tonearm grounding insert, halfway removed here" 
 %}
 
-To replace the wire in the tonearm, i'm using Silk wrapped [Litz Wire](https://en.wikipedia.org/wiki/Litz_wire). It has the seal or approval from internet audiophiles for this purpose, and I have some scrap wire that is perfect for this. The biggest concern is the successful soldering of it, since it comprises of lots of thin enamel coated strands. I've found that the best way of soldering this, is to first remove some of the silk wrapping (it uncurls itself off if you pull it) and then using a hot soldering iron with large tip at 400°C tin the end with a nice blob of solder; the enamel will bubble away and the solder will tin the strands nicely. Be sure to check the resistance of each piece though, and definitely give your tip a good clean with *wet sponge* in between every use!
+To replace the wire in the tonearm, I'm using Silk wrapped [Litz Wire](https://en.wikipedia.org/wiki/Litz_wire). It has the seal or approval from internet audiophiles for this purpose, and I have some scrap wire that is perfect for this. The biggest concern is the successful soldering of it, since it comprises of lots of thin enamel coated strands. I've found that the best way of soldering this, is to first remove some of the silk wrapping (it uncurls itself off if you pull it) and then using a hot soldering iron with large tip at 400°C tin the end with a nice blob of solder; the enamel will bubble away and the solder will tin the strands nicely. Be sure to check the resistance of each piece though, and definitely give your tip a good clean with *wet sponge* in between every use!
 
 {% include image.html 
 SmallImg="/blog_images/garrard/s13.jpg" max-width="300px" 
