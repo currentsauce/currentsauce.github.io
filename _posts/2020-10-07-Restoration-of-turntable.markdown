@@ -119,10 +119,10 @@ Last thing is the external cables. I made up a new audio cables using:
 - Black braid sheath 6mm diameter
 
 {% include image.html 
-SmallImg="/blog_images/garrard/s20.jpg" max-width="300px" 
-LargeImg="/blog_images/garrard/20.jpg" 
+SmallImg="/blog_images/garrard/s25.jpg" max-width="300px" 
+LargeImg="/blog_images/garrard/25.jpg" 
 alt="New audio cable with phono grounding"
-caption="New audio cable with phono grounding" 
+caption="New audio cable with phono grounding. Plus a new mains lead!" 
 %}
 
 {% include image.html 
@@ -135,8 +135,8 @@ caption="New audio cable fitted"
 Finally, the last thing to do is fit a brand new (*modern*) cartridge and stylus. Theres so many options on the market, I settled on something that isn't too expensive, yet will give above average performance; [Audio Technica AT-VM95E](https://amzn.to/2SP1DCs), it has an elliptical tip, which is preferred over a conical one for better sound reproduction.
 
 {% include image.html 
-SmallImg="/blog_images/garrard/s23.jpg" max-width="300px" 
-LargeImg="/blog_images/garrard/23.jpg" 
+SmallImg="/blog_images/garrard/s24.jpg" max-width="300px" 
+LargeImg="/blog_images/garrard/24.jpg" 
 alt="New audio cartridge and stylus fitted"
 caption="New audio cartridge and stylus fitted" 
 %}
