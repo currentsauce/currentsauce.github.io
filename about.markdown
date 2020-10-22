@@ -25,7 +25,7 @@ Electronics is one of my hobbies, though I also enjoy Snowboarding, Rock Climbin
 
 **What about this website?**
 I spent far too long trying to decide how to build a website. I'm no web designer[^1], but I didn't want to use a WYSIWYG platform [^2] - just seemed like cheating to me, I wanted something that I had to work on!
-So I eventually settled on building something using Jekyll, which is super convenient as I can host the site <sub><sup>(for free)</sup></sub>using Github pages. Fabulous! I write it all in Notepad++, and the theme that I am using is called [Bulma Clean Theme](https://github.com/chrisrhymes/bulma-clean-theme) by [C.S. Rhymes](https://www.csrhymes.com). I really love it, it is so clean and nice (clue was in the name I suppose), I definitely could't have Jekyll'd this level of detail myself and am so grateful that the author made it open for use.
+So I eventually settled on building something using [Jekyll](https://jekyllrb.com), which is super convenient as I can host the site <sub><sup>(for free)</sup></sub>using Github pages. Fabulous! I write it all in Notepad++ (on Windows 10), and the theme that I am using is called [Bulma Clean Theme](https://github.com/chrisrhymes/bulma-clean-theme) by [C.S. Rhymes](https://www.csrhymes.com). I really love it, it is so clean and nice (clue was in the name I suppose), I definitely could't have Jekyll'd this level of detail myself and am so grateful that the author made it open for use.
 
 I hope you enjoy this website as much as I am enjoying building it. :smile:
 
