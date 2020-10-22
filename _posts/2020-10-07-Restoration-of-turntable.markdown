@@ -8,6 +8,7 @@ hero_darken: true
 image: /blog_images/a_page_heros/garrard.jpg
 
 ---
+This is my first proper post! It's relatively simple, but was fun and worthwhile nonetheless.
 
 I've always loved vinyl records! I remember my first time - I was around 10 years old and found my mums original [ELO - Out Of The Blue](https://en.wikipedia.org/wiki/Out_of_the_Blue_(Electric_Light_Orchestra_album)) LP, and thought *wow that's cool!* and played the first track *Turn to Stone*, amazing. Well, I'm not the type of person who insists that it is better than digital music, or that it is "warmer", no, I just think its really cool! I mean, its just pure sound vibrations *(even more cool that you can hear the sound from the stylus too)* that get turned into an electrcal signal through a pair of magnets and coils, such simple yet fundamental elements. 
 
@@ -74,7 +75,7 @@ alt="The tonearm grounding clip, halfway removed here"
 caption="The tonearm grounding insert, halfway removed here" 
 %}
 
-To replace the wire in the tonearm, I'm using Silk wrapped [Litz Wire](https://en.wikipedia.org/wiki/Litz_wire). It has the seal or approval from internet audiophiles for this purpose, and I have some scrap wire that is perfect for this. The biggest concern is the successful soldering of it, since it comprises of lots of thin enamel coated strands. I've found that the best way of soldering this, is to first remove some of the silk wrapping (it uncurls itself off if you pull it) and then using a hot soldering iron with large tip at 400°C tin the end with a nice blob of solder; the enamel will bubble away and the solder will tin the strands nicely. Be sure to check the resistance of each piece though, and definitely give your tip a good clean with *wet sponge* in between every use!
+To replace the wire in the tonearm, I'm using Silk wrapped [Litz Wire](https://en.wikipedia.org/wiki/Litz_wire). It has the seal or approval from internet audiophiles for this purpose, and I have some scrap wire that is perfect for this. The biggest concern is the successful soldering of it, since it comprises of lots of thin enamel coated strands. I've found that the best way of soldering this, is to first remove some of the silk wrapping (it uncurls itself off if you pull it) and then using a hot soldering iron with large tip at 400°C tin the end with a nice blob of solder; the enamel will bubble away and the solder will tin the strands nicely. Be sure to check the resistance of each piece though to make sure they are are low and equal, and definitely give your tip a good clean with *wet sponge* in between every use, there's lots of enamel being removed!!
 
 {% include image.html 
 SmallImg="/blog_images/garrard/s13.jpg" max-width="300px" 

@@ -11,7 +11,7 @@ hero_darken: true
 
 Hello there! 
 
-Over the years, I have learnt a lot from various sources on the internet. I've always said that i'd like to create a website of my own to blog about the things that I do, as i'd like to try help others out in the same way I have been helped out. So, this is that website!
+Over the years, I have learnt a lot from various sources on the internet. I've always said that I'd like to create a website of my own to blog about the things that I do, as i'd like to try help others out in the same way I have been helped out. So, this is that website!
 
 Why Current Sauce? I love a good pun! It's a play on words between an electrical current source, and fruity currant sauce. Truthfully, this is the best that I could come up with! :rofl:
 
@@ -24,8 +24,10 @@ I graduated with an M.Eng. in *Electrical and Electronic Engineering* at The Uni
 Electronics is one of my hobbies, though I also enjoy Snowboarding, Rock Climbing (and bouldering too I guess) and Hiking to name a few. I'm also a massive softy for cats and dogs, though I don't have any right now...yet!
 
 **What about this website?**
-I spent far too long trying to decide how to build a website. I'm no web designer[^1], but using a WYSIWYG platform [^2] just seemed like cheating to me, I wanted something that I had to work on!
-So I eventually settled on using Jekyll, which super convenient as I can host the site using Github pages. Fabulous! The theme that I am using is called [Bulma Clean Theme](https://github.com/chrisrhymes/bulma-clean-theme) by [C.S. Rhymes](https://www.csrhymes.com). It's great, isn't it! I couldn't have done this and am so grateful that it is available to use!
+I spent far too long trying to decide how to build a website. I'm no web designer[^1], but I didn't want to use a WYSIWYG platform [^2] - just seemed like cheating to me, I wanted something that I had to work on!
+So I eventually settled on building something using Jekyll, which is super convenient as I can host the site <sub><sup>(for free)</sup></sub>using Github pages. Fabulous! I write it all in Notepad++, and the theme that I am using is called [Bulma Clean Theme](https://github.com/chrisrhymes/bulma-clean-theme) by [C.S. Rhymes](https://www.csrhymes.com). I really love it, it is so clean and nice (clue was in the name I suppose), I definitely could't have Jekyll'd this level of detail myself and am so grateful that the author made it open for use.
+
+I hope you enjoy this website as much as I am enjoying building it. :smile:
 
 
 
