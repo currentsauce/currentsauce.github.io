@@ -155,7 +155,7 @@ caption="Back into service"
 SmallImg="/blog_images/garrard/s22.jpg" max-width="300px" 
 LargeImg="/blog_images/garrard/22.jpg" 
 alt="My Setup"
-caption="This my setup, which is an Onkyo A-9211 Integrated Amplifier, with Q-Acoustic 2020i Bookshelf speakers on Soundstyle Z2 speaker stands." 
+caption="This my setup, which is an Onkyo A-9211 Integrated Amplifier, with Q-Acoustic 2020i Bookshelf speakers on Soundstyle Z2 speaker stands. Need to get a cabinet though for the equipment!" 
 %}
 
 
