@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "'Hacking' an original Bose Sounddock"
-date:   2020-01-20 21:00:00 +0100
+date:   2021-01-20 21:00:00 +0100
 categories: blog
 hero_image: /blog_images/a_page_heros/bose.jpg
 hero_darken: true
