@@ -10,8 +10,8 @@ hero_image: /blog_images/a_page_heros/IndexHero.jpg
 hero_darken: true
 show_sidebar: true
 ---
-Hi there, this is my new website!
+James Has a Website...
 ---------------------------------------------------
-This is all about my electronics projects, hacks and tinkerings, with perhaps a sprinkling of other interesting topics too. 
+This is all about the electronics projects, hacks and tinkerings by me, James Kincell, with perhaps a sprinkling of other interesting topics too. 
 
 Check out my blog posts [here!](/blog)
