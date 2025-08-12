@@ -32,14 +32,14 @@ SmallImg="/blog_images/bose/Mainboard.jpg" max_width="300px"
 LargeImg="/blog_images/bose/Mainboard.jpg" 
 alt=""
 caption="This is the 'Top' side of the mainboard. Top Left: Ribbon to Amp Board, Top Right: Ribbon from Dock Board. Within the EMC can is the Spansion Flash. Bottom: Power input - looks like a 4-pin Molex Mini Fit Jr." 
-%
+%}
 
 {% include image.html 
 SmallImg="/blog_images/bose/MainboardDSP.jpg" max_width="300px" 
 LargeImg="/blog_images/bose/MainboardDSP.jpg" 
 alt=""
 caption="This is the 'Bottom' side of the mainboard. That's the DSP. The IOR SOIC is a MOSFET." 
-
+%}
 
 
 With a bit of patience, I was able to reverse-engineer the schematic on the dock board. This meant, that armed with the pin-out of the 30-pin connector, I could work out what the signals on the ribbon cable were, and, the schematic of the volume buttons. With the ribbon connector salvaged from the dock board, I was able to bodge together a breakout board on breadboard!
