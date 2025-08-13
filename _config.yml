@@ -31,3 +31,10 @@ defaults:
 
 disqus:
     shortname: currentsauce
+    
+exclude:
+  - NonJekyllStuff/
+  - PhotosToUse/
+  - README.md
+  - .gitignore
+  - .github/
