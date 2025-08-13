@@ -7,17 +7,16 @@ url: "https://www.currentsauce.co.uk"
 twitter_username: currentsauce
 github_username:  currentsauce
 
-google_analytics: UA-175995787-1
-
-paginate: 5
-paginate_path: "/blog/page:num"
-
 # Build settings
 remote_theme: chrisrhymes/bulma-clean-theme@v1.0.0
-
 plugins:
+  - jekyll-remote-theme
   - jekyll-feed
   - jemoji
+  - jekyll-paginate
+  - jekyll-sitemap
+paginate: 5
+paginate_path: "/blog/page:num"
   
 defaults:
   -
@@ -31,57 +30,3 @@ defaults:
 
 disqus:
     shortname: currentsauce
-    
-#livereload: true
-
-# Exclude from processing.
-# The following items will not be processed, by default.
-# Any item listed under the `exclude:` key here will be automatically added to
-# the internal "default list".
-#
-# Excluded items can be processed by explicitly listing the directories or
-# their entries' file path in the `include:` list.
-#
-# exclude:
-#   - .sass-cache/
-#   - .jekyll-cache/
-#   - gemfiles/
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules/
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
-title: Current Sauce
-email: currentsauce1@gmail.com
-description: >-
-  I decided to make a website of the things I make and do. A website on electronic projects, hacks, and more by James Kincell.
-baseurl: ""
-url: "https://www.currentsauce.co.uk"
-
-twitter_username: currentsauce
-github_username: currentsauce
-
-# Use the remote theme (no 'theme:' key when you do this)
-remote_theme: chrisrhymes/bulma-clean-theme@v1.0.0
-
-paginate: 5
-paginate_path: "/blog/page:num"
-
-plugins:
-  - jekyll-remote-theme
-  - jekyll-feed
-  - jemoji
-  - jekyll-paginate
-  - jekyll-sitemap
-
-defaults:
-  - scope: { path: "", type: "posts" }
-    values:
-      author: "James K"
-      layout: post
-      show_sidebar: true
-
-disqus:
-  shortname: currentsauce
