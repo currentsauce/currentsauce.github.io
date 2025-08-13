@@ -7,6 +7,7 @@ gem "jekyll-feed"
 gem "jemoji"
 gem "jekyll-paginate"
 gem "jekyll-sitemap"
+gem "jekyll-seo-tag"
 
 gem "jekyll-sass-converter", "~> 3.0"   # uses Dart Sass
 gem "sass-embedded", ">= 1.0"
