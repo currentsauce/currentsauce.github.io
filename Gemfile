@@ -1,16 +1,12 @@
 source "https://rubygems.org"
-gem "jekyll", "~> 4.3"
 
-# Plugins you actually use in _config.yml
+gem "jekyll", "~> 4.3"
+gem "jekyll-remote-theme"
 gem "jekyll-feed"
 gem "jemoji"
 gem "jekyll-paginate"
 gem "jekyll-sitemap"
-
-# Use Dart Sass (Bulma 1.x requires this)
-gem "jekyll-sass-converter", "~> 3.0"
+gem "jekyll-sass-converter", "~> 3.0"   # uses Dart Sass
 gem "sass-embedded", ">= 1.0"
-
-# Markdown + local serve nicety
 gem "kramdown-parser-gfm"
-gem "webrick", "~> 1.8"      # for local 'jekyll serve' on Ruby 3
+gem "webrick", "~> 1.8"

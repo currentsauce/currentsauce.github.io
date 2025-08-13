@@ -2,7 +2,7 @@ name: Build and deploy (Jekyll + Dart Sass)
 
 on:
   push:
-    branches: ["main"]    # change if your default branch is different
+    branches: ["main"]   # change if your default branch is different
   workflow_dispatch:
 
 permissions:
