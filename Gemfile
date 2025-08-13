@@ -7,9 +7,10 @@ gem "jemoji"
 gem "jekyll-paginate"
 gem "jekyll-sitemap"
 
-# Fix Sass: Bulma v1 needs Dart Sass, not old Ruby Sass
+# Use Dart Sass (Bulma 1.x requires this)
 gem "jekyll-sass-converter", "~> 3.0"
 gem "sass-embedded", ">= 1.0"
 
+# Markdown + local serve nicety
 gem "kramdown-parser-gfm"
 gem "webrick", "~> 1.8"      # for local 'jekyll serve' on Ruby 3
