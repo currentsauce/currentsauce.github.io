@@ -1,0 +1,9 @@
+/* Keep enlarged image within viewport and add a soft shadow */
+.modal .image img {
+  max-width: 90vw;
+  max-height: 90vh;
+  height: auto;
+  width: auto;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.4);
+}
