@@ -60,12 +60,10 @@ figure.image figcaption {
   overflow-wrap: anywhere;
 }
 
-/* Make the whole dark modal background clickable to close */
-.modal.is-active {
-  cursor: pointer;
-}
+/* Let clicks pass through the container, but NOT the image block */
+.modal .modal-content { pointer-events: none; }
+.modal .modal-content .image { pointer-events: auto; }
 
-/* Prevent clicks on the image/caption from closing it */
-.modal .modal-content {
-  cursor: default;
-}
+/* Make the whole modal indicate it's tappable */
+.modal.is-active { cursor: pointer; }
+.modal .modal-content { cursor: default; } /* but not the image itself */
