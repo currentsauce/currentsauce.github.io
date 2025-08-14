@@ -67,3 +67,22 @@ figure.image figcaption {
 /* Make the whole modal indicate it's tappable */
 .modal.is-active { cursor: pointer; }
 .modal .modal-content { cursor: default; } /* but not the image itself */
+
+/* Make sure the × button is visible and tappable above modal-content */
+.modal .modal-close {
+  position: fixed;      /* float it over the content */
+  top: calc(1rem + env(safe-area-inset-top));
+  right: calc(1rem + env(safe-area-inset-right));
+  z-index: 1001;        /* higher than modal-content */
+  display: block;
+  opacity: 1;           /* ensure visible */
+  pointer-events: auto; /* clickable even if content is pointer-events:none */
+}
+
+/* Slightly larger hit target on mobile */
+@media (max-width: 480px) {
+  .modal .modal-close.is-large {
+    width: 56px;
+    height: 56px;
+  }
+}
