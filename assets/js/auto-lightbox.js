@@ -1,12 +1,13 @@
-// Auto-lightbox + auto-caption + optional box for Bulma Clean Theme.
+// Auto-lightbox + auto-caption + auto-box for Bulma Clean Theme.
 // Authoring: plain Markdown image with a title for the caption.
-// Add class ".boxed" (via Kramdown attr list) to put the image in a Bulma .box.
+// Default: every content image is boxed + click-to-enlarge.
+// Opt-out per image with: {: data-no-lightbox="true" } or {: .no-box }
 
 (function () {
   function ready(fn){ if (document.readyState !== "loading") fn(); else document.addEventListener("DOMContentLoaded", fn); }
 
   ready(() => {
-    // Create a single Bulma modal for lightbox use
+    // Inject one Bulma modal
     const modal = document.createElement('div');
     modal.className = 'modal';
     modal.innerHTML = `
@@ -29,22 +30,79 @@
       capEl.textContent = '';
     }
 
-    // Close on ESC
+    // ESC closes
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
 
-    // Close when tapping/clicking outside the figure, or on the × button
+    // Click outside figure OR on × closes
     modal.addEventListener('click', (e) => {
       const insideImage = e.target.closest('.modal-content .image');
-      const onCloseBtn = e.target.closest('.modal-close');
+      const onCloseBtn  = e.target.closest('.modal-close');
       if (!insideImage || onCloseBtn) close();
     });
 
-    // Enhance content images (skip logos/nav)
-    const containers = document.querySelectorAll('.content, .post, article, .section');
-    containers.forEach(container => {
-      container.querySelectorAll('img').forEach(img => {
-        if (img.dataset.noLightbox === "true") return;
+    // Make images lightboxable
+    const allImgs = Array.from(document.querySelectorAll('img'));
+    allImgs.forEach(img => {
+      // Skip obvious non-content areas and the modal's own image
+      if (img.closest('header, footer, nav, .navbar, .hero, .modal, .logo, .brand')) return;
+      if (img.dataset.noLightbox === "true") return;
 
-        // Build figure wrapper + caption (from title or data-caption)
-        const caption = img.getAttribute('title') || img.dataset.caption || img.getAttribute('alt') || '';
-        const wantsBox = img.classList.contains('boxed');
+      const caption = img.getAttribute('title') || img.dataset.caption || img.getAttribute('alt') || '';
+
+      // Wrap into a <figure> once, add .box by default (unless .no-box is present)
+      let figure = img.closest('figure');
+      if (!figure) {
+        figure = document.createElement('figure');
+        figure.className = 'image has-text-centered';
+        if (!img.classList.contains('no-box')) figure.classList.add('box');
+
+        // If author set max-width on the img, move it to the figure and let img fill
+        const mw = img.style.maxWidth || '';
+        if (mw) {
+          figure.style.maxWidth = mw;
+          img.style.maxWidth = '100%';
+        }
+
+        img.replaceWith(figure);
+        figure.appendChild(img);
+
+        if (caption) {
+          const figcap = document.createElement('figcaption');
+          figcap.className = 'has-text-grey is-size-7';
+          figcap.style.marginTop = '.5rem';
+          figcap.textContent = caption;
+          figure.appendChild(figcap);
+        }
+      } else {
+        // If the figure already existed, still ensure .box unless explicitly opted out
+        if (!img.classList.contains('no-box')) figure.classList.add('box');
+      }
+
+      // Ensure there's a link wrapper pointing to the big image
+      let link = img.closest('a');
+      const target = link?.getAttribute('href') || img.currentSrc || img.src;
+
+      if (!link) {
+        link = document.createElement('a');
+        link.href = target;
+        link.style.display = 'inline-block';
+        img.replaceWith(link);
+        link.appendChild(img);
+      }
+
+      // Bind once
+      if (!link.dataset.lbBound) {
+        link.addEventListener('click', (e) => {
+          const href = link.getAttribute('href') || '';
+          if (!/\.(png|jpe?g|webp|gif|bmp|svg)(\?.*)?$/i.test(href)) return; // let non-image links behave normally
+          e.preventDefault();
+          imgEl.src = href;
+          capEl.textContent = caption;
+          imgEl.alt = img.getAttribute('alt') || '';
+          modal.classList.add('is-active');
+        });
+        link.dataset.lbBound = "true";
+      }
+    });
+  });
+})();
