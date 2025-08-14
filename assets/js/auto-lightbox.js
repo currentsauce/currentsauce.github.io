@@ -96,3 +96,12 @@
     });
   });
 })();
+
+// Close when clicking outside the modal content
+document.querySelectorAll('.modal').forEach(modal => {
+  modal.addEventListener('click', e => {
+    if (!e.target.closest('.modal-content')) {
+      modal.classList.remove('is-active');
+    }
+  });
+});
