@@ -18,7 +18,7 @@
           <figcaption id="lb-cap" class="has-text-grey-light has-text-centered is-size-6" style="margin-top:.5rem;"></figcaption>
         </figure>
       </div>
-      <button class="modal-close is-large" aria-label="close"></button>`;
+      <button class="modal-close is-large" aria-label="close"><span aria-hidden="true">×</span></button>`;
     document.body.appendChild(modal);
 
     const imgEl = modal.querySelector('#lb-img');
