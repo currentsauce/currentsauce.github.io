@@ -57,7 +57,7 @@
             if (!/\.(png|jpe?g|webp|gif|bmp|svg)(\?.*)?$/i.test(target)) return;
             e.preventDefault();
             imgEl.src = target;
-            capEl.textContent = img.getAttribute('title') || img.getAttribute('alt') || '';
+            capEl.textContent = img.dataset.caption || img.getAttribute('title') || img.getAttribute('alt') || '';
             modal.classList.add('is-active');
           });
           link.dataset.lbBound = "true";
