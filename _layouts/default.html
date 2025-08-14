@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {%- include head.html -%}
+    <link rel="stylesheet" href="{{ '/assets/css/auto-lightbox.css' | relative_url }}">
+  </head>
+  <body>
+    {%- include header.html -%}
+    {{ content }}
+    {%- include footer.html -%}
+    <script defer src="{{ '/assets/js/auto-lightbox.js' | relative_url }}"></script>
+  </body>
+</html>
