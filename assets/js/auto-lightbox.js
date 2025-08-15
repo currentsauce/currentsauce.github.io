@@ -41,27 +41,26 @@
     });
 
     // Helper: should we enhance this image?
-    function shouldEnhance(img) {
-      // Hard skips
-      if (
-        img.dataset.noLightbox === "true" ||
-        img.classList.contains('emoji') ||                // jemoji
-        img.closest('.emoji') ||                          // any parent marked emoji
-        img.closest('header, footer, nav, .navbar, .footer, .site-header, .site-footer, .hero, .modal, .logo, .brand')
-      ) return false;
+	function shouldEnhance(img) {
+	  // Hard skips
+	  if (
+		img.dataset.noLightbox === "true" ||
+		img.classList.contains('emoji') ||            // jemoji outputs <img class="emoji">
+		img.closest('.emoji') ||
+		img.closest('header, footer, nav, .navbar, .footer, .site-header, .site-footer, .hero, .modal, .logo, .brand')
+	  ) return false;
 
-      // Skip common listing/card/summary regions (blog index, cards, media objects)
-      if (img.closest(
-        '.card, .card-image, .card-content, .post-list, .posts, .post-summary, .media, .media-left, .media-content, .tiles, .columns, .column'
-      )) {
-        // Unless the image is inside a real article's .content, don't touch it
-        if (!img.closest('article .content, .post .content, .page .content')) return false;
-      }
+	  // If the image is in card/listing UI AND not in any .content block, skip it
+	  const inListingUI = !!img.closest(
+		'.card, .card-image, .card-content, .post-list, .posts, .post-summary, .media, .media-left, .media-content, .tiles, .columns, .column'
+	  );
+	  const inContent = !!img.closest('.content');
 
-      // Only process images that are inside actual article/page content blocks
-      const inContent = img.closest('article .content, .post .content, .page .content, .content');
-      return !!inContent;
-    }
+	  if (inListingUI && !inContent) return false;
+
+	  // Only enhance images that are in actual content blocks
+	  return inContent;
+	}
 
     // Make images lightboxable
     const allImgs = Array.from(document.querySelectorAll('img'));
