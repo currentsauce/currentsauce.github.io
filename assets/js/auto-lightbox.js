@@ -1,7 +1,7 @@
 // Auto-lightbox + auto-caption + auto-box for Bulma Clean Theme.
 // Authoring: plain Markdown image with a title for the caption.
-// Default: every content image is boxed + click-to-enlarge.
-// Opt-out per image with: {: data-no-lightbox="true" } or {: .no-box }
+// Default: content images are boxed + click-to-enlarge.
+// Opt-out: {: data-no-lightbox="true" } or {: .no-box }
 
 (function () {
   function ready(fn){ if (document.readyState !== "loading") fn(); else document.addEventListener("DOMContentLoaded", fn); }
@@ -40,12 +40,33 @@
       if (!insideImage || onCloseBtn) close();
     });
 
+    // Helper: should we enhance this image?
+    function shouldEnhance(img) {
+      // Hard skips
+      if (
+        img.dataset.noLightbox === "true" ||
+        img.classList.contains('emoji') ||                // jemoji
+        img.closest('.emoji') ||                          // any parent marked emoji
+        img.closest('header, footer, nav, .navbar, .footer, .site-header, .site-footer, .hero, .modal, .logo, .brand')
+      ) return false;
+
+      // Skip common listing/card/summary regions (blog index, cards, media objects)
+      if (img.closest(
+        '.card, .card-image, .card-content, .post-list, .posts, .post-summary, .media, .media-left, .media-content, .tiles, .columns, .column'
+      )) {
+        // Unless the image is inside a real article's .content, don't touch it
+        if (!img.closest('article .content, .post .content, .page .content')) return false;
+      }
+
+      // Only process images that are inside actual article/page content blocks
+      const inContent = img.closest('article .content, .post .content, .page .content, .content');
+      return !!inContent;
+    }
+
     // Make images lightboxable
     const allImgs = Array.from(document.querySelectorAll('img'));
     allImgs.forEach(img => {
-      // Skip obvious non-content areas and the modal's own image
-      if (img.closest('header, footer, nav, .navbar, .hero, .modal, .logo, .brand')) return;
-      if (img.dataset.noLightbox === "true") return;
+      if (!shouldEnhance(img)) return;
 
       const caption = img.getAttribute('title') || img.dataset.caption || img.getAttribute('alt') || '';
 
@@ -56,7 +77,7 @@
         figure.className = 'image has-text-centered';
         if (!img.classList.contains('no-box')) figure.classList.add('box');
 
-        // If author set max-width on the img, move it to the figure and let img fill
+        // Move inline max-width to the figure
         const mw = img.style.maxWidth || '';
         if (mw) {
           figure.style.maxWidth = mw;
@@ -74,7 +95,6 @@
           figure.appendChild(figcap);
         }
       } else {
-        // If the figure already existed, still ensure .box unless explicitly opted out
         if (!img.classList.contains('no-box')) figure.classList.add('box');
       }
 
@@ -94,7 +114,7 @@
       if (!link.dataset.lbBound) {
         link.addEventListener('click', (e) => {
           const href = link.getAttribute('href') || '';
-          if (!/\.(png|jpe?g|webp|gif|bmp|svg)(\?.*)?$/i.test(href)) return; // let non-image links behave normally
+          if (!/\.(png|jpe?g|webp|gif|bmp|svg)(\?.*)?$/i.test(href)) return;
           e.preventDefault();
           imgEl.src = href;
           capEl.textContent = caption;
