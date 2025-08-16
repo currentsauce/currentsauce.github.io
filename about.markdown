@@ -24,12 +24,7 @@ I launched this website in August 2020 amidst the COVID-19 pandemic, what a time
 I'm James. I'm a 29 year old Electronic Design Engineer in Manchester, UK.
 I graduated with an M.Eng. in *Electrical and Electronic Engineering* at The University of Manchester in 2014, but I tend to ignore the first 'E' as I did very few *Electrical* modules and have forgotten what I did learn, and I'm at peace with that! I moved to Manchester from Doncaster, South Yorkshire and ended up settling in Manchester where I live with my partner.
 
-{% include image.html 
-SmallImg="/blog_images/a_about/me.jpg" max-width="300px" 
-LargeImg="/blog_images/a_about/me.jpg" 
-alt="Stop hovering over me."
-caption="That's me!" 
-%}
+![Me](/blog_images/a_about/me.jpg "Thats me!"){: style="max-width:500px;" }
 
 Electronics is one of my hobbies, though I also enjoy Snowboarding, Rock Climbing (and bouldering too I guess) and Hiking to name a few. I'm also a massive softy for cats and dogs. We have a very silly yet very lovely Sprocker Spaniel called Oscar, he's ace!
 
