@@ -12,25 +12,10 @@ This is a fairly simple post, but useful nontheless. I was designing a constant 
 
 The solution is baiscally a sawtooth wave, and a comparator (which is actually performed by a Schmitt trigger, with no Schmitting at all, i.e. no hysteresis). It has been parameterised, and packaged up into a component that can be dragged into a circuit.
 
-{% include image.html 
-SmallImg="/blog_images/ltspice_pwm/MainCircuit.jpg" max-width="300px" 
-LargeImg="/blog_images/ltspice_pwm/MainCircuit.jpg" 
-alt=""
-caption="This is the main circuit of the PWM generator" 
-%}
+![Main circuit of the PWM generator](/blog_images/ltspice_pwm/MainCircuit.jpg "This is the main circuit of the PWM generator"){: style="max-width:500px;" }
 
-{% include image.html 
-SmallImg="/blog_images/ltspice_pwm/ExampleCircuit.jpg" max-width="300px" 
-LargeImg="/blog_images/ltspice_pwm/ExampleCircuit.jpg" 
-alt=""
-caption="Example usage of the packaged PWM component." 
-%}
+![Example usage of the packaged PWM component](/blog_images/ltspice_pwm/ExampleCircuit.jpg "Example usage of the packaged PWM component."){: style="max-width:500px;" }
 
-{% include image.html 
-SmallImg="/blog_images/ltspice_pwm/PWM.jpg" max-width="300px" 
-LargeImg="/blog_images/ltspice_pwm/PWM.jpg" 
-alt=""
-caption="Three different PWM signals generated from the three components from previous image." 
-%}
+![Three PWM signals generated](/blog_images/ltspice_pwm/PWM.jpg "Three different PWM signals generated from the three components from previous image."){: style="max-width:500px;" }
 
 Check it out on [GitHub](https://github.com/currentsauce/LTspice_PWM_Source).

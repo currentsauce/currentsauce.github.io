@@ -68,29 +68,29 @@ The Service Manual specifies that when an iPod is connected, on the 30-pin dock,
 
 I tested that this all works using the breakout connector. I now needed to create these power on conditions on the DSP board directly, and find places to tap into for the audio and volume controls. I removed the ribbon connector from the DSP board to make this easier. I was able to place the 2K resistor easily enough, and for the grounding of pin 19, there were very convenient jumper pads already!
 
-![Audio and volume tap-in](/blog_images/bose/SignalHack.jpg "Pin 4 (iPod pin 13) pulled high via 2K to pin 21 (5V USB). Pin 19 (iPod 30) pulled to GND via a very convenient jumper pad to GND on the PCB already! The pads look like the 3 unused ones - I needed a bit of wire to make the bridge with solder."){: style="max-width:500px;" }
+![Signal Mods on Board](/blog_images/bose/SignalHack.jpg "Pin 4 (iPod pin 13) pulled high via 2K to pin 21 (5V USB). Pin 19 (iPod 30) pulled to GND via a very convenient jumper pad to GND on the PCB already! The pads look like the 3 unused ones - I needed a bit of wire to make the bridge with solder."){: style="max-width:500px;" }
 
-![Audio and volume tap-in](/blog_images/bose/AudioTapIn.jpg "Here is where the Audio Input is tapped into the iPod input signals."){: style="max-width:500px;" }
+![Audio tap-in](/blog_images/bose/AudioTapIn.jpg "Here is where the Audio Input is tapped into the iPod input signals."){: style="max-width:500px;" }
 
 ![Audio and volume tap-in](/blog_images/bose/VolumeTapIn.jpg "Here is where the Volume signals are tapped in."){: style="max-width:500px;" }
 
 I added a 3.5mm Jack Socket that I salvaged from another board - ideally I should have used a panel mount one, but I only had this PCB mount one to hand. I used hot glue to fix it in place and it is doing fine. 
 
-![Audio and volume tap-in](/blog_images/bose/AudioInput.jpg "3.5mm Audio Jack on the back of the unit."){: style="max-width:500px;" }
+![Audio Jack](/blog_images/bose/AudioInput.jpg "3.5mm Audio Jack on the back of the unit."){: style="max-width:500px;" }
 
 I needed a way to power the unit on and off. I went a bit quick and dirty on this bit! The power into the unit is +18V and -18V. I decided to switch these two power rails using a DPDT switch. Annoyingly the 18V pins are the inside ones on the molex connector! So I had to make the outside pins do a bit of a go around, to be able to access the inside pins. The 18V pins were cut from the PCB, and routed into the switch. The switched 18V rails were then routed back to where they go into the PCB. 
 
-![Audio and volume tap-in](/blog_images/bose/PowerHack.jpg "The +18V and -18V lines just *had* to be the difficult ones to get to! Grr."){: style="max-width:500px;" }
+![Power Lines](/blog_images/bose/PowerHack.jpg "The +18V and -18V lines just *had* to be the difficult ones to get to! Grr."){: style="max-width:500px;" }
 
-![Audio and volume tap-in](/blog_images/bose/Doneish.jpg "Nearly finished here - Audio Jack and Volume Buttons mounted, just need to do the power switch (grey wires)"){: style="max-width:500px;" }
+![Jack and Volume Buttons](/blog_images/bose/Doneish.jpg "Nearly finished here - Audio Jack and Volume Buttons mounted, just need to do the power switch (grey wires)"){: style="max-width:500px;" }
 
-![Audio and volume tap-in](/blog_images/bose/BaseDone.jpg "Power Switch Fitted, base plate back in place.)"){: style="max-width:500px;" }
+![Switch and base plate](/blog_images/bose/BaseDone.jpg "Power Switch Fitted, base plate back in place.)"){: style="max-width:500px;" }
 
 And after all that, I have a Bose Sounddock that takes a 3.5mm Audio Input, and has volume controls on the front! Wasn't too difficult, and i'm quite happy with it. It comes in quite handy this unit - the sound is pretty decent, and it's quite loud - the DSP doesn't start compressing too early.
 
 One to-do here, is to design and 3D print a better base plate that covers everything up. There's also a gap where the front dock mount used to be, which for now is disguised with black electrical tape. That could be filled in with the new base plate design. I'll get round to this, one day...
 
-![Audio and volume tap-in](/blog_images/bose/Finished.jpg "Nice!"){: style="max-width:500px;" }
+![Finished](/blog_images/bose/Finished.jpg "Nice!"){: style="max-width:500px;" }
 
 
 
