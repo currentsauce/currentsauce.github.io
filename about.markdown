@@ -21,7 +21,7 @@ I love a good pun! It's a play on words between an electrical current source, an
 I launched this website in August 2020 amidst the COVID-19 pandemic, what a time to be creative!
 
 **Who am I?**
-I'm James. I'm a 29 year old Electronic Design Engineer in Manchester, UK.
+I'm James. I'm a 34 year old Electronic Design Engineer in Manchester, UK.
 I graduated with an M.Eng. in *Electrical and Electronic Engineering* at The University of Manchester in 2014, but I tend to ignore the first 'E' as I did very few *Electrical* modules and have forgotten what I did learn, and I'm at peace with that! I moved to Manchester from Doncaster, South Yorkshire and ended up settling in Manchester where I live with my partner.
 
 ![Me](/blog_images/a_about/me.jpg "Thats me!"){: style="max-width:500px;" }
