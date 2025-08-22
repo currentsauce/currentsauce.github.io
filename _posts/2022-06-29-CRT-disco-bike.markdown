@@ -60,5 +60,13 @@ At the high end of the scale, you have the same components as the previous (mid)
 
 Since I want to accomplish the requirement of "decent sound quality" and "loudness", I decided to go the the "high end" approach, i.e. I want to have four amplified channels producing the mids & highs, and then one amplified channel for a subwoofer.
 
-So to produce the mids and highs, a mid range speaker is coupled with a high-frequency tweeter speaker, and a suitable cross-over circuit is used to provide the tweeter with a high-pass filtered signal. These two speakers are separate, but thankfully in the car audio market, co-axial speakers exist - these are speakers with tweeters mounted in the middle, which makes installation easier. These seemed like the best choice for a clean installation.
+So to produce the mids and highs, a mid range speaker is coupled with a high-frequency tweeter speaker, and a suitable cross-over circuit is used to provide the tweeter with a high-pass filtered signal. These two speakers are separate, but thankfully in the car audio market, coaxial speakers exist - these are speakers with tweeters mounted in the middle, which makes installation easier. These seemed like the best choice for a clean installation.
+
+When chosing the speakers, it was a difficult balance between finding speakers that are suitably sized for the loudness requirement, that could be installed in such a way that it did not interfere with the graphics on the enclosure. I made a 2D model of the enclosure faces in Microsoft Visio (don't judge, I have to use it aaaallll the time at work) to be able to play around with different speaker options. The design that I settled on is shown below:
+
+![Visio Plan](/blog_images/discobike/VisioPlan.png "2D Plan of the Disco Bike Enclosure, to select the most appropriate speakers."){: style="max-width:500px;" }
+
+The mid-high coaxial speakers used here are oval! The graphics on the enclosure had some empty space that I wanted to use, and these oval speakers utilised this space the best versus round speakers, since I did not want the speakers to interfere with the graphics on there. The speakers chosen here are In Phase XTC69.3 6x9" speakers, technically they're 3-way triaxial, as there are two different tweeters in there, nice! Each speaker has a peak power handling of 260W. Since these four speakers will have the low frequencies cut, they should be capable of being loud.
+
+For the subwoofer, a JBL Stage 810 8" Subwoofer was chosen. This has a peak power handling of 800W at 4ohms, and a frequency response of 38Hz to 200Hz. Most importantly, JBL publishes the Thiele-Small Parameters for this speaker, which means that I am able to design the subwoofer enclosure properly using speaker modelling software.
 
