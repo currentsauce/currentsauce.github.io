@@ -24,6 +24,7 @@ The goals for this project are:
 - Self powered from an internal battery
 - ...which can power the unit for 2 hours
 - All be self contained within the freezer-sized enclosure
+- Be built within a budget of £500
 
 ### Nice to Have:
 - Incorporate LED lighting for extra "wow"
@@ -38,6 +39,26 @@ The enclosure was made by the manufacturer of the bike, and has some nice Canal 
 
 The first thing to considder is how it is powered, as this will dictate a lot of the system. It needs to be operate for at aleast 2 hours, so this will require a hefty battery. I decided to use a deep-cycle leisure battery that is intended for use in motor-homes and caravans, due to it being able to sustain large loads over a prolonged period of time, and the battery chemistry generally being able to handle deep-discharges. In comparison, a standard car battery is not suitable here; they are designed to give a very short burst of current to the starter of a car, and then more or less immediately get recharged by the alternator - not long use, and not deep-discharges. In addition, leisure batteries come in much larger capacities than car batteries, at the expense of a larger size.
 
-I settled on a `NUMAX DC25MF` 105Ah Sealed Leisure Battery. 
+I settled on a `NUMAX DC25MF` 105Ah Sealed Leisure Battery. This is a NCC Class B battery, meaning that it can handle deep discharges well, since it is capable of at least 200 discharges to 50%. 
 
 ![Leisure Battery](/blog_images/discobike/battery.png "NUMAX DC25MF 105Ah Sealed Leisure Battery, and dimensions"){: style="max-width:500px;" }
+
+Since we now know that we are dealing with a 12V system, next is to decide on the main audio components. The car audio market was the easy choice here, since:
+- It is designed for 12V systems
+- There is a vast selection of parts available
+- Audio quality is key in this market
+- Thanks to the target market, loudness is also catered for
+- Panel mount, which is very install friendly
+
+In car audio, you can either power the speakers using the built in amplifier of a head-unit, or, you can have separate amplifiers for loud systems - this is what I am going to use in this project, separate amplifiers. Since amplifiers are available in 4-channel types (front and rear), I decided to exploit this to be able to install 4 speakers into the system, to achieve the "loudness" requirement. 
+
+### Simplistic overview of car audio speakers
+At the basic end of the scale, you have just one speaker per channel, which is an all-range driver, i.e. doing the bass, mids and high frequencies. Typically, it excels in neither.
+At the mid range, each channel will have two drivers - a speaker doing the bass and mid range frequencies, and a separate tweeter doing the high frequencies. Bookshelf speakers have a similar approach.
+At the high end of the scale, you have the same components as the previous (mid), however, a high-pass filter is used to prevent the speaker from attempting to produce any low frequencies - which allows it to produce better sound without bass encumbering it. To reproduce the low frequencies (bass), a separately amplified bass sub-woofer is used. Usually, this is only one, since low frequencies are not directional and there generally isn't a concept of "stereo" with low frequencies.
+...This list is not fully exhaustive by the way! But it is a good general overview of the most common implementations of car audio.
+
+Since I want to accomplish the requirement of "decent sound quality" and "loudness", I decided to go the the "high end" approach, i.e. I want to have four amplified channels producing the mids & highs, and then one amplified channel for a subwoofer.
+
+So to produce the mids and highs, a mid range speaker is coupled with a high-frequency tweeter speaker, and a suitable cross-over circuit is used to provide the tweeter with a high-pass filtered signal. These two speakers are separate, but thankfully in the car audio market, co-axial speakers exist - these are speakers with tweeters mounted in the middle, which makes installation easier. These seemed like the best choice for a clean installation.
+
