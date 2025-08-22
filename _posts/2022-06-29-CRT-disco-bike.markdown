@@ -70,3 +70,8 @@ The mid-high coaxial speakers used here are oval! The graphics on the enclosure 
 
 For the subwoofer, a JBL Stage 810 8" Subwoofer was chosen. This has a peak power handling of 800W at 4ohms, and a frequency response of 38Hz to 200Hz. Most importantly, JBL publishes the Thiele-Small Parameters for this speaker, which means that I am able to design the subwoofer enclosure properly using speaker modelling software.
 
+To power the four triaxial speakers, a Juice JA1504 was chosen. This is a four channel amplifier with a peak power of 1500W, which is 375W per channel - this is higher than the peak power handling of the speakers, don't worry, I account for this later! This amplifier has a built-in high pass filter (HPF) for all four channels, which is important, since I want to cut lower frequencies that are handled by the subwoofer.
+
+To power the subwoofer, a Juice JA902 was chosen. This is a two channel amplifier with a peak power of 900W. This amplifier is bridgeable, meaning I can have both channels drive the single subwoofer as one channel. This amplifier has a built-in low pass filter (LPF), meaning that I can cut all the high frequencies handled by the other speakers, i.e so it functions as a subwoofer.
+
+![Parts](/blog_images/discobike/parts.jpg "Pile of parts, lets finish designing and start making this thing!"){: style="max-width:500px;" }
