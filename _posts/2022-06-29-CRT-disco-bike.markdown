@@ -75,3 +75,11 @@ To power the four triaxial speakers, a Juice JA1504 was chosen. This is a four c
 To power the subwoofer, a Juice JA902 was chosen. This is a two channel amplifier with a peak power of 900W. This amplifier is bridgeable, meaning I can have both channels drive the single subwoofer as one channel. This amplifier has a built-in low pass filter (LPF), meaning that I can cut all the high frequencies handled by the other speakers, i.e so it functions as a subwoofer.
 
 ![Parts](/blog_images/discobike/parts.jpg "Pile of parts, lets finish designing and start making this thing!"){: style="max-width:500px;" }
+
+You may have spotted some extra items in that image, theres a controller for RGB LED strips there which has a sound-to-light mode. The plan is to put the RGB LED strips on the vertices of the enclosure. Theres also a suitable battery charger there too, which will be permanently fitted within the enclosure so that it is easy to recharge it.
+
+Next thing is to get an idea of how the inside will be constructed. The bottom needs an enclosure for the subwoofer - the width is fixed by the enclosure, and the height will be fixed by the height of the triaxial speakers. There is a little bit of flexibility in the depth, however enough size needs to be reserved for the battery. I used SketchUp to come up with a plan for the internals, which was being built with MDF sheets.
+
+![SketchUp Plan](/blog_images/discobike/sketchup_plan.png "Using SketchUp to come up with a plan for the inside construction."){: style="max-width:500px;" }
+
+
