@@ -107,7 +107,7 @@ I adapted my SketchUp drawing to make the enclosure 50m<sup>3</sup>, and started
 
 ![Subwoofer Build photo 2](/blog_images/discobike/SubEnclosure2.jpg "Subwoofer enclosure finished."){: style="max-width:500px;" }
 
-I then created the enclosures for the triaxial speakers, and added the RGB LED strips to the edges. The LED strips were self adhesive (supposidly 3M adhesive, if that can be trusted), but I was taking no chances here, so I also used clear [Sticks Like Sh*t Adhesive](https://trade.evo-stik.co.uk/products/sticks-sht-adhesive) *(at the time of writing, this is still called "Sticks Like Sh*t, however when I see it in the stores, it has been renamed to simply "Sticks Like"...)*.
+I then created the enclosures for the triaxial speakers, and added the RGB LED strips to the edges. The LED strips were self adhesive (supposidly 3M adhesive, if that can be trusted), but I was taking no chances here, so I also used clear [Sticks Like Sh\*t Adhesive](https://trade.evo-stik.co.uk/products/sticks-sht-adhesive) *(at the time of writing, this is still called "Sticks Like Sh\*t, however when I see it in the stores, it has been renamed to simply "Sticks Like"...)*.
 
 ![Speakers and LEDs](/blog_images/discobike/SpeakersAndLEDs.jpg "Triaxial speakers fitted, and the LEDs being put on the edges. Can you tell that I built this in my Kitchen?"){: style="max-width:500px;" }
 
