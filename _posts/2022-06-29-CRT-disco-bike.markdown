@@ -87,3 +87,17 @@ With this design plan, I now needed to design the subwoofer enclosure. I used [W
 With the HPF added into WinISD, this resulted in a working bandwidth of ≈31Hz to ≈59Hz for the subwoofer (-3dB Point).
 
 ![WinISD Transfer Function Magnitude](/blog_images/discobike/TransferMag.png "Transfer Function Magnitude from WinISD Lower -3dB point is ≈31Hz and upper -3dB point is ≈59Hz."){: style="max-width:500px;" }
+
+Other key parameters that were considdered in this subwoofer design were Sound Pressure Level (SPL), Cone Excursion, Port Air Velocity and Port Gain.
+
+SPL is a measure of loudness:
+![WinISD SPL](/blog_images/discobike/SPL.png "The SPL had a peak at 35Hz (since that's the frequency it is tuned to), and then had a uniform SPL from ≈50Hz to ≈126Hz."){: style="max-width:500px;" }
+
+Cone excursion is how much the speaker cone moves; too much excursion risks damaging the speaker. The detail in speaker design is getting the most out of the least amount of excursion. I sound like a speaker expert here, and i'm not! I'm just trying my best to make this subwoofer not suck.
+![WinISD Cone Excursion](/blog_images/discobike/ConeExcursion.png "The maximum cone excursion is 9.75mm at 34.5Hz. This is above the limits of the speaker (red line). Therefore, the overall power delivered to the subwoofer speaker will need to be limited through gain limiting."){: style="max-width:500px;" }
+
+Port Air Velocity shows how much air is being pushed and sucked out of the bass port. When this is too high, you get "Chuffing", which is undesirable noise caused by the sheer amount of air being moved. It is best to keep this below 18m/s. My simulations showed that this was exceeded at the tuning frequency of 35Hz at 35m/s, but rapidly reduced to below 18m/s by 36.8Hz. Since I couldn't improve this, I decided to hope for the best when I build it, and adjust the HPF if needed.  
+![WinISD Air Velocity](/blog_images/discobike/AirVelocity.png "Quite an abrupt peak at the tuning frequency. I wasn't able to curtail this very much unfortunately. But it is a rapid drop after the tuning frequency."){: style="max-width:500px;" }
+
+*...By the way, when I did this work, my Windows laptop was out of action (Dell can go to Hell). So I ended up using WinISD on my Mac using [CrossOver by Code Weavers](https://www.codeweavers.com/crossover). Worked really well!*
+
