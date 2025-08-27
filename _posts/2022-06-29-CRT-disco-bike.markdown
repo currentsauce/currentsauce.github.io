@@ -101,3 +101,14 @@ Port Air Velocity shows how much air is being pushed and sucked out of the bass 
 
 *...By the way, when I did this work, my Windows laptop was out of action (Dell can go to Hell). So I ended up using WinISD on my Mac using [CrossOver by Code Weavers](https://www.codeweavers.com/crossover). Worked really well!*
 
+I adapted my SketchUp drawing to make the enclosure 50m<sup>3</sup>, and started building it. 
+
+![Subwoofer Build photo 1](/blog_images/discobike/SubEnclosure1.jpg "Build has started! You might be thinking "woah, that's a lot of wood glue", and you're right! But, I do not want any air leaks in this subwoofer at all, since that would ruin its performance drastically. Note that the bass port wasn't created yet."){: style="max-width:500px;" }
+
+![Subwoofer Build photo 2](/blog_images/discobike/SubEnclosure2.jpg "Subwoofer enclosure finished."){: style="max-width:500px;" }
+
+I then created the enclosures for the triaxial speakers, and added the RGB LED strips to the edges. The LED strips were self adhesive (supposidly 3M adhesive, if that can be trusted), but I was taking no chances here, so I also used clear [Sticks Like Sh*t Adhesive](https://trade.evo-stik.co.uk/products/sticks-sht-adhesive) *(at the time of writing, this is still called "Sticks Like Sh*t, however when I see it in the stores, it has been renamed to simply "Sticks Like"...)*.
+
+![Speakers and LEDs](/blog_images/discobike/SpeakersAndLEDs.jpg "Triaxial speakers fitted, and the LEDs being put on the edges. Can you tell that I built this in my Kitchen?"){: style="max-width:500px;" }
+
+![Speakers Interior](/blog_images/discobike/Inside1.jpg "Here you can see the cabinets for the triaxial speakers. Also, the Amplifiers are mounted too."){: style="max-width:500px;" }
