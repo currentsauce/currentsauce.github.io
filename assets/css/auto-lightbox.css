@@ -11,7 +11,7 @@ article figure.image {
 figure.image figcaption {
   text-align: center;
   color: #7a7a7a;          /* Bulma grey */
-  font-size: 0.875rem;     /* ~ is-size-7 */
+  font-size: 1rem;     /* made to be 1
   margin-top: .5rem;
 }
 
