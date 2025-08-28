@@ -114,3 +114,5 @@ I then created the enclosures for the triaxial speakers, and added the RGB LED s
 I deviated away from the original plan with the mounting of the amplifiers, and decided to stack them recessed a little bit into the gap between the triaxial speaker enclosures.
 
 ![Speakers Interior](/blog_images/discobike/Inside1.jpg "Here you can see the cabinets for the triaxial speakers. Also, the Amplifiers are mounted too."){: style="max-width:500px;" }
+
+![LEDs Fitted](/blog_images/discobike/LEDsFitted.jpg "RGB LED Strips mounted now. Excuse the pink gaffer tape while the Sticks Like Sh\*t Dries!"){: style="max-width:500px;" }

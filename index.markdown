@@ -13,7 +13,7 @@ show_sidebar: true
 James Has a Website...
 ---------------------------------------------------
 Hi! I’m **James Kincell**, an **Electronics Engineer** based in Manchester (Stockport).  
-I specialise in **designing, building, and troubleshooting electronic systems**, and I am now looking to bring those skills into **interactive and immersive installations**.
+I specialise in **designing, building, and troubleshooting electronic systems**.
 
 This site is where I document my projects - electronics design, installs, hacks, tinkerings and repairs. 
 
