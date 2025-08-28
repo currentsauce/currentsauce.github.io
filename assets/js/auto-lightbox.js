@@ -88,7 +88,7 @@
 
         if (caption) {
           const figcap = document.createElement('figcaption');
-          figcap.className = 'has-text-grey is-size-7';
+          figcap.className = 'has-text-grey';
           figcap.style.marginTop = '.5rem';
           figcap.textContent = caption;
           figure.appendChild(figcap);
