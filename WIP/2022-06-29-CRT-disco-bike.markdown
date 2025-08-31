@@ -133,10 +133,16 @@ It seems that most of the time when I am using LTspice, I am running transient s
 
 ![LTSpice Simulation](/blog_images/discobike/LTspiceSch.png "AC Simulation of the Infrasonic Filter. -3dB cut-off frequency of ≈33.7Hz confirmed."){: style="max-width:500px;" }
 
-Now I needed to turn this design into a reality. Usually for one-off boards like this, I turn to stripboard/veroboard, but I decided to be more professional and design a PCB for two reasons: 1. I wanted the traces to be as short and neat as possible, so that the real thing matches the simulation (I was concerned of stray capacitance / inductance from the stripboard having a negative effect), and 2. I wanted it to look professional! I designed the Schematic and Layout using KiCad.
+Now I needed to turn this design into a reality. Usually for one-off boards like this, I turn to stripboard/veroboard, but I decided to be more professional and design a PCB for two reasons: 1. I wanted the traces to be as short and neat as possible, so that the real thing matches the simulation (I was concerned of stray capacitance / inductance from the stripboard having a negative effect), and 2. I wanted it to look professional! I designed the Schematic and Layout using KiCad. 
+
+To provide the +15V and -15V rails, I used a [XP Power ITV1215S](https://www.xppower.com/storage/portals/0/pdfs/SF_ITV.pdf) DC-DC converter module. This takes in the battery voltage, and converts it to +15V and -15V in a nice neat package.
 
 ![KiCad Schematic](/blog_images/discobike/kicad_sch.png "Schematic diagram of the Infrasonic Filter in KiCad."){: style="max-width:500px;" }
 
 Since I was pushed for time at this point (I was in the middle of moving house while doign this - this bike enclosure box was literally the last thing left in the house!), I did not have time to wait for PCBs to be manufactured, so I decided to go old-school and etch the PCB myself, since I already had the tools and equipment - this means that I had to design it as a 1-layer board. I managed to do the layout with only 3 jumpers needed, which I was really pleased about.
 
 ![KiCad Layout](/blog_images/discobike/kicad_pcb.png "PCB Design in KiCad. The red top-layer traces will be jumpers."){: style="max-width:500px;" }
+
+Sadly I did not get any photos of the etching process, but there's nothing novel going on here, so you're not missing out on anything. I used copper clad board that already has the photoresist layer - you just have to peel back a protective film. This makes the process a lot easier. And for the etching, I used classic Ferric Chloride. 
+
+![Etched PCB](/blog_images/discobike/infrasonic_pcb.png "Etched PCB. The text was a bit too fine, and didn't come out very well, but the rest of it came out fine, which is what is the important thing!"){: style="max-width:500px;" }
