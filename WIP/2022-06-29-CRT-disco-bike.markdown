@@ -146,3 +146,5 @@ Since I was pushed for time at this point (I was in the middle of moving house w
 Sadly I did not get any photos of the etching process, but there's nothing novel going on here, so you're not missing out on anything. I used copper clad board that already has the photoresist layer - you just have to peel back a protective film. This makes the process a lot easier. And for the etching, I used classic Ferric Chloride. 
 
 ![Etched PCB](/blog_images/discobike/infrasonic_pcb.jpg "Etched PCB. The text was a bit too fine, and didn't come out very well, but the rest of it came out fine, which is what is the important thing!"){: style="max-width:500px;" }
+
+![Finished PCB](/blog_images/discobike/AssembledPCB.jpg "Finished Infrasonic Filter PCB. Notice how I used some SMD capacitors here? I had no through hole ones in the right value and did what I had to!"){: style="max-width:500px;" }
