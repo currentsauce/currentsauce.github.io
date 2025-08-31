@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Canal & River Trust Disco Bike"
+title:  "Canal & River Trust Disco Pride Bike"
 date:   2022-06-29 21:00:00 +0100
 categories: blog
 hero_image: /blog_images/a_page_heros/discobike.jpg
@@ -9,12 +9,12 @@ image: /blog_images/a_page_heros/discobike.jpg
 
 ---
 
-The Canal and River Trust participates in LGBTQ+ Pride Parades all over the country, and they wanted to up their game. They already had an Ice Cream Bike, which they used at various events, and they wanted to be able to  transform it into a Disco Bike for whenever they go to pride parades. The idea being that the freezer unit is swapped with an enclosure of the same size, which is a self contained, self powered Public Address (PA) system, capable of playing music loudly.
+The Canal and River Trust participates in LGBTQ+ Pride Parades all over the country, and they wanted to up their game. They already had an Ice Cream Bike, which they used at various events, and they wanted to be able to  transform it into a Disco Bike for whenever they go to pride parades. The idea being that the freezer unit is swapped with an enclosure of the same size, which is a self contained, self powered Public Address (PA) system, capable of playing music loudly. I did this work for them voluntarily, and I'm really pleased with how it turned out. In this blog post, I will explain how it came to life!
 
 ![Original bike](/blog_images/discobike/originalbike.png "I don't have an photo of the bike with the freezer unit, but is was like this."){: style="max-width:500px;" }
 
 ## Requirements
-The goals for this project are:
+Firstly and most importantly, The goals for this project are:
 ### Must Haves:
 - Have speakers mounted within the enclosure, facing the outside
 - Create sound from both left and right of the bike
@@ -113,8 +113,30 @@ I then created the enclosures for the triaxial speakers, and added the RGB LED s
 
 I deviated away from the original plan with the mounting of the amplifiers, and decided to stack them recessed a little bit into the gap between the triaxial speaker enclosures. I also made a place for the battery to sit so that is is not loose.
 
+To drive the RGB LED strips, I just used some generic controller box that I got from AliExpress. It has built in patterns and two sound-to-light functions using a built in microphone. Importantly here, the controller has a potentiometer to adjust the sensitivity, which is important, since the sound that the microphone will pick up will no doubt be very loud inside the enclosure! 
+
 ![Speakers Interior](/blog_images/discobike/Inside1.jpg "Here you can see the cabinets for the triaxial speakers. Also, the Amplifiers are mounted too. Still at wire-spaghetti stage here..."){: style="max-width:500px;" }
 
 ![LEDs Fitted](/blog_images/discobike/LEDsFitted.jpg "RGB LED Strips mounted now. Excuse the pink gaffer tape while the Sticks Like Sh*t Dries!"){: style="max-width:500px;" }
 
-![LEDs Fitted](/blog_images/discobike/Inside2.jpg "Wire-spaghetti becoming conrtrolled now :)"){: style="max-width:500px;" }
+I'm quite keen on keeping wiring neat and tidy, so at this point, decided to neaten up the wiring. Also, I removed the potentiometer from the LED Controller PCB and extended it on some wire so that the sensitivity can be adjusted easily - you'll see how later on...
+
+![LEDs Fitted](/blog_images/discobike/Inside2.jpg "Wire-spaghetti becoming controlled now :)"){: style="max-width:500px;" }
+
+With the majority of items now fitted, it is coming to the finishing touches-stage. As previously mentioned, I want the input signal to go through a HPF to remove the super low frequencies that are not neccesary. Cutting these very low frequencies would not be noticable, and would save on power, with bass being power hungry. Since I was pushed for time here, and did not want to reinvent the wheel, I looked to the interent for some inspiration. Thankfully, I came accross this [Infrasonic Filter by Elliott Sound Products](https://sound-au.com/project99.htm). The main project itself is for a -3dB point at 18Hz, however I wanted this to be about 35Hz. Thankfully, the -3dB frequency is adjusted by changing the value of capacitors C1 to C6, and the project page details the value of capacitor for different -3dB frequencies. So, using 82nF for C1 to C6 should give me a -3dB point of 33.2Hz, which is close enough.
+
+I love using LTspice whenever I can, so I decided to simulate this Infrasonic Filter, using the 82nF capacitors. The project page lists some reccomended opamps, and so I had a look in my parts bins _(my partner calls it parts hoarding...)_ and I had some of the reccomended [Texas Instruments OPA2134](https://www.ti.com/product/OPA2134)! Nice! So I decided to simulate with this. Thankfully TI provide the SPICE library for this part, so it was not diffucult to import the SPICE model into LTspice.
+
+![LTSpice Schematic](/blog_images/discobike/LTspiceSch.png "Simulation Schematic of the Infrasonic Filter. The ref. designators match the ESP project too."){: style="max-width:500px;" }
+
+It seems that most of the time when I am using LTspice, I am running transient simulations (time-domain simulations), so this simulation was a great opportunity to use LTspice for AC analysis (frequency-domain simulations). I set the simulation up to analyse the attenuation of the output with respect to the input signal, over a frequency range of 0Hz to 1kHz. What I found, was that the -3dB point was ≈33.7Hz; not too far off the stated value of 33.2Hz! So this Infrasonic Filter should be the ideal HPF for my needs here. (I did also double-check that there was no attenuation above 1kHz too).
+
+![LTSpice Simulation](/blog_images/discobike/LTspiceSch.png "AC Simulation of the Infrasonic Filter. -3dB cut-off frequency of ≈33.7Hz confirmed."){: style="max-width:500px;" }
+
+Now I needed to turn this design into a reality. Usually for one-off boards like this, I turn to stripboard/veroboard, but I decided to be more professional and design a PCB for two reasons: 1. I wanted the traces to be as short and neat as possible, so that the real thing matches the simulation (I was concerned of stray capacitance / inductance from the stripboard having a negative effect), and 2. I wanted it to look professional! I designed the Schematic and Layout using KiCad.
+
+![KiCad Schematic](/blog_images/discobike/kicad_sch.png "Schematic diagram of the Infrasonic Filter in KiCad."){: style="max-width:500px;" }
+
+Since I was pushed for time at this point (I was in the middle of moving house while doign this - this bike enclosure box was literally the last thing left in the house!), I did not have time to wait for PCBs to be manufactured, so I decided to go old-school and etch the PCB myself, since I already had the tools and equipment - this means that I had to design it as a 1-layer board. I managed to do the layout with only 3 jumpers needed, which I was really pleased about.
+
+![KiCad Layout](/blog_images/discobike/kicad_pcb.png "PCB Design in KiCad. The red top-layer traces will be jumpers."){: style="max-width:500px;" }
