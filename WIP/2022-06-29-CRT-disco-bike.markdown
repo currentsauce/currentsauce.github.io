@@ -131,7 +131,7 @@ I love using LTspice whenever I can, so I decided to simulate this Infrasonic Fi
 
 It seems that most of the time when I am using LTspice, I am running transient simulations (time-domain simulations), so this simulation was a great opportunity to use LTspice for AC analysis (frequency-domain simulations). I set the simulation up to analyse the attenuation of the output with respect to the input signal, over a frequency range of 0Hz to 1kHz. What I found, was that the -3dB point was ≈33.7Hz; not too far off the stated value of 33.2Hz! So this Infrasonic Filter should be the ideal HPF for my needs here. (I did also double-check that there was no attenuation above 1kHz too).
 
-![LTSpice Simulation](/blog_images/discobike/LTspiceSch.png "AC Simulation of the Infrasonic Filter. -3dB cut-off frequency of ≈33.7Hz confirmed."){: style="max-width:500px;" }
+![LTSpice Simulation](/blog_images/discobike/LTspiceSim.png "AC Simulation of the Infrasonic Filter. -3dB cut-off frequency of ≈33.7Hz confirmed."){: style="max-width:500px;" }
 
 Now I needed to turn this design into a reality. Usually for one-off boards like this, I turn to stripboard/veroboard, but I decided to be more professional and design a PCB for two reasons: 1. I wanted the traces to be as short and neat as possible, so that the real thing matches the simulation (I was concerned of stray capacitance / inductance from the stripboard having a negative effect), and 2. I wanted it to look professional! I designed the Schematic and Layout using KiCad. 
 
