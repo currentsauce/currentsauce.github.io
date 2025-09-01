@@ -37,7 +37,7 @@ The enclosure was made by the manufacturer of the bike, and has some nice Canal 
 
 ![Enclosure Dimensions](/blog_images/discobike/dimensions.png "Very basic sketch of the dimensions of the enclosure being worked on"){: style="max-width:500px;" }
 
-The first thing to considder is how it is powered, as this will dictate a lot of the system. It needs to be operate for at aleast 2 hours, so this will require a hefty battery. I decided to use a deep-cycle leisure battery that is intended for use in motor-homes and caravans, due to it being able to sustain large loads over a prolonged period of time, and the battery chemistry generally being able to handle deep-discharges. In comparison, a standard car battery is not suitable here; they are designed to give a very short burst of current to the starter of a car, and then more or less immediately get recharged by the alternator - not long use, and not deep-discharges. In addition, leisure batteries come in much larger capacities than car batteries, at the expense of a larger size.
+The first thing to consider is how it is powered, as this will dictate a lot of the system. It needs to be operate for at at least 2 hours, so this will require a hefty battery. I decided to use a deep-cycle leisure battery that is intended for use in motor-homes and caravans, due to it being able to sustain large loads over a prolonged period of time, and the battery chemistry generally being able to handle deep-discharges. In comparison, a standard car battery is not suitable here; they are designed to give a very short burst of current to the starter of a car, and then more or less immediately get recharged by the alternator - not long use, and not deep-discharges. In addition, leisure batteries come in much larger capacities than car batteries, at the expense of a larger size.
 
 I settled on a `NUMAX DC25MF` 105Ah Sealed Leisure Battery. This is a NCC Class B battery, meaning that it can handle deep discharges well, since it is capable of at least 200 discharges to 50%. 
 
@@ -64,7 +64,7 @@ So to produce the mids and highs, a mid range speaker is coupled with a high-fre
 
 ## Speaker and Amplifier Choices
 
-When chosing the speakers, it was a difficult balance between finding speakers that are suitably sized for the loudness requirement, that could be installed in such a way that it did not interfere with the graphics on the enclosure. I made a 2D model of the enclosure faces in Microsoft Visio (don't judge, I have to use it aaaallll the time at work) to be able to play around with different speaker options. The design that I settled on is shown below:
+When choosing the speakers, it was a difficult balance between finding speakers that are suitably sized for the loudness requirement, that could be installed in such a way that it did not interfere with the graphics on the enclosure. I made a 2D model of the enclosure faces in Microsoft Visio (don't judge, I have to use it aaaallll the time at work) to be able to play around with different speaker options. The design that I settled on is shown below:
 
 ![Visio Plan](/blog_images/discobike/VisioPlan.png "2D Plan of the Disco Bike Enclosure, to select the most appropriate speakers."){: style="max-width:500px;" }
 
@@ -78,7 +78,7 @@ To power the subwoofer, a Juice JA902 was chosen. This is a two channel amplifie
 
 ![Parts](/blog_images/discobike/parts.jpg "Pile of parts, lets finish designing and start making this thing!"){: style="max-width:500px;" }
 
-You may have spotted some extra items in that image, theres a controller for RGB LED strips there which has a sound-to-light mode. The plan is to put the RGB LED strips on the vertices of the enclosure. Theres also a suitable battery charger there too, which will be permanently fitted within the enclosure so that it is easy to recharge it.
+You may have spotted some extra items in that image, there’s a controller for RGB LED strips there which has a sound-to-light mode. The plan is to put the RGB LED strips on the vertices of the enclosure. There's also a suitable battery charger there too, which will be permanently fitted within the enclosure so that it is easy to recharge it.
 
 ## Mechanical Design
 
@@ -94,15 +94,17 @@ With the HPF added into WinISD, this resulted in a working bandwidth of ≈31Hz 
 
 ![WinISD Transfer Function Magnitude](/blog_images/discobike/TransferMag.png "Transfer Function Magnitude from WinISD Lower -3dB point is ≈31Hz and upper -3dB point is ≈59Hz."){: style="max-width:500px;" }
 
-Other key parameters that were considdered in this subwoofer design were Sound Pressure Level (SPL), Cone Excursion, Port Air Velocity and Port Gain.
+Other key parameters that were considered in this subwoofer design were Sound Pressure Level (SPL), Cone Excursion, Port Air Velocity and Port Gain.
 
 SPL is a measure of loudness:
 ![WinISD SPL](/blog_images/discobike/SPL.png "The SPL had a peak at 35Hz (since that's the frequency it is tuned to), and then had a uniform SPL from ≈50Hz to ≈126Hz."){: style="max-width:500px;" }
 
-Cone excursion is how much the speaker cone moves; too much excursion risks damaging the speaker. The detail in speaker design is getting the most out of the least amount of excursion. I sound like a speaker expert here, and i'm not! I'm just trying my best to make this subwoofer not suck.
+Cone excursion is how much the speaker cone moves; too much excursion risks damaging the speaker. The detail in speaker design is getting the most out of the least amount of excursion. I sound like a speaker expert here, and I’m not! I'm just trying my best to make this subwoofer not suck.
+
 ![WinISD Cone Excursion](/blog_images/discobike/ConeExcursion.png "The maximum cone excursion is 9.75mm at 34.5Hz. This is above the limits of the speaker (red line). Therefore, the overall power delivered to the subwoofer speaker will need to be limited through gain limiting."){: style="max-width:500px;" }
 
 Port Air Velocity shows how much air is being pushed and sucked out of the bass port. When this is too high, you get "Chuffing", which is undesirable noise caused by the sheer amount of air being moved. It is best to keep this below 18m/s. My simulations showed that this was exceeded at the tuning frequency of 35Hz at 35m/s, but rapidly reduced to below 18m/s by 36.8Hz. Since I couldn't improve this, I decided to hope for the best when I build it, and adjust the HPF if needed.  
+
 ![WinISD Air Velocity](/blog_images/discobike/AirVelocity.png "Quite an abrupt peak at the tuning frequency. I wasn't able to curtail this very much unfortunately. But it is a rapid drop after the tuning frequency."){: style="max-width:500px;" }
 
 *...By the way, when I did this work, my Windows laptop was out of action (Dell can go to Hell). So I ended up using WinISD on my Mac using [CrossOver by Code Weavers](https://www.codeweavers.com/crossover). Worked really well!*
@@ -115,7 +117,7 @@ I adapted my SketchUp drawing to make the enclosure 50m<sup>3</sup>, and started
 
 ![Subwoofer Build photo 2](/blog_images/discobike/SubEnclosure2.jpg "Subwoofer enclosure finished."){: style="max-width:500px;" }
 
-I then created the enclosures for the triaxial speakers, and added the RGB LED strips to the edges. The LED strips were self adhesive (supposidly 3M adhesive, if that can be trusted), but I was taking no chances here, so I also used clear [Sticks Like Sh\*t Adhesive](https://trade.evo-stik.co.uk/products/sticks-sht-adhesive) *(at the time of writing, this is still called "Sticks Like Sh\*t, however when I see it in the stores, it has been renamed to simply "Sticks Like"...)*.
+I then created the enclosures for the triaxial speakers, and added the RGB LED strips to the edges. The LED strips were self adhesive (supposedly 3M adhesive, if that can be trusted), but I was taking no chances here, so I also used clear [Sticks Like Sh\*t Adhesive](https://trade.evo-stik.co.uk/products/sticks-sht-adhesive) *(at the time of writing, this is still called "Sticks Like Sh\*t, however when I see it in the stores, it has been renamed to simply "Sticks Like"...)*.
 
 ![Speakers and LEDs](/blog_images/discobike/SpeakersAndLEDs.jpg "Triaxial speakers fitted, and the LEDs being put on the edges. Can you tell that I built this in my Kitchen?"){: style="max-width:500px;" }
 
@@ -133,9 +135,9 @@ I'm quite keen on keeping wiring neat and tidy, so at this point, decided to nea
 
 ## Infrasonic Filter PCB
 
-With the majority of items now fitted, it is coming to the finishing touches-stage. As previously mentioned, I want the input signal to go through a HPF to remove the super low frequencies that are not neccesary. Cutting these very low frequencies would not be noticable, and would save on power, with bass being power hungry. Since I was pushed for time here, and did not want to reinvent the wheel, I looked to the interent for some inspiration. Thankfully, I came accross this [Infrasonic Filter by Elliott Sound Products](https://sound-au.com/project99.htm). The main project itself is for a -3dB point at 18Hz, however I wanted this to be about 35Hz. Thankfully, the -3dB frequency is adjusted by changing the value of capacitors C1 to C6, and the project page details the value of capacitor for different -3dB frequencies. So, using 82nF for C1 to C6 should give me a -3dB point of 33.2Hz, which is close enough.
+With the majority of items now fitted, it is coming to the finishing touches-stage. As previously mentioned, I want the input signal to go through a HPF to remove the super low frequencies that are not necessary. Cutting these very low frequencies would not be noticeable, and would save on power, with bass being power hungry. Since I was pushed for time here, and did not want to reinvent the wheel, I looked to the internet for some inspiration. Thankfully, I came across this [Infrasonic Filter by Elliott Sound Products](https://sound-au.com/project99.htm). The main project itself is for a -3dB point at 18Hz, however I wanted this to be about 35Hz. Thankfully, the -3dB frequency is adjusted by changing the value of capacitors C1 to C6, and the project page details the value of capacitor for different -3dB frequencies. So, using 82nF for C1 to C6 should give me a -3dB point of 33.2Hz, which is close enough.
 
-I love using LTspice whenever I can, so I decided to simulate this Infrasonic Filter, using the 82nF capacitors. The project page lists some reccomended opamps, and so I had a look in my parts bins _(my partner calls it parts hoarding...)_ and I had some of the reccomended [Texas Instruments OPA2134](https://www.ti.com/product/OPA2134)! Nice! So I decided to simulate with this. Thankfully TI provide the SPICE library for this part, so it was not diffucult to import the SPICE model into LTspice.
+I love using LTspice whenever I can, so I decided to simulate this Infrasonic Filter, using the 82nF capacitors. The project page lists some recommended op-amps, and so I had a look in my parts bins _(my partner calls it parts hoarding...)_ and I had some of the recommended [Texas Instruments OPA2134](https://www.ti.com/product/OPA2134)! Nice! So I decided to simulate with this. Thankfully TI provide the SPICE library for this part, so it was not difficult to import the SPICE model into LTspice.
 
 ![LTSpice Schematic](/blog_images/discobike/LTspiceSch.png "Simulation Schematic of the Infrasonic Filter. The ref. designators match the ESP project too."){: style="max-width:500px;" }
 
@@ -149,7 +151,7 @@ To provide the +15V and -15V rails, I used a [XP Power ITV1215S](https://www.xpp
 
 ![KiCad Schematic](/blog_images/discobike/kicad_sch.png "Schematic diagram of the Infrasonic Filter in KiCad."){: style="max-width:500px;" }
 
-Since I was pushed for time at this point (I was in the middle of moving house while doign this - this bike enclosure box was literally the last thing left in the house!), I did not have time to wait for PCBs to be manufactured, so I decided to go old-school and etch the PCB myself, since I already had the tools and equipment - this means that I had to design it as a 1-layer board. I managed to do the layout with only 3 jumpers needed, which I was really pleased about.
+Since I was pushed for time at this point (I was in the middle of moving house while doing this - this bike enclosure box was literally the last thing left in the house!), I did not have time to wait for PCBs to be manufactured, so I decided to go old-school and etch the PCB myself, since I already had the tools and equipment - this means that I had to design it as a 1-layer board. I managed to do the layout with only 3 jumpers needed, which I was really pleased about.
 
 ![KiCad Layout](/blog_images/discobike/kicad_pcb.png "PCB Design in KiCad. The red top-layer traces will be jumpers."){: style="max-width:500px;" }
 
@@ -169,7 +171,7 @@ With most of the enclosure now done, I now needed to tidy up the inside and make
 - A way to switch between OFF/battery charging and ON
 - A way to turn the speakers on/off via the on/off trigger input of the amps
 - A way to turn the LEDS on/off
-- Somewhere to mount the sensitivity pot of the LED conroller
+- Somewhere to mount the sensitivity pot of the LED controller
 - Somewhere to mount the remote controller for the LED controller
 - A way to see the battery state of charge
 
