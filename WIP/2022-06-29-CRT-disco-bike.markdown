@@ -62,6 +62,8 @@ Since I want to accomplish the requirement of "decent sound quality" and "loudne
 
 So to produce the mids and highs, a mid range speaker is coupled with a high-frequency tweeter speaker, and a suitable cross-over circuit is used to provide the tweeter with a high-pass filtered signal. These two speakers are separate, but thankfully in the car audio market, coaxial speakers exist - these are speakers with tweeters mounted in the middle, which makes installation easier. These seemed like the best choice for a clean installation.
 
+## Speaker and Amplifier Choices
+
 When chosing the speakers, it was a difficult balance between finding speakers that are suitably sized for the loudness requirement, that could be installed in such a way that it did not interfere with the graphics on the enclosure. I made a 2D model of the enclosure faces in Microsoft Visio (don't judge, I have to use it aaaallll the time at work) to be able to play around with different speaker options. The design that I settled on is shown below:
 
 ![Visio Plan](/blog_images/discobike/VisioPlan.png "2D Plan of the Disco Bike Enclosure, to select the most appropriate speakers."){: style="max-width:500px;" }
@@ -78,9 +80,13 @@ To power the subwoofer, a Juice JA902 was chosen. This is a two channel amplifie
 
 You may have spotted some extra items in that image, theres a controller for RGB LED strips there which has a sound-to-light mode. The plan is to put the RGB LED strips on the vertices of the enclosure. Theres also a suitable battery charger there too, which will be permanently fitted within the enclosure so that it is easy to recharge it.
 
+## Mechanical Design
+
 Next thing is to get an idea of how the inside will be constructed. The bottom needs an enclosure for the subwoofer - the width is fixed by the enclosure, and the height will be fixed by the height of the triaxial speakers. There is a little bit of flexibility in the depth, however enough size needs to be reserved for the battery. As well as the subwoofer enclosure, the triaxial speakers also need an enclosure too - this is quite important, the enclosure that speakers are in make a tremendous difference to both the quality and loudness of a speaker. (In fact, it was interesting when looking at the reviews of these speakers - most of the reviews said that they were very good, especially for the price. Some reviews said that they were terrible - I can only imagine that it is the enclosure of the door that they are fitted to (for car use) that is letting them down). I used SketchUp to come up with a plan for the internals, which was being built with MDF sheets.
 
 ![SketchUp Plan](/blog_images/discobike/sketchup_plan.png "Using SketchUp to come up with a plan for the inside construction."){: style="max-width:500px;" }
+
+## Subwoofer Design
 
 With this design plan, I now needed to design the subwoofer enclosure. I used [WinISD by Linearteam](http://www.linearteam.org/), this was the first time using this, so was a learning experience for me. By entering the Thiele-Small Parameters that JBL published, I was able to model the subwoofer enclosure. I settled on making the enclosure 50m<sup>3</sup> with a tuning frequency of 35Hz. I found that having two bass ports gave the best performance, and WinISD informed me that their length should be 7.24cm long. Through this simulation, I noticed that the subwoofer was working particularly well below the tuning frequency of 35Hz. Conventionally, this would be a good thing, a subwoofer that can go really low is usually sought after. However, the end use of this is outdoors in an already loud environment, and so the low frequencies would be lost here, and would not add a huge amount of benefit. Most importantly, bass reproduction is quite power hungry, and I do not want to waste power where it can be avoided. For this reason, I decided to use a HPF to cut out frequencies below ≈33Hz - more on this later! 
 
@@ -100,6 +106,8 @@ Port Air Velocity shows how much air is being pushed and sucked out of the bass 
 ![WinISD Air Velocity](/blog_images/discobike/AirVelocity.png "Quite an abrupt peak at the tuning frequency. I wasn't able to curtail this very much unfortunately. But it is a rapid drop after the tuning frequency."){: style="max-width:500px;" }
 
 *...By the way, when I did this work, my Windows laptop was out of action (Dell can go to Hell). So I ended up using WinISD on my Mac using [CrossOver by Code Weavers](https://www.codeweavers.com/crossover). Worked really well!*
+
+## Building Commences
 
 I adapted my SketchUp drawing to make the enclosure 50m<sup>3</sup>, and started building it. 
 
@@ -122,6 +130,8 @@ To drive the RGB LED strips, I just used some generic controller box that I got 
 I'm quite keen on keeping wiring neat and tidy, so at this point, decided to neaten up the wiring. Also, I removed the potentiometer from the LED Controller PCB and extended it on some wire so that the sensitivity can be adjusted easily - you'll see how later on...
 
 ![LEDs Fitted](/blog_images/discobike/Inside2.jpg "Wire-spaghetti becoming controlled now :)"){: style="max-width:500px;" }
+
+## Infrasonic Filter PCB
 
 With the majority of items now fitted, it is coming to the finishing touches-stage. As previously mentioned, I want the input signal to go through a HPF to remove the super low frequencies that are not neccesary. Cutting these very low frequencies would not be noticable, and would save on power, with bass being power hungry. Since I was pushed for time here, and did not want to reinvent the wheel, I looked to the interent for some inspiration. Thankfully, I came accross this [Infrasonic Filter by Elliott Sound Products](https://sound-au.com/project99.htm). The main project itself is for a -3dB point at 18Hz, however I wanted this to be about 35Hz. Thankfully, the -3dB frequency is adjusted by changing the value of capacitors C1 to C6, and the project page details the value of capacitor for different -3dB frequencies. So, using 82nF for C1 to C6 should give me a -3dB point of 33.2Hz, which is close enough.
 
@@ -147,4 +157,9 @@ Sadly I did not get any photos of the etching process, but there's nothing novel
 
 ![Etched PCB](/blog_images/discobike/infrasonic_pcb.jpg "Etched PCB. The text was a bit too fine, and didn't come out very well, but the rest of it came out fine, which is what is the important thing!"){: style="max-width:500px;" }
 
-![Finished PCB](/blog_images/discobike/AssembledPCB.jpg "Finished Infrasonic Filter PCB. Notice how I used some SMD capacitors here? I had no through hole ones in the right value and did what I had to!"){: style="max-width:500px;" }
+Now, when I designed the PCB, the only 82nF capacitors I had were some SMD ones - this is no issue, it's easy enough to mount SMD capacitors as though they are through hole, you just have to have through holes that are the length of the component. Using these holes, you solder some tinned copper wire in the holes, trim down, and then solder the SMD part onto those leads. Well, that was the plan, but clearly I cannot count - I only had 10 of those SMD 82nF capacitors, not 12! So silly of me. Since I was pushed for time (house move still ongoing!), I decided to see if I could remedy this. Thankfully I did have some other 82nF capacitors, I think they were polyester ones, versus the multi-layer ceramic SMD ones, but they were through hole and quite big - certainly bigger than I had designed for. Very annoying. But, I made it work!
+
+![Finished PCB](/blog_images/discobike/AssembledPCB.jpg "Finished Infrasonic Filter PCB. Please don't focus on the red capacitors. You're looking at the red capacitors, aren't you?!"){: style="max-width:500px;" }
+
+## Final Touches
+
