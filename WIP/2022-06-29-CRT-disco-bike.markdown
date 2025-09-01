@@ -52,7 +52,7 @@ Since we now know that we are dealing with a 12V system, next is to decide on th
 
 In car audio, you can either power the speakers using the built in amplifier of a head-unit, or, you can have separate amplifiers for loud systems - this is what I am going to use in this project, separate amplifiers. Since amplifiers are available in 4-channel types (front and rear), I decided to exploit this to be able to install 4 speakers into the system, to achieve the "loudness" requirement. 
 
-### Simplistic overview of car audio speakers
+## Simplistic overview of car audio speakers
 At the basic end of the scale, you have just one speaker per channel, which is an all-range driver, i.e. doing the bass, mids and high frequencies. Typically, it excels in neither.
 At the mid range, each channel will have two drivers - a speaker doing the bass and mid range frequencies, and a separate tweeter doing the high frequencies. Bookshelf speakers have a similar approach.
 At the high end of the scale, you have the same components as the previous (mid), however, a high-pass filter is used to prevent the speaker from attempting to produce any low frequencies - which allows it to produce better sound without bass encumbering it. To reproduce the low frequencies (bass), a separately amplified bass sub-woofer is used. Usually, this is only one, since low frequencies are not directional and there generally isn't a concept of "stereo" with low frequencies.
@@ -161,5 +161,15 @@ Now, when I designed the PCB, the only 82nF capacitors I had were some SMD ones 
 
 ![Finished PCB](/blog_images/discobike/AssembledPCB.jpg "Finished Infrasonic Filter PCB. Please don't focus on the red capacitors. You're looking at the red capacitors, aren't you?!"){: style="max-width:500px;" }
 
+I now wanted to test it out, to make sure that it worked. The best way would have been to evaluate the gain vs frequency, to get a graph similar to the one obtained in the LTspice simulation. I didn't really have the correct equipment to do this (bit outside of the capabilities of my home lab). So I did it a different way. Firstly, without the Infrasonic Filter installed, I used a frequency generator to listen to the reproduction of frequencies between 1Hz and 50Hz. Then, I installed the Infrasonic Filter and repeated this frequency sweep, and as expected, there was _nothing at all_ until just below the -dB point of 33 to 34Hz. Amazing! To double check, I played some music to make sure that it is not having an impact, which it wasn't.
+
 ## Final Touches
+
+With most of the enclosure now done, I now needed to tidy up the inside and make it easy to use, and maintenance free. I mounted the battery charger inside (so that it does not go missing!). But I needed to address the following needs:
+- A way to switch between OFF/battery charging and ON
+- A way to turn the speakers on/off via the on/off trigger input of the amps
+- A way to turn the LEDS on/off
+- Somewhere to mount the sensitivity pot of the LED conroller
+- Somewhere to mount the remote controller for the LED controller
+- A way to see the battery state of charge
 
