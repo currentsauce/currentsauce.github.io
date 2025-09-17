@@ -163,7 +163,7 @@ Now, when I designed the PCB, the only 82nF capacitors I had were some SMD ones 
 
 ![Finished PCB](/blog_images/discobike/AssembledPCB.jpg "Finished Infrasonic Filter PCB. Please don't focus on the red capacitors. You're looking at the red capacitors, aren't you?!"){: style="max-width:500px;" }
 
-I now wanted to test it out, to make sure that it worked. The best way would have been to evaluate the gain vs frequency, to get a graph similar to the one obtained in the LTspice simulation. I didn't really have the correct equipment to do this (bit outside of the capabilities of my home lab). So I did it a different way. Firstly, without the Infrasonic Filter installed, I used a frequency generator to listen to the reproduction of frequencies between 1Hz and 50Hz. Then, I installed the Infrasonic Filter and repeated this frequency sweep, and as expected, there was _nothing at all_ until just below the -dB point of 33 to 34Hz. Amazing! To double check, I played some music to make sure that it is not having an impact, which it wasn't.
+I now wanted to test it out, to make sure that it worked. The best way would have been to evaluate the gain vs frequency, to get a graph similar to the one obtained in the LTspice simulation. I didn't really have the correct equipment to do this (bit outside of the capabilities of my home lab). So I did it a different way. Firstly, without the Infrasonic Filter installed, I used a frequency generator to listen to the reproduction of frequencies between 1Hz and 50Hz. Then, I installed the Infrasonic Filter and repeated this frequency sweep, and as expected, there was _nothing at all_ until just below the -3dB point of 33 to 34Hz. Amazing! To double check, I played some music to make sure that it is not having an impact, which it wasn't.
 
 ## Final Touches
 
@@ -175,3 +175,14 @@ With most of the enclosure now done, I now needed to tidy up the inside and make
 - Somewhere to mount the remote controller for the LED controller
 - A way to see the battery state of charge
 
+I went a bit above and beyond here, and I made a control panel that sits inside the enclosure. The LED Controller has a remote control, that I wanted to mount on the control panel so that it doesn't go missing. I hacked this a little bit - I removed the Infrared (IR) LED from the remote control PCB, and put it on a small length of wire, so that I could make sure the IR LED points at the IR receiver in the LED controller. The sensitivity potentiometer mentioned earlier also got mounted on this control panel.
+
+![Control Panel](/blog_images/discobike/ControlPanel.jpg "Internal Control Panel"){: style="max-width:500px;" }
+
+And here is where I got a bit carried away... I decided to use a small LCD screen that I had sat around, with the intention of using it do display the battery level. Since I was rushing a bit at this point (moving house!), I used an Arduino Nano. Remember how I said eariler that I made a PCB because it looks more professional than stripboard? Well, I used stripboard to make the microcontroller board. On here, was a potential divider and voltage follower, to allow the Arduino to measure the battery voltage. But I went a bit mad here, and decided to add in some current shunt resistors to allow the current consumption to be measured as well! It might be a bit _extra_, but I think it's really cool!
+
+![Finished Inside](/blog_images/discobike/FinishedInside.jpg "The finished internals! Well, kind of, not shown here, I put some perspex covers over the top of the PCBs to protect them."){: style="max-width:500px;" }
+
+And here is the finished bike!
+
+![Finished Bike](/blog_images/discobike/FinishedBike.jpg "I'm so pleased with this!"){: style="max-width:500px;" }
