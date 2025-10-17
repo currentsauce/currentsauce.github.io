@@ -1,4 +1,13 @@
-ODL LED Matrix
+---
+layout: post
+title:  "OutdoorLads LED Matrix for DJ Booth"
+date:   2025-09-23 21:00:00 +0100
+categories: blog
+hero_image: /blog_images/a_page_heros/discobike.jpg
+hero_darken: true
+image: /blog_images/a_page_heros/discobike.jpg
+
+---
 
 ## Background
 
