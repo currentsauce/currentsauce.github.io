@@ -185,4 +185,5 @@ And here is where I got a bit carried away... I decided to use a small LCD scree
 
 And here is the finished bike!
 
+
 ![Finished Bike](/blog_images/discobike/FinishedBike.jpg "I'm so pleased with this!"){: style="max-width:500px;" }
