@@ -111,7 +111,7 @@ Port Air Velocity shows how much air is being pushed and sucked out of the bass 
 
 ## Building Commences
 
-I adapted my SketchUp drawing to make the enclosure 50m<sup>3</sup>, and started building it. 
+I adapted my SketchUp drawing to make the enclosure, and started building it. 
 
 ![Subwoofer Build photo 1](/blog_images/discobike/SubEnclosure1.jpg "Build has started! You might be thinking "woah, that's a lot of wood glue", and you're right! But, I do not want any air leaks in this subwoofer at all, since that would ruin its performance drastically. Note that the bass port wasn't created yet."){: style="max-width:500px;" }
 
