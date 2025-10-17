@@ -37,7 +37,7 @@ The enclosure was made by the manufacturer of the bike, and has some nice Canal 
 
 ![Enclosure Dimensions](/blog_images/discobike/dimensions.png "Very basic sketch of the dimensions of the enclosure being worked on"){: style="max-width:500px;" }
 
-The first thing to consider is how it is powered, as this will dictate a lot of the system. It needs to be operate for at at least 2 hours, so this will require a hefty battery. I decided to use a deep-cycle leisure battery that is intended for use in motor-homes and caravans, due to it being able to sustain large loads over a prolonged period of time, and the battery chemistry generally being able to handle deep-discharges. In comparison, a standard car battery is not suitable here; they are designed to give a very short burst of current to the starter of a car, and then more or less immediately get recharged by the alternator - not long use, and not deep-discharges. In addition, leisure batteries come in much larger capacities than car batteries, at the expense of a larger size.
+The first thing to consider is how it is powered, as this will dictate a lot of the system. It needs to be operated for at at least 2 hours, so this will require a hefty battery. I decided to use a deep-cycle leisure battery that is intended for use in motor-homes and caravans, due to it being able to sustain large loads over a prolonged period of time, and the battery chemistry generally being able to handle deep-discharges. In comparison, a standard car battery is not suitable here; they are designed to give a very short burst of current to the starter of a car, and then more or less immediately get recharged by the alternator - not long use, and not deep-discharges. In addition, leisure batteries come in much larger capacities than car batteries, at the expense of a larger size.
 
 I settled on a `NUMAX DC25MF` 105Ah Sealed Leisure Battery. This is a NCC Class B battery, meaning that it can handle deep discharges well, since it is capable of at least 200 discharges to 50%. 
 
@@ -55,10 +55,10 @@ In car audio, you can either power the speakers using the built in amplifier of 
 ## Simplistic overview of car audio speakers
 At the basic end of the scale, you have just one speaker per channel, which is an all-range driver, i.e. doing the bass, mids and high frequencies. Typically, it excels in neither.
 At the mid range, each channel will have two drivers - a speaker doing the bass and mid range frequencies, and a separate tweeter doing the high frequencies. Bookshelf speakers have a similar approach.
-At the high end of the scale, you have the same components as the previous (mid), however, a high-pass filter is used to prevent the speaker from attempting to produce any low frequencies - which allows it to produce better sound without bass encumbering it. To reproduce the low frequencies (bass), a separately amplified bass sub-woofer is used. Usually, this is only one, since low frequencies are not directional and there generally isn't a concept of "stereo" with low frequencies.
+At the high-end of the scale, you have the same components as the previous (mid), however, a high-pass filter is used to prevent the speaker from attempting to produce any low frequencies - which allows it to produce better sound without bass encumbering it. To reproduce the low frequencies (bass), a separately amplified bass sub-woofer is used. Usually, this is only one, since low frequencies are not directional and there generally isn't a concept of "stereo" with low frequencies.
 ...This list is not fully exhaustive by the way! But it is a good general overview of the most common implementations of car audio.
 
-Since I want to accomplish the requirement of "decent sound quality" and "loudness", I decided to go the the "high end" approach, i.e. I want to have four amplified channels producing the mids & highs, and then one amplified channel for a subwoofer.
+Since I want to accomplish the requirement of "decent sound quality" and "loudness", I decided to go with the "high end" approach, i.e. I want to have four amplified channels producing the mids & highs, and then one amplified channel for a subwoofer.
 
 So to produce the mids and highs, a mid range speaker is coupled with a high-frequency tweeter speaker, and a suitable cross-over circuit is used to provide the tweeter with a high-pass filtered signal. These two speakers are separate, but thankfully in the car audio market, coaxial speakers exist - these are speakers with tweeters mounted in the middle, which makes installation easier. These seemed like the best choice for a clean installation.
 
@@ -170,7 +170,7 @@ I now wanted to test it out, to make sure that it worked. The best way would hav
 With most of the enclosure now done, I now needed to tidy up the inside and make it easy to use, and maintenance free. I mounted the battery charger inside (so that it does not go missing!). But I needed to address the following needs:
 - A way to switch between OFF/battery charging and ON
 - A way to turn the speakers on/off via the on/off trigger input of the amps
-- A way to turn the LEDS on/off
+- A way to turn the LEDs on/off
 - Somewhere to mount the sensitivity pot of the LED controller
 - Somewhere to mount the remote controller for the LED controller
 - A way to see the battery state of charge
@@ -179,7 +179,7 @@ I went a bit above and beyond here, and I made a control panel that sits inside 
 
 ![Control Panel](/blog_images/discobike/ControlPanel.jpg "Internal Control Panel"){: style="max-width:500px;" }
 
-And here is where I got a bit carried away... I decided to use a small LCD screen that I had sat around, with the intention of using it do display the battery level. Since I was rushing a bit at this point (moving house!), I used an Arduino Nano. Remember how I said eariler that I made a PCB because it looks more professional than stripboard? Well, I used stripboard to make the microcontroller board. On here, was a potential divider and voltage follower, to allow the Arduino to measure the battery voltage. But I went a bit mad here, and decided to add in some current shunt resistors to allow the current consumption to be measured as well! It might be a bit _extra_, but I think it's really cool!
+And here is where I got a bit carried away... I decided to use a small LCD screen that I had sat around, with the intention of using it do display the battery level. Since I was rushing a bit at this point (moving house!), I used an Arduino Nano. Remember how I said earlier that I made a PCB because it looks more professional than stripboard? Well, I used stripboard to make the microcontroller board. On here, was a potential divider and voltage follower, to allow the Arduino to measure the battery voltage. But I went a bit mad here, and decided to add in some current shunt resistors to allow the current consumption to be measured as well! It might be a bit _extra_, but I think it's really cool!
 
 ![Finished Inside](/blog_images/discobike/FinishedInside.jpg "The finished internals! Well, kind of, not shown here, I put some perspex covers over the top of the PCBs to protect them."){: style="max-width:500px;" }
 
@@ -206,7 +206,7 @@ Subjective, but Yes - I tested this outside in my street and it got all the neig
 
 **...And be decent sound quality**
 
-Again, subjectively Yes - I am quite particular about sound quality[^1], and considering I did this on a budget, I think it sounded as good as a quality PA system. By not overwhelming the main speakers with producing lowe frequencies, and using a good subwoofer, the sound was something I was happy with. Which was a relief!  
+Again, subjectively Yes - I am quite particular about sound quality[^1], and considering I did this on a budget, I think it sounded as good as a quality PA system. By not overwhelming the main speakers with producing lower frequencies, and using a good subwoofer, the sound was something I was happy with. Which was a relief!  
 
 **Enclosure has artwork, so not interfere with the overall appearance of that**
 
@@ -226,7 +226,7 @@ Yes - everything is securely mounted within, in a tidy manner too.
 
 **Be built within a budget of £500**
 
-YES! The total cost was £498.96, a whole £1.04 left over. Super pleased with this. But I did spreadsheet the whole project while designing it, and parts were chosen to fit this budged. I do need to 'fess up here though, that I'm not factoring in things like Solder, Miscellaneous wire, nuts and bolts etc., which I have on stock. Also, the control panel was built entirely out of parts that I already had in my collection of parts that I have in my parts bins and trays (my partner would call it hoarding, but I disagree!). I was happy use these parts and give away to the Canal & River Trust.
+YES! The total cost was £498.96, a whole £1.04 left over. Super pleased with this. But I did spreadsheet the whole project while designing it, and parts were chosen to fit this budget. I do need to 'fess up here though, that I'm not factoring in things like Solder, Miscellaneous wire, nuts and bolts etc., which I have on stock. Also, the control panel was built entirely out of parts that I already had in my collection of parts that I have in my parts bins and trays (my partner would call it hoarding, but I disagree!). I was happy to use these parts and give away to the Canal & River Trust.
 
 **Incorporate LED lighting for extra "wow"**
 
