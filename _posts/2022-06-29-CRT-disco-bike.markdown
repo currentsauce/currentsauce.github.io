@@ -187,3 +187,47 @@ And here is the finished bike!
 
 
 ![Finished Bike](/blog_images/discobike/FinishedBike.jpg "I'm so pleased with this!"){: style="max-width:500px;" }
+
+## Requirements Check
+
+So now is the time to evaluate if I met all my requirements...
+
+- Have speakers mounted within the enclosure, facing the outside
+Yes - Four speakers mounted within.
+
+- Create sound from both left and right of the bike
+Yes - two speakers on each side to create near-enough 360° sound.
+
+- Be loud!
+Subjective, but Yes - I tested this outside in my street and it got all the neighbours outside to see what was going on! And the real proof, is when this was finally used for Pride Parades, and the feedback I got was that it was plenty loud enough for them.
+
+- ...And be decent sound quality
+Again, subjectively Yes - I am quite particular about sound quality[^1], and considering I did this on a budget, I think it sounded as good as a quality PA system. By not overwhelming the main speakers with producing lowe frequencies, and using a good subwoofer, the sound was something I was happy with. Which was a relief!  
+
+- Enclosure has artwork, so not interfere with the overall appearance of that
+The four speakers and subwoofer grill and port are placed such that they don't interfere with the graphics on the enclosure.
+
+- Self powered from an internal battery
+Yes - used a quality leisure battery which is intended for prolonged use.
+
+- ...which can power the unit for 2 hours
+Yes - proof is in the pudding, in that this lasts just over 3 hours when used in a Pride Parade. This is helped by the use of an Infrasonic Filter (HPF) to cut wasteful lower frequencies that would use power with no real benefit.
+
+- All be self contained within the freezer-sized enclosure
+Yes - everything is securely mounted within, in a tidy manner too.
+
+- Be built within a budget of £500
+YES! The total cost was £498.96, a whole £1.04 left over. Super pleased with this. But I did spreadsheet the whole project while designing it, and parts were chosen to fit this budged. I do need to 'fess up here though, that I'm not factoring in things like Solder, Miscellaneous wire, nuts and bolts etc., which I have on stock. Also, the control panel was built entirely out of parts that I already had in my collection of parts that I have in my parts bins and trays (my partner would call it hoarding, but I disagree!). I was happy use these parts and give away to the Canal & River Trust.
+
+- Incorporate LED lighting for extra "wow"
+Yes - LED Strips mounted on all vertices of the enclosure, that have sound-to-light feature - looks great!
+
+- Built in battery charging capability
+Yes - A 12V Battery charger is built in to allow the battery to be charged easily, and also so there is never a "where’s the battery charger?!" moment.
+
+- Easy way of determining the battery level
+Yes - went a bit extra with the control panel, but it gives a really easy way to see the battery state of charge.
+
+---
+
+[1^]: For a bit of justification to this, back in 2018 I managed to get a new BMW 3 Series, which was great, but the standard sound was truly awful. I was going to have the car for the next 4 years, and didn't like the idea of having to deal with the poor sound for that long. So I removed all the seats, trims and door cards, replaced the speakers, fitted some tweeters into the A-pillars, and installed a DSP-Amplifier with some new wiring looms that I made myself. And also sound-deadening sheets applied to the inside of the doors. Re-coded the head unit to output a non-amplified flat-EQ and tuned the DSP as best as I could. Oh, and put the car back together again! The result sounded incredible! And I could crank it up too. Was really proud of that, had a beautiful 4 years of sound and driving with that car. I still miss that car... Maybe I will do a blog post on this one day!
