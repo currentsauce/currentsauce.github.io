@@ -192,40 +192,40 @@ And here is the finished bike!
 
 So now is the time to evaluate if I met all my requirements...
 
-- Have speakers mounted within the enclosure, facing the outside
+? Have speakers mounted within the enclosure, facing the outside
 Yes - Four speakers mounted within.
 
-- Create sound from both left and right of the bike
+? Create sound from both left and right of the bike
 Yes - two speakers on each side to create near-enough 360° sound.
 
-- Be loud!
+? Be loud!
 Subjective, but Yes - I tested this outside in my street and it got all the neighbours outside to see what was going on! And the real proof, is when this was finally used for Pride Parades, and the feedback I got was that it was plenty loud enough for them.
 
-- ...And be decent sound quality
+? ...And be decent sound quality
 Again, subjectively Yes - I am quite particular about sound quality[^1], and considering I did this on a budget, I think it sounded as good as a quality PA system. By not overwhelming the main speakers with producing lowe frequencies, and using a good subwoofer, the sound was something I was happy with. Which was a relief!  
 
-- Enclosure has artwork, so not interfere with the overall appearance of that
+? Enclosure has artwork, so not interfere with the overall appearance of that
 The four speakers and subwoofer grill and port are placed such that they don't interfere with the graphics on the enclosure.
 
-- Self powered from an internal battery
+? Self powered from an internal battery
 Yes - used a quality leisure battery which is intended for prolonged use.
 
-- ...which can power the unit for 2 hours
+? ...which can power the unit for 2 hours
 Yes - proof is in the pudding, in that this lasts just over 3 hours when used in a Pride Parade. This is helped by the use of an Infrasonic Filter (HPF) to cut wasteful lower frequencies that would use power with no real benefit.
 
-- All be self contained within the freezer-sized enclosure
+? All be self contained within the freezer-sized enclosure
 Yes - everything is securely mounted within, in a tidy manner too.
 
-- Be built within a budget of £500
+? Be built within a budget of £500
 YES! The total cost was £498.96, a whole £1.04 left over. Super pleased with this. But I did spreadsheet the whole project while designing it, and parts were chosen to fit this budged. I do need to 'fess up here though, that I'm not factoring in things like Solder, Miscellaneous wire, nuts and bolts etc., which I have on stock. Also, the control panel was built entirely out of parts that I already had in my collection of parts that I have in my parts bins and trays (my partner would call it hoarding, but I disagree!). I was happy use these parts and give away to the Canal & River Trust.
 
-- Incorporate LED lighting for extra "wow"
+? Incorporate LED lighting for extra "wow"
 Yes - LED Strips mounted on all vertices of the enclosure, that have sound-to-light feature - looks great!
 
-- Built in battery charging capability
+? Built in battery charging capability
 Yes - A 12V Battery charger is built in to allow the battery to be charged easily, and also so there is never a "where’s the battery charger?!" moment.
 
-- Easy way of determining the battery level
+? Easy way of determining the battery level
 Yes - went a bit extra with the control panel, but it gives a really easy way to see the battery state of charge.
 
 ---
