@@ -59,13 +59,15 @@ For this design, in order to be able to accommodate the depth of the LEDs, I cho
 
 ![Design A LEDs](/blog_images/odl_led_matrix/Design_A.png "This is the 2D Drawing of Design A."){: style="max-width:500px;" }
 
+![Design A LEDs](/blog_images/odl_led_matrix/Design_A_Side_Detail.png "Further detail on Design A, focussing on mounting the LEDs."){: style="max-width:500px;" }
+
 ### Design B
 
 The first design is good and allows flexibility in pixel density, however it is too damn thick! This makes it difficult to store and transport, plus makes it more clumsy. My second design is with a thinner design, using addressable LED strips - you're probably familiar with these types of things, they are LEDs etc. mounted to a flexible PCB, and usually come with a self-adhesive back, and they can be found in water-resistant versions where they are covered in a flexible encapsulation. These are really thin! So it means I can make the frame thinner than with Design A. The downside though, is that they have a fixed spacing between the pixels, so less flexibility when designing in to the frame.
 
-30 LEDs/m ≈ 33mm between LED centres
-60 LEDs/m ≈ 17mm between LED centres
-144 LEDs/m ≈ 7mm between LED centres
+30 LEDs/m ≈ 33mm between LED centres  
+60 LEDs/m ≈ 17mm between LED centres  
+144 LEDs/m ≈ 7mm between LED centres  
 
 ### Design C
 
