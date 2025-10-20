@@ -57,23 +57,24 @@ The first design is based around addressable LEDs that are in a string - a bit l
 
 The good thing about these, is that I can space the pixels however I please, to both get the right pixel density, and also fit within the panel size evenly. The down side with , is that they are very deep, so the panels needs to be able to accommodate their depth. 
 
-For this design, in order to be able to accommodate the depth of the LEDs, I chose to use 75mm by 32mm timber. I already was not happy with this design - the folded thickness is 150mm - that's 15cm! That's too big, clumsy, and heavy. Also, the frame causes a gap of 64mm between the two panels, and the best spreading I could design here was a inter-pixel distance of 58.9mm. This means that there will be a slightly bigger gap between the LEDs at middle, which will be obvious. Not happy with this.
+For this design, in order to be able to accommodate the depth of the LEDs, I chose to use 75mm by 32mm timber. I already was not happy with this design - the folded thickness is 150mm - that's 15cm! That's too big, clumsy, and heavy. Also, the frame causes a gap of 64mm between the two panels, and the best spreading I could design here was a inter-pixel distance of 58.9mm. This means that there will be a slightly bigger gap  between the LEDs at middle, which will be obvious. Not happy with this.
 
-![Design A LEDs](/blog_images/odl_led_matrix/Design_A.png "This is the 2D Drawing of Design A."){: style="max-width:500px;" }
+![Design A](/blog_images/odl_led_matrix/Design_A.png "This is the 2D Drawing of Design A."){: style="max-width:500px;" }
 
-![Design A LEDs](/blog_images/odl_led_matrix/Design_A_Side_Detail.png "Further detail on Design A, focussing on mounting the LEDs."){: style="max-width:500px;" }
+![Design A Side Detail](/blog_images/odl_led_matrix/Design_A_Side_Detail.png "Further detail on Design A, focussing on mounting the LEDs."){: style="max-width:500px;" }
 
-|Thickness|150mm|
-|Inter-pixel Distance|58.9mm|
-|Frame Gap|64mm|
-|Total Number of Pixels|360|
-|Approx. Max. Power|108W|
+|Thickness:|150mm|
+|Inter-pixel Distance:|58.9mm|
+|Frame Gap:|64mm|
+|Resolution:|20 x 18|
+|Total Number of Pixels:|360|
+|Approx. Max. Power:|108W|
 
 ### Design B
 
 The first design is good and allows flexibility in pixel density, however it is too damn thick! This makes it difficult to store and transport, plus makes it more clumsy. My second design is with a thinner design, using addressable LED strips - you're probably familiar with these types of things, they are LEDs etc. mounted to a flexible PCB, and usually come with a self-adhesive back, and they can be found in water-resistant versions where they are covered in a flexible encapsulation. These are really thin! So it means I can make the frame thinner than with Design A. The downside though, is that they have a fixed spacing between the pixels, so less flexibility when designing in to the frame.
 
-![Design A LEDs](/blog_images/odl_led_matrix/Design_B_LEDs.png "These are the addressable LED strips for Design B. If you're eagle-eyed, you might have noticed this image actually shows Warm White/Cool White strips, but the form factor is the same, and is just for indication."){: style="max-width:500px;" }
+![Design B LEDs](/blog_images/odl_led_matrix/Design_B_LEDs.png "These are the addressable LED strips for Design B. If you're eagle-eyed, you might have noticed this image actually shows Warm White/Cool White strips, but the form factor is the same, and is just for indication."){: style="max-width:500px;" }
 
 30 LEDs/m ≈ 33mm between LED centres  
 60 LEDs/m ≈ 17mm between LED centres  
@@ -83,11 +84,34 @@ For this design, since the strips are thin - about 2.5mm, the frame can be much 
 
 So, this design already has it's down sides despite being thin. And there's more... If one pixel fails in the future, it would be very difficult to replace a single pixel. The LED strips would have to be attached using the pre-applied self-adhesive tape. I have very little confidence that this would last, and fear that the panels would fall apart too easily, unless a clear perspex front was added on the front, adding to weight and cost, and making it even more difficult to replace a pixel. And then for the final negative point, I think the strips would look a bit cheap and amateur.
 
-|Thickness|50mm|
-|Inter-pixel Distance|H: 33mm, V: 34.25mm|
-|Frame Gap|40mm|
-|Total Number of Pixels|1156|
-|Approx. Max. Power|346.8W|
+![Design B](/blog_images/odl_led_matrix/Design_B.png "This is the 2D Drawing of Design B."){: style="max-width:500px;" }
+
+|Thickness:|50mm|
+|Inter-pixel Distance:|H: 33mm, V: 34.25mm|
+|Frame Gap:|40mm|
+|Resolution:|34 x 34|
+|Total Number of Pixels:|1156|
+|Approx. Max. Power:|346.8W|
 
 ### Design C
 
+Okay so we're not off to a good start with the first two designs! I thought I was a bit stumped, but there was something in the back of my mind - the Design A LEDs gave great flexibility with pixel spacing, and looked more professional, but it was the damn enclosure thing that they are encapsulated in that is causing the problems. If I could have those LED strings without the mounting encapsulation thing, that would probably be perfect. 
+
+Well, after lots and lots of trawling of the internet, it turns out you can indeed get the Design A LEDs in their raw form, but they were hard to find! With these, the LED is bent 90° as though they are ready to go into the plastic mounting encapsulation thing, but I knew that I could bend the LEDs back to their original position, which would reduce their depth. Plus the lack of a mounting bezel on the LEDs means that the LEDs on the middle can butt up to the frame, to reduce the spacing caused by the middle of the frame.
+
+This design combined the positives of Design A with the Positives of Design B: 
+- Less bulky design, 50mm thick when folded
+- Individual LEDs that can be spaced however I want. Can avoid the visible gap of the middle, and the LEDs can be more easily replaced should one of them fail in the future.
+
+With this design, when the LEDs are butt up to the edge of the frame in the middle, the horizontal pixel spacing is 48mm. While it is possible to make the rest of the pixels spaced the same, it meant that the outer edges had no pixel, and it looked odd. As a compromise, I made the pixel spacing 46.44mm, which allowed me to horizontally squeeze in 13 pixels in a single frame, with the middle pixels only being spaced by 1.56mm more, which I don't think will be noticeable. I was also able to fit 24 pixels in the vertical direction at the same pixel spacing of 46.44mm.
+
+![Design C](/blog_images/odl_led_matrix/Design_C.png "This is the 2D Drawing of Design C."){: style="max-width:500px;" }
+
+![Design C Side Detail](/blog_images/odl_led_matrix/Design_C_Side_Detail.png "Further detail on Design C, focussing on mounting the LEDs."){: style="max-width:500px;" }
+
+|Thickness:|50mm|
+|Inter-pixel Distance:|46.44|
+|Frame Gap:|40mm|
+|Resolution:|26 x 24|
+|Total Number of Pixels:|624|
+|Approx. Max. Power:|187.2W|
