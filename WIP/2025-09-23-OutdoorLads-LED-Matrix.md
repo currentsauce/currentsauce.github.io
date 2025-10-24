@@ -99,7 +99,7 @@ Okay so we're not off to a good start with the first two designs! I thought I wa
 
 Well, after lots and lots of trawling of the internet, it turns out you can indeed get the Design A LEDs in their raw form, but they were hard to find! With these, the LED is bent 90° as though they are ready to go into the plastic mounting encapsulation thing, but I knew that I could bend the LEDs back to their original position, which would reduce their depth. Plus the lack of a mounting bezel on the LEDs means that the LEDs on the middle can butt up to the frame, to reduce the spacing caused by the middle of the frame. The addressable LEDs in this form factor use the WS2811 IC.
 
-![Design C LEDs](/blog_images/odl_led_matrix/Design_A_LEDs.png "These are the addressable LED strings used for Design C. They're just like the Design A LEDs, but not encapsulated. "){: style="max-width:500px;" }
+![Design C LEDs](/blog_images/odl_led_matrix/Design_C_LEDs.png "These are the addressable LED strings used for Design C. They're just like the Design A LEDs, but not encapsulated. "){: style="max-width:500px;" }
 
 This design combined the positives of Design A with the Positives of Design B: 
 - Less bulky design, 50mm thick when folded
@@ -150,7 +150,7 @@ With the necessary design work done, now is the time to make this a reality! Sin
 
 ![Frame Detail](/blog_images/odl_led_matrix/Frame_Detail.png "Updated detail of the frame, made from 75mm by 32mm timber"){: style="max-width:500px;" }
 
-To make the frame, my friends Pete and Phil of [Crazy9 Mobile Crazy Golf](https://www.crazy9.co.uk) very kindly let me use their Stockport Woodworking Studio (Pete helped me while Pete was busy making a Plinko Game for their mobile golf course!). We used a table saw to make the details needed for the mounting of the sheet wood. I also used the picture-frame idea and made the corners at 45° too. The final result is exactly what I had envisioned, really pleased with it. Marking out 624 holes and then drilling them was less fun though.
+To make the frame, my friends Pete and Phil of [Crazy9 Mobile Crazy Golf](https://www.crazy9.co.uk) very kindly let me use their Stockport Woodworking Studio (Pete helped me while Phil was busy making a Plinko Game for their mobile golf course!). We used a table saw to make the details needed for the mounting of the sheet wood. I also used the picture-frame idea and made the corners at 45° too. The final result is exactly what I had envisioned, really pleased with it. Marking out 624 holes and then drilling them was less fun though.
 
 ![The Frame](/blog_images/odl_led_matrix/Frame_No_LEDs.jpeg "The frame now exists! Don't judge it too much, this is only with the first primer paint layer."){: style="max-width:500px;" }
 
@@ -158,8 +158,16 @@ I thought that drilling 624 holes was hard work, I take it back, fitting 624 LED
 
 Since the LEDs are in a string, it makes sense to wind the LEDs up and down - this makes the wiring simpler, and most importantly it keeps the distance between the LEDs the same distance. I don't want to make the distance between the LEDs any longer, since long wires are the enemy; the output of each WS2811 pixel is a buffered output, but long wires make the signal susceptible to signal degradation. Thankfully, the Jinx! software is able to handle pixels arranged in this snake-lines pattern. I planned to have the connectors at the bottom of each panel, so this means that the data signals will originate from the bottom, so this means that the snake-lines will run bottom to top, top to bottom etc., so the pixels will be in columns, not rows.
 
-![LEDs Fitted](/blog_images/odl_led_matrix/LEDs_Fitted.jpeg "That's all 624 LEDs fitted. Glad that is over and done with."){: style="max-width:500px;" }
+![LEDs Fitted](/blog_images/odl_led_matrix/LEDs_Fitted.jpeg "That's all 624 LEDs fitted. Glad that is over and done with. It's upside-down, by the way."){: style="max-width:500px;" }
 
 Each panel will receive four data lines, meaning that the 13 columns of pixels need dividing up into channel groups. 13 isn't a nice number for that! The best way to do this would be to have 3 groups of 3 columns, and one group of 4 columns. I wish that I had made this realisation *before* putting the LEDs in, because doing it this way would mean that I have to break up the snake-lines to re-start at the bottom on the 4th, 8th, 12th etc. columns. Instead, with the way the LEDs are fitted, these columns are a flow down, not a flow up. Damn! So with the arrangement I have, the I need even number of columns in a group. The arrangement I went for is three groups of 4 columns, and one group of 1 column per panel. Overall, this means six channels with 96 pixels, and two channels with 24 pixels. A picture speaks a thousand words, so this is shown below:
 
 ![Pixel Arrangement](/blog_images/odl_led_matrix/Pixel_Arrangement.png "Pixel arrangement, showing the snake-lines pattern and channel groupings."){: style="max-width:500px;" }
+
+With the start of each channel group starting at the bottom, I connected wires to the start pixel in each group, and routed the wires to the middle in an empty gap, in preparation for a connector to be fitted. I also prepared the power wires to an empty gap on the bottom right, in preparation for a connector. The daisy-chain of the LEDs carries both the data and power, but one thing you have to watch out for with a string of lights like this is voltage-drop on the cable. The individual LEDs are each interconnected with wire, which will have a very small amount of resistance. Current in a resistive element causes a potential difference - Volts - simple Ohm's Law. This means that over a length of cable, what started as 5V will gradually decrease. The voltage-drop is very small, but over a long length, this adds up, and it manifests itself as the start of the string being brighter than the end of the string. When a string is spread out over a long distance, it isn't too obvious, but when the pixels are grouped together in a matrix like this, it is very noticeable. This is avoided by having multiple sourced of power, not just at one end of the string. 
+
+Since the string of pixels are broken up to form the channel groups, as a minimum, power needs to be routed to each channel group. This already assists with avoiding voltage-drop, since the long string is broken up, and each string is a shorter overall length. With each string only being 96 pixels in length, this was probably short enough that voltage-drop would not be a problem, but I was taking no chances here! I made it so that each string that had 96 pixels was powered at the start and the end. The two channels with 24 pixels were short enough that power was only applied to the start.  
+
+![Pixels Grouped](/blog_images/odl_led_matrix/Pixels_Grouped.jpg "The wiring has been done for the pixel groupings. Also power has been routed to multiple points to avoid voltage-drop."){: style="max-width:500px;" }
+
+
