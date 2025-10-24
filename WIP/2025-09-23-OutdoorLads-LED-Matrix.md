@@ -156,6 +156,8 @@ To make the frame, my friends Pete and Phil of [Crazy9 Mobile Crazy Golf](https:
 
 I thought that drilling 624 holes was hard work, I take it back, fitting 624 LEDs was a real chore. I spent time making sure that the cables were routed nice and neatly, it means that the cables are under less twisting and bending stress, improving reliability, considering this will be transported around frequently. It also makes it much easier to work with, since I will be routing data and power lines in addition to these LEDs. The holes were drilled at 8mm, which is the same size as the LEDs. I did a practice hole first to check how well the LEDs fit in the hole, and it turned out that they fit really well; there was a lot of friction to get the LEDs in the hole, so I had confidence that the friction fit was all that was needed to hold the LEDs in in place. There were only a couple that were a little questionable, so I put some hot glue on those just to be safe. Not needing to glue every single one in place was good for two reasons - firstly, it saved me a lot of time and mess, and secondly, from a maintenance perspective, should I need to change an LED if one fails, I don't have to de-glue them.
 
+## Pixel Talk
+
 Since the LEDs are in a string, it makes sense to wind the LEDs up and down - this makes the wiring simpler, and most importantly it keeps the distance between the LEDs the same distance. I don't want to make the distance between the LEDs any longer, since long wires are the enemy; the output of each WS2811 pixel is a buffered output, but long wires make the signal susceptible to signal degradation. Thankfully, the Jinx! software is able to handle pixels arranged in this snake-lines pattern. I planned to have the connectors at the bottom of each panel, so this means that the data signals will originate from the bottom, so this means that the snake-lines will run bottom to top, top to bottom etc., so the pixels will be in columns, not rows.
 
 ![LEDs Fitted](/blog_images/odl_led_matrix/LEDs_Fitted.jpeg "That's all 624 LEDs fitted. Glad that is over and done with. It's upside-down, by the way."){: style="max-width:500px;" }
@@ -168,6 +170,6 @@ With the start of each channel group starting at the bottom, I connected wires t
 
 Since the string of pixels are broken up to form the channel groups, as a minimum, power needs to be routed to each channel group. This already assists with avoiding voltage-drop, since the long string is broken up, and each string is a shorter overall length. With each string only being 96 pixels in length, this was probably short enough that voltage-drop would not be a problem, but I was taking no chances here! I made it so that each string that had 96 pixels was powered at the start and the end. The two channels with 24 pixels were short enough that power was only applied to the start.  
 
-![Pixels Grouped](/blog_images/odl_led_matrix/Pixels_Grouped.jpg "The wiring has been done for the pixel groupings. Also power has been routed to multiple points to avoid voltage-drop."){: style="max-width:500px;" }
+![Pixels Grouped](/blog_images/odl_led_matrix/Pixels_Grouped.jpeg "The wiring has been done for the pixel groupings. Also power has been routed to multiple points to avoid voltage-drop."){: style="max-width:500px;" }
 
 
