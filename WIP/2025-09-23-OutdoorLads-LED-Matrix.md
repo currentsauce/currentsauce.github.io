@@ -185,3 +185,11 @@ The only issue here, is that this panel-mount socket has a maximum panel thickne
 For the power connectors, these need to be robust and be able to sustain the high current demands of the panels. Each pixel is a RGB LED, so three LEDs in one. When each panel has all LEDs driven at full brightness (i.e. white), the panel should consume 23.4 A. I'll be covering the power aspects of the design later in this post though. I had some familiarity with the XT type connectors, which are simple, robust, and are designed for high-current applications. I could have got away with using XT-30 connectors, which are rated for continuous current of 30 A, but I decided to go with the XT-60 connectors instead, which are rated for continuous current of 60A. It isn't the current rating that made me go for the XT-60, it is because it is bigger and is less fiddly to connect - makes it easier to set up.
 
 ![XT60 Connectors](/blog_images/odl_led_matrix/XT60_Connectors.png "XT60 Connectors used in this design."){: style="max-width:500px;" }
+
+A male panel mount XT60 is used for the power input on the panels (Since power outlets should always be a socket, and inlets a pin). I decided to design a little mounting panel for the power connector, again, using OnShape and my 3D printer. This means that there is a bigger surface of attachment than if I just used a nut and washer. It also makes the overall appearance look more professional than the XT-60 poking out a square hole cut in the back panel.
+
+![XT60 Connector Panel](/blog_images/odl_led_matrix/Power_Connector_Panel.png "This is the small panel for mounting the male XT-60 power inlet. "){: style="max-width:500px;" }
+
+The image below shows the final result of the connector mounting. It is shown here with the cables connected. As you can see, I used heatshrink to finish off the power cable - hiding under the heatshrink is a little hot glue to make the heatshrink form in a nice taper.
+
+![Finished Rear Connectors](/blog_images/odl_led_matrix/Rear_Connectors.jpeg "The finished rear connectors. "){: style="max-width:500px;" }
