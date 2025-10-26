@@ -176,7 +176,7 @@ Since the string of pixels are broken up to form the channel groups, as a minimu
 
 When designing these panels, I am keeping maintainability in mind, i.e. making sure that future-me does not hate present me! The back panel fits into the recess of the frame, and so I need to make sure that the connectors can be detached from the panel easily - if the connectors cannot be detached then it will be really difficult to remove the back panel with the connectors still connected to the wiring. For the data connectors, I chose the Switchcraft EN3 connectors - they're a nice circular connector with a bayonet type attachment, and very conveniently, I had a pair of them in my box of miscellaneous connectors! The socket is a panel-mount type, which mounts on the rear and is affixed with a hex-nut. This is perfect as it means that should maintenance be needed, the hex-nut can be removed so that the connector stays with the wiring and the panel comes off completely.
 
-![Switchcraft EN3](/blog_images/odl_led_matrix/Switchcraft_EN3.png "Switchcraft EN3 Panel-mount socket and plug."){: style="max-width:500px;" }
+![Switchcraft EN3](/blog_images/odl_led_matrix/Switchcraft_EN3.png "Switchcraft EN3 Plug and Panel-mount Socket."){: style="max-width:500px;" }
 
 The only issue here, is that this panel-mount socket has a maximum panel thickness of 3mm, and my back panel is 5mm thick - damn! Well this was easily solved; I designed a panel in my favourite 3D CAD package, OnShape, which attaches to the back panel, and has an aperture for the socket that is 3mm in thickness. This is actually a better solution than mounting to the wood panel directly, because I am able to put the flat edge detail in, so that the connector cannot twist when mounted, which would strain the wires and connections within the panel. When I 3D printed this, I realised that there was actually a little more give in the mounting than is specified in the connector data-sheet, so I changed the panel to be 4mm thick. This means that the connector does not protrude as much, making it a little less susceptible to damage.
 
@@ -190,6 +190,27 @@ A male panel mount XT60 is used for the power input on the panels (Since power o
 
 ![XT60 Connector Panel](/blog_images/odl_led_matrix/Power_Connector_Panel.png "This is the small panel for mounting the male XT-60 power inlet. "){: style="max-width:500px;" }
 
-The image below shows the final result of the connector mounting. It is shown here with the cables connected. As you can see, I used heatshrink to finish off the power cable - hiding under the heatshrink is a little hot glue to make the heatshrink form in a nice taper.
+The image below shows the final result of the connector mounting. It is shown here with the cables connected. As you can see, I used heatshrink to finish off the power cable.
 
 ![Finished Rear Connectors](/blog_images/odl_led_matrix/Rear_Connectors.jpeg "The finished rear connectors. "){: style="max-width:500px;" }
+
+## Driving the Pixels
+
+With the panels built, it is now time to build a box that can drive them so we can have some pretty effects on this LED Matrix! In case you were wondering, I did test each channel group to make sure that all the LEDs were working!
+
+### Pixel Power
+
+The WS2811 strings I have are specified to use a maximum of 0.3 W per pixel when the Red, Green and Blue are at full brightness (i.e. full white). With 624 pixels, this will be 187.2 W. Also in the data, it specifies that the maximum current consumption of 60 mA (makes sense, 20 mA per R/G/B). Multiplied by 624, this is 37.44 A. Since they use 5V, the power is 37.44 A × 5 V = 187.2 W - the same value as before - phew, that's a relief, since I was dubious due to the data being on an AliExpress page! 
+
+A pretty beefy 5V PSU is needed, and it needs to be de-rated. In a nutshell, I don't want the PSU to be operating close to its maximum specified power - this is very standard practice. It prevents the PSU overheating, and ensures reliability; operating a PSU at its maximum is a sure-fire way to reduce its lifespan. So, in worst case scenario (i.e. Pixels at their maximum) I only want the PSU to be operating at a maximum of 80% of its stated power, ideally lower. So, if 187.2 W is 80%, then 100% is 234 W, similarly, if 37.44 A is 80%, then 100% is 46.8A. I.e. the PSU needs to be at least 234 W / 37.5 A.
+
+When I looked for a suitable PSU, chose a 300 W 60 A one, since the one below that is 200 W, which isn't high enough. This is good, since it means that the PSU is even more de-rated. So, when the panels are at their maximum power of 187.2 W, the PSU is at 62.4 % of its full capacity, so that's great, the PSU is never going to be under heavy load and it should mean a long life-span.
+
+![PSU](/blog_images/odl_led_matrix/5V_PSU.png "The 5 V 60 A 300 W PSU chosen for this project. It's an un-branded generic one, but it'll never see significant demand."){: style="max-width:500px;" }
+
+## Packaging It Up
+
+The idea is to have a "control box", which houses the PSU and the Microcontroller board as an all-in-one center for the Matric Panels. The main factor governing the size of the control box is the size of the PSU. Now, I don't know if you have ever tried to look for a suitable enclosure for a project, but I find that it can be blooming difficult sometimes and time consuming! Are those internal dimensions? Are those external dimensions? Gah! I eventually settled on a Gewiss Surface Mounted Plastic Enclosure, part number GW44208. It has external dimensions of 254 × 200 x 98 mm, and internal dimensions of 240 × 190 × 90 mm. On the face of it, this is big enough for the PSU, however it has noggins (correct term?!) in the corners for the lid screws to go into - this means that the PSU cannot butt-up right to the edge. All is not lost though - I realised that I can cut a notch out of one of the  noggins, and modify the connector-end of the PSU enclosure to be able to accommodate the PSU, since it is below the screw depth. This is more clear in the following photo of the PSU mounted in the enclosure:
+
+![PSU Mounted](/blog_images/odl_led_matrix/PSU_Mounted.jpeg "PSU mounted in the enclosure nicely. If you look carefully at the bottom left, you can see that I trimmed the top bit of the PSU enclosure off, and made a little notch in the enclosure to make it fit."){: style="max-width:500px;" }
+
