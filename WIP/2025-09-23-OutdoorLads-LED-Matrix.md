@@ -222,4 +222,32 @@ On the face of it, this is big enough for the PSU, however it has noggins (corre
 
 ## Microcontroller Board
 
+| Pin No. | IO No. / Net | Special Function Used?     | Connected to                             |
+|---------|--------------|----------------------------|------------------------------------------|
+| 1.      | GND          | -                          | GND / 0V                                 |
+| 2.      | 0            | GPIO Out                   | Status Green LED                         |
+| 5.      | 3            | GPIO Out                   | Status Red LED                           |
+| 10.     | 8            | GPIO Out                   | Temperature Status Green LED             |
+| 13.     | 11           | GPIO Out                   | Temperature Status Red LED               |
+| 19.     | 27           | GPIO Out                   | Data Activity LED                        |
+| 21.     | 29           | GPIO Out, Direct DMA Write | WS2811 Ch. 1                             |
+| 22.     | 30           | GPIO Out, Direct DMA Write | WS2811 Ch. 2                             |
+| 23.     | 31           | GPIO Out, Direct DMA Write | WS2811 Ch. 3                             |
+| 24.     | 32           | GPIO Out, Direct DMA Write | WS2811 Ch. 4                             |
+| 25.     | 33           | GPIO Out, Direct DMA Write | WS2811 Ch. 8                             |
+| 26.     | 34           | GPIO Out, Direct DMA Write | WS2811 Ch. 7                             |
+| 27.     | 35           | GPIO Out, Direct DMA Write | WS2811 Ch. 6                             |
+| 28.     | 36           | GPIO Out, Direct DMA Write | WS2811 Ch. 5                             |
+| 34.     | GND          | -                          | GND / 0V                                 |
+| 36.     | 14           | A0                         | Panel Detect 1                           |
+| 37.     | 15           | A1                         | Panel Detect 2                           |
+| 42.     | 20           | 1-Wire Bus                 | DS18B20 Temperature Sensor               |
+| 44.     | 22           | GPIO In, Pull-up enabled   | User Button                              |
+| 45.     | 23           | A9                         | Brightness Pot Readback                  |
+| 46.     | 3.3V         | -                          | R22 Pull-up for DS18B20 & Brightness Pot |
+| 47.     | GND          | -                          | GND / 0V                                 |
+| 48.     | Vin          | 5V In                      | MCU Power LED, Via R21                   |
+
 ![Board Design](/blog_images/odl_led_matrix/Board_Design_Annotated.png "Design for the microcontroller board on Stripboard. Annotated for your convenience!"){: style="max-width:500px;" }
+
+![Finished Board](/blog_images/odl_led_matrix/Microcontroller_Board.jpeg "And here is the finished microcontroller board! Very minimal deviation from what was planned."){: style="max-width:500px;" }
