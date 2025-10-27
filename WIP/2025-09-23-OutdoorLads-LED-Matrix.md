@@ -222,6 +222,49 @@ On the face of it, this is big enough for the PSU, however it has noggins (corre
 
 ## Microcontroller Board
 
+With the PSU fitted in the enclosure, I now need to squeeze in board that has the Teensy 4.1, and associated support circuitry. I'll break it down:
+
+### Output Buffer
+
+As previously mentioned, the Teensy 4.1 is a 3.3 V device, so its GPIO outputs are 3.3 V at logic high output. The WS2811 Pixels take 5 V, and in general, require a 5 V logic data signal. If we go into nitty gritty detail, the WS2811 IC is specified to have a V<sub>IH</sub> minimum of 0.55V<sub>DD</sub>. V<sub>IH</sub> minimum is the threshold at which the input is registered as a logic high input. So, when V<sub>DD</sub>=5 V, V<sub>IH</sub> minimum = 0.55 × 5 V = 2.75 V. So, technically, the WS2811 ICs will handle a 3.3 V logic input, but, there is only 0.55 V of headroom there - I'm not happy with that.
+
+To solve this, I need to convert the 3.3 V logic out of the Teensy 4.1 to 5V logic. I decided to use a [TI SN74HCT541 Octal Buffers and Line Drivers with 3-state Outputs](https://www.ti.com/lit/ds/symlink/sn74hct541.pdf). Why this? Well, it can operate on supply voltages between 4.5 V to 5.5 V, for registering logic high inputs, the threshold is V<sub>IH</sub> minimum = 2 V, so the 3.3 V logic output from the Teensy comfortably surpasses that. For registering logic low inputs the threshold is V<sub>IL</sub> maximum = 0.8 V, the logic low output of the Teensy 4.1 should be pretty close to 0V and will never be anywhere near that threshold.
+
+How about the output? Well, the WS2811 datasheet defines the data in pin as consuming only 1 μA. (I'm not sure how much I believe this, since that would mean the input impedance is 5 MΩ! Hmm.) Well, taking it at face value, when the output current of the buffer is 20 μA or less:
+
+V<sub>OH</sub> = 4.4 V min @ 20 μA
+V<sub>OL</sub> = 0.1 V max @ 20 μA
+
+... That's much better! The logic high output is guaranteed to be at least 4.4 V, and in reality, probably much closer to 5 V, since the stated values are a conservative minimum.
+
+With WS2811 LED Strings that are located away from the data source, the most vulnerable part is the link from the output to the first pixel, and indeed this project fits this mould. The outputs from each pixel are buffered outputs from the WS2811, and the wire distance between each pixel is the same, and short. So, we need to ensure that the data that reaches the first pixel does not suffer from any signal integrity issues. Admittedly, the signal is quite slow when compared to high speed links where signal integrity is a real concern, so there is not as much danger, however signal integrity issues still can cause problems. Having the output buffered to be 5 V logic certainly reduces potential signal integrity issues, however it may be necessary to have low value impedance matching resistors in-line with the outputs to help balance out any signal integrity issues. I was not sure if this would be beeded or not, so I decided to design them in using single in-line sockets, so that I could observe the input data at the first pixel on my oscilloscope both with and without impedance matching resistors, and make the call whether they are needed or not.
+
+### Status LEDs
+
+asd
+
+### Panel Detect Functionality
+
+asd
+
+### Temperature Readback
+
+asd
+
+### Brightness Control
+
+asd
+
+### User Button
+
+asd
+
+### Board Design
+
+asd
+
+![Board Design](/blog_images/odl_led_matrix/Board_Design_Annotated.png "Design for the microcontroller board on Stripboard. Annotated for your convenience!"){: style="max-width:500px;" }
+
 | Pin No. | IO No. / Net | Special Function Used?     | Connected to                             |
 |---------|--------------|----------------------------|------------------------------------------|
 | 1.      | GND          | -                          | GND / 0V                                 |
@@ -248,6 +291,10 @@ On the face of it, this is big enough for the PSU, however it has noggins (corre
 | 47.     | GND          | -                          | GND / 0V                                 |
 | 48.     | Vin          | 5V In                      | MCU Power LED, Via R21                   |
 
-![Board Design](/blog_images/odl_led_matrix/Board_Design_Annotated.png "Design for the microcontroller board on Stripboard. Annotated for your convenience!"){: style="max-width:500px;" }
+### I Made It!
 
 ![Finished Board](/blog_images/odl_led_matrix/Microcontroller_Board.jpeg "And here is the finished microcontroller board! Very minimal deviation from what was planned."){: style="max-width:500px;" }
+
+## Time to Code
+
+asd
