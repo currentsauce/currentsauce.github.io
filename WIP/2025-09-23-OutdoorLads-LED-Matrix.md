@@ -249,29 +249,31 @@ I decided to put some status LEDs on the control box. These being:
 4. Matrix Power - Green
 5. Microcontroller Power - Green
 
-The latter two are sourced from power rails, but the first three will be driven by the Teensy, i.e. 5 outputs. The Teensy GPIO pins cannot output the required current for the LEDs, so will need buffering. I decided to use some NPN transistors that I had in my box of bits, allowing me to wire these up with common anode to the 5V rail. Unfortunately I cannot remember which transistors that I used, but they were a very generic "jelly bean" NPN.
+The latter two are sourced from power rails, but the first three will be driven by the Teensy, i.e. 5 outputs. The Teensy GPIO pins cannot output the required current for the LEDs, so will need buffering. I decided to use some NPN transistors that I had in my box of bits, allowing me to wire these up with common anode to the 5V rail. Standard 2N3904 NPN transistors are used, with 1k on the base input.
 
 ### Panel Detect Functionality
 
-asd
+This is a nifty feature that I decided to add in - I had some spare cores in the data cable, so I decided to make it so that the microcontroller can detect which panel is connected to each output plug, since they're both the same. It's quite simple really, there are two analogue inputs that are pulled low by a 1k resistor. These two input lines go to the panels. One of the panels has this line to 5 V via a 1k resistor, meaning this panel cause a 2.5 V reading (Remember, the Teensy is a 3.3V device so we cannot put more than 3.3V into an input). The other panel has the line to 5 V via a 3k resistor, meaning this panel will cause a 1.25 V reading. If the connector is not connected to a panel, 0 V will be read. 
 
 ### Temperature Readback
 
-asd
+Temperature could be a concern in this control box enclosure - I can mitigate this vents and fans should it be a problem, but I thought it was a good idea to put in some way of measuring the ambient temperature in the control box. Two reasons for this; during development and testing, I can use it to keep an eye on the temperature and make amendments as necessary. The second reason, is one that I hoped I would not need, but if temperature was a real problem, then I could add functionality in the code to throttle down the brightness should the temperature be too high, to reduce the demand on the PSU. Speaking of brightness control...
 
 ### Brightness Control
 
-asd
+The LED Pixels are quite bright! The brightness of the pixels can of course be controlled in firmware, but I did not want to hard-code this as a fixed value. A brightness control seemed a good idea. This is implemented very simply! I will have a rotary potentiometer that is connected across 3.3V and 0V (5V is a no no!), and the wiper of the potentiometer is readback on an anlogue input. This analogue readback can then be used change a brightness variable. 
 
 ### User Button
 
-asd
+I did not see any need for a button on the control box, but I did not know if I may want one for a future upgrade to the firmware (for some feature I haven't thought of yet). To make sure that future-me likes present-me, I added a push button into the design. It won't do anything, but it is there just in case! I decided to utilise the built-in pull-up on the GPIO pin to save me from needing to add a pull-up/pull-down resistor on the board. The button simply connects between the input and 0V.
 
 ### Board Design
 
-asd
+I wanted to keep costs down on this project, so I decided against having a PCB made, and instead use stripboard. I had limited space available in the control box enclosure now that the PSU is fitted, so I measured what was available and designed with this constraint. To plan the stripboard, I used [DIYLC](https://diy-fever.com/software/diylc/) - I've been using this for the last 15 years, and honestly it has never let me down. For me, planning and preparation of stripboard always results in really neat and tidy designs, that usually work first time! I'm quite proud of that to be honest.  
 
 ![Board Design](/blog_images/odl_led_matrix/Board_Design_Annotated.png "Design for the microcontroller board on Stripboard. Annotated for your convenience!"){: style="max-width:500px;" }
+
+The following table shows the pins that are utilised on the Teensy 4.1 for the functionality discussed:
 
 | Pin No. | IO No. / Net | Special Function Used?     | Connected to                             |
 |---------|--------------|----------------------------|------------------------------------------|
@@ -299,10 +301,30 @@ asd
 | 47.     | GND          | -                          | GND / 0V                                 |
 | 48.     | Vin          | 5V In                      | MCU Power LED, Via R21                   |
 
-### I Made It!
+### The Board Exists
 
-![Finished Board](/blog_images/odl_led_matrix/Microcontroller_Board.jpeg "And here is the finished microcontroller board! Very minimal deviation from what was planned."){: style="max-width:500px;" }
+![Finished Board](/blog_images/odl_led_matrix/Microcontroller_Board.jpeg "And here is the finished microcontroller board! Very minimal deviation from what was planned. The line matching resistors are in place here."){: style="max-width:500px;" }
 
 ## Time to Code
 
 asd
+
+```cpp
+//Check Panel Arrangement:
+  if((analogRead(Output1Readback) < 620) & (analogRead(Output1Readback) > 155) & (analogRead(Output2Readback) > 620)){
+    //Wrong Arrangement:
+    digitalWrite(statusGreen, LOW);
+    digitalWrite(statusRed, HIGH);
+    panelArrangement = 1;
+  } else if ((analogRead(Output1Readback) > 620) & (analogRead(Output2Readback) < 620) &  (analogRead(Output2Readback) > 155)){
+    //Panels Correct Arrangement:
+    digitalWrite(statusGreen, HIGH);
+    digitalWrite(statusRed, LOW);
+    panelArrangement = 2;    
+  } else {
+    //Error! Not connected perhaps?:
+    digitalWrite(statusGreen, LOW);
+    digitalWrite(statusRed, HIGH);
+    panelArrangement = 0;
+  }
+ ```
