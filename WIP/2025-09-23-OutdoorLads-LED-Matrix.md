@@ -307,7 +307,19 @@ The following table shows the pins that are utilised on the Teensy 4.1 for the f
 
 ## Time to Code
 
-asd
+The code to drive these panels went through many versions! I'm going to try and not waffle on, and explain the key points.
+
+As a first test, I of course wanted to see the panels working using some basic effects built into the firmware. I used the [OctoWS2111 Library by Paul Stoffregen](https://github.com/PaulStoffregen/OctoWS2811) to accomplish this.
+
+My first attempt at driving the panels from the Jinx! software was using ArtNET over Ethernet, using the [Ethernet Kit for Teensy 4.1](https://www.pjrc.com/store/ethernet_kit.html). It kind of worked, but it was a bit temperamental, and can safely point the finger of blame at my code, I'll accept that! I *could* have fixed this, but there was something bugging me - I was developing this on my Windows laptop, which has an Ethernet port, however the Windows 10 Tablet I had for this project did not have an Ethernet port. This means that a USB to Ethernet dongle would be needed. I didn't like this - anything that can go wrong will go wrong, and a USB to Ethernet adapter *will* go missing at some point. That's a weak point in this system.
+
+So, I felt no shame in scrapping the ArtNET connection idea, and instead focussing on using the USB UART on the Teensy 4.1. Remember, the USB UART on a Teensy 4.1 is not limited by a traditional Baud rate of conventional UART; it actually runs at native USB speeds, so this is a massive relief.
+
+The most sensible option here was to use the TPM2 protocol, which is a protocol designed for LED Matrices. This is where the [TPM2 Arduino Library by rstephan](https://github.com/rstephan/TPM2) came in extremely useful.
+
+Up to now though, I am just using the OctoWS2811 library to drive the pixels, which is great, and it works. But, [FastLED](https://fastled.io/) exists! FastLED is one of the best libraries for driving WS2811 pixels - I'd recommend checking it out, to see why. I wanted to be able to use this! I needed to therefore combine OctoWS2811 with FastLED.  Quite fortunately, I came across [this great resource](https://blinkylights.blog/2021/02/03/using-teensy-4-1-with-fastled/), which allowed me to accomplish this.
+
+{% include vimeo.html video="1131090785" %}
 
 ```cpp
 //Check Panel Arrangement:
@@ -316,7 +328,7 @@ asd
     digitalWrite(statusGreen, LOW);
     digitalWrite(statusRed, HIGH);
     panelArrangement = 1;
-  } else if ((analogRead(Output1Readback) > 620) & (analogRead(Output2Readback) < 620) &  (analogRead(Output2Readback) > 155)){
+  } else if ((analogRead(Output1Readback) > 620) & (analogRead(Output2Readback) < 620) & (analogRead(Output2Readback) > 155)){
     //Panels Correct Arrangement:
     digitalWrite(statusGreen, HIGH);
     digitalWrite(statusRed, LOW);
