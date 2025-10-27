@@ -226,22 +226,30 @@ With the PSU fitted in the enclosure, I now need to squeeze in board that has th
 
 ### Output Buffer
 
-As previously mentioned, the Teensy 4.1 is a 3.3 V device, so its GPIO outputs are 3.3 V at logic high output. The WS2811 Pixels take 5 V, and in general, require a 5 V logic data signal. If we go into nitty gritty detail, the WS2811 IC is specified to have a V<sub>IH</sub> minimum of 0.55V<sub>DD</sub>. V<sub>IH</sub> minimum is the threshold at which the input is registered as a logic high input. So, when V<sub>DD</sub>=5 V, V<sub>IH</sub> minimum = 0.55 × 5 V = 2.75 V. So, technically, the WS2811 ICs will handle a 3.3 V logic input, but, there is only 0.55 V of headroom there - I'm not happy with that.
+As previously mentioned, the Teensy 4.1 is a 3.3 V device, so its GPIO outputs are 3.3 V at logic high output. The WS2811 Pixels take 5 V, and in general, require a 5 V logic data signal. If we go into nitty gritty detail, the WS2811 IC is specified to have a V<sub>IH</sub> minimum of 0.55V<sub>DD</sub>. V<sub>IH</sub> minimum is the threshold at which the input is registered as a logic high input. So, when V<sub>DD</sub> = 5 V, V<sub>IH</sub> minimum = 0.55 × 5 V = 2.75 V. So, technically, the WS2811 ICs will handle a 3.3 V logic input, but, there is only 0.55 V of headroom there - I'm not happy with that.
 
 To solve this, I need to convert the 3.3 V logic out of the Teensy 4.1 to 5V logic. I decided to use a [TI SN74HCT541 Octal Buffers and Line Drivers with 3-state Outputs](https://www.ti.com/lit/ds/symlink/sn74hct541.pdf). Why this? Well, it can operate on supply voltages between 4.5 V to 5.5 V, for registering logic high inputs, the threshold is V<sub>IH</sub> minimum = 2 V, so the 3.3 V logic output from the Teensy comfortably surpasses that. For registering logic low inputs the threshold is V<sub>IL</sub> maximum = 0.8 V, the logic low output of the Teensy 4.1 should be pretty close to 0V and will never be anywhere near that threshold.
 
 How about the output? Well, the WS2811 datasheet defines the data in pin as consuming only 1 μA. (I'm not sure how much I believe this, since that would mean the input impedance is 5 MΩ! Hmm.) Well, taking it at face value, when the output current of the buffer is 20 μA or less:
 
-V<sub>OH</sub> = 4.4 V min @ 20 μA
+V<sub>OH</sub> = 4.4 V min @ 20 μA  
 V<sub>OL</sub> = 0.1 V max @ 20 μA
 
-... That's much better! The logic high output is guaranteed to be at least 4.4 V, and in reality, probably much closer to 5 V, since the stated values are a conservative minimum.
+... That's much better! The logic high output is guaranteed to be at least 4.4 V, and in reality, probably much closer to 5 V, since the stated values are a conservative minimum. I will have the enable pins permanently asserted, so the 3-state output functionality is not used. I absolutely love this choice of buffer by the way, it's classic 7400 series logic, it's been around since the 60's. In fact, the datasheet linked was first written in 1996 when I was 5. This is the HCT version, but I suspect the original '541 was probably released between the 60's and 80's. (I'll try find out...). 
 
 With WS2811 LED Strings that are located away from the data source, the most vulnerable part is the link from the output to the first pixel, and indeed this project fits this mould. The outputs from each pixel are buffered outputs from the WS2811, and the wire distance between each pixel is the same, and short. So, we need to ensure that the data that reaches the first pixel does not suffer from any signal integrity issues. Admittedly, the signal is quite slow when compared to high speed links where signal integrity is a real concern, so there is not as much danger, however signal integrity issues still can cause problems. Having the output buffered to be 5 V logic certainly reduces potential signal integrity issues, however it may be necessary to have low value impedance matching resistors in-line with the outputs to help balance out any signal integrity issues. I was not sure if this would be beeded or not, so I decided to design them in using single in-line sockets, so that I could observe the input data at the first pixel on my oscilloscope both with and without impedance matching resistors, and make the call whether they are needed or not.
 
 ### Status LEDs
 
-asd
+I decided to put some status LEDs on the control box. These being:
+
+1. Status - Red/Green LED
+2. Temperature Status - Red/Green LED
+3. Data - Blue LED
+4. Matrix Power - Green
+5. Microcontroller Power - Green
+
+The latter two are sourced from power rails, but the first three will be driven by the Teensy, i.e. 5 outputs. The Teensy GPIO pins cannot output the required current for the LEDs, so will need buffering. I decided to use some NPN transistors that I had in my box of bits, allowing me to wire these up with common anode to the 5V rail. Unfortunately I cannot remember which transistors that I used, but they were a very generic "jelly bean" NPN.
 
 ### Panel Detect Functionality
 
