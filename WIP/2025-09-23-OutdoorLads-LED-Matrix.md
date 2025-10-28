@@ -381,6 +381,8 @@ Below is a screenshot from the tablet of the show mode control panel. I made the
 
 ![Jinx! Control Panel](/blog_images/odl_led_matrix/Jinx_Panel.png "The finished Jinx! Control Panel."){: style="max-width:500px;" }
 
+Actually, before I made the text utility in Visual C, I made it in Python. It worked, it was great. But you know what wasn't great? For some reason, the Windows on-screen keyboard *would not pop up* for the text boxes. I tried to figure this out, and came up empty handed. I guess there mustn't be many cases of people wanting the Windows on-screen keyboard with a Python GUI! Rather than waste hours on this, I went the Visual C route. Brushed up my Visual C skills in the process so this was kind of beneficial.
+
 
 ![Tablet Desktop](/blog_images/odl_led_matrix/Desktop.png "The desktop, with the shortcut to launch the software, and a shutdown shortcut. Also very on-brand too."){: style="max-width:500px;" }
 
@@ -390,3 +392,38 @@ Below is a screenshot from the tablet of the show mode control panel. I made the
 
 ## Requirements Check-up
 
+1. Must fill the whole front of the DJ Booth, and be able to be securely attached
+
+Yes!
+
+2. Must be able to fold up to aid in transportation and storage
+
+Yes!
+
+3. Must be rugged to withstand transportation and drunk people
+
+Yes, and so far, so good.
+
+4. Must be easy to setup by non tech-savvy people
+
+First version, No. Second version, Yes.
+
+5. Must have a decent pixel density (bit of a wishy-washy requirement)
+
+Yes
+
+6. Must have a selection of kick-ass visualisation effects
+
+Yes - thanks, Jinx!!
+
+7. LEDs must be RGB, and be as big as possible
+
+Yes, and LEDs are 8mm diameter.
+
+8. LEDs must be able to be driven rapidly to sustain a video-quality refresh rate
+
+Yes - 50 FPS
+
+9. Total cost of parts must be below £300
+
+Yes! Can you believe that? It cost a total of £275.22. *(I do wonder how much my time would have cost, haha)*
