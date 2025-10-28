@@ -237,7 +237,7 @@ V<sub>OL</sub> = 0.1 V max @ 20 μA
 
 ... That's much better! The logic high output is guaranteed to be at least 4.4 V, and in reality, probably much closer to 5 V, since the stated values are a conservative minimum. I will have the enable pins permanently asserted, so the 3-state output functionality is not used. I absolutely love this choice of buffer by the way, it's classic 7400 series logic, it's been around since the 60's. In fact, the datasheet linked was first written in 1996 when I was 5. This is the HCT version, but I suspect the original '541 was probably released between the 60's and 80's. (I'll try find out...). 
 
-With WS2811 LED Strings that are located away from the data source, the most vulnerable part is the link from the output to the first pixel, and indeed this project fits this mould. The outputs from each pixel are buffered outputs from the WS2811, and the wire distance between each pixel is the same, and short. So, we need to ensure that the data that reaches the first pixel does not suffer from any signal integrity issues. Admittedly, the signal is quite slow when compared to high speed links where signal integrity is a real concern, so there is not as much danger, however signal integrity issues still can cause problems. Having the output buffered to be 5 V logic certainly reduces potential signal integrity issues, however it may be necessary to have low value impedance matching resistors in-line with the outputs to help balance out any signal integrity issues. I was not sure if this would be beeded or not, so I decided to design them in using single in-line sockets, so that I could observe the input data at the first pixel on my oscilloscope both with and without impedance matching resistors, and make the call whether they are needed or not.
+With WS2811 LED Strings that are located away from the data source, the most vulnerable part is the link from the output to the first pixel, and indeed this project fits this mould. The outputs from each pixel are buffered outputs from the WS2811, and the wire distance between each pixel is the same, and short. So, we need to ensure that the data that reaches the first pixel does not suffer from any signal integrity issues. Admittedly, the signal is quite slow when compared to high speed links where signal integrity is a real concern, so there is not as much danger, however signal integrity issues still can cause problems. Having the output buffered to be 5 V logic certainly reduces potential signal integrity issues, however it may be necessary to have low value impedance matching resistors in-line with the outputs to help balance out any signal integrity issues. I was not sure if this would be needed or not, so I decided to design them in using single in-line sockets, so that I could observe the input data at the first pixel on my oscilloscope both with and without impedance matching resistors, and make the call whether they are needed or not.
 
 ### Status LEDs
 
@@ -329,6 +329,8 @@ Up to now though, I am just using the OctoWS2811 library to drive the pixels, wh
 
 Rather than explain all the code here, It's probably best to go check it out on my GitHub Here - I've explained it all in the comments.
 
+Coming back to the data-line resistors, I observed the data arriving at the first pixel on an oscilloscope. I found that the signal was marginally better with 100Ω resistors. So these will stay. I soldered them into the sockets so that they won't become loose. Unfortunately I don't have a photo of the oscilloscope results, so you'll just have to trust me! Sorry.
+
 ## Finalising the Control Box
 
 Now that I know that it all works, the Control Box needs to be finished off. 
@@ -361,28 +363,24 @@ I decided to put a fan on the box, to aid with keeping the control box cool. The
 
 ![Fan Duct](/blog_images/odl_led_matrix/Fan_Duct.png "Fan Duct Design"){: style="max-width:500px;" }
 
+And that's the Control Box done!
+
 ![Fan Duct](/blog_images/odl_led_matrix/Finished_Control_Box.jpeg "This is the finished control box. Neat!"){: style="max-width:500px;" }
 
 ## Jinx!
 
 With the Matrix Panels now doing what I want 
 
-```cpp
-//Check Panel Arrangement:
-  if((analogRead(Output1Readback) < 620) & (analogRead(Output1Readback) > 155) & (analogRead(Output2Readback) > 620)){
-    //Wrong Arrangement:
-    digitalWrite(statusGreen, LOW);
-    digitalWrite(statusRed, HIGH);
-    panelArrangement = 1;
-  } else if ((analogRead(Output1Readback) > 620) & (analogRead(Output2Readback) < 620) & (analogRead(Output2Readback) > 155)){
-    //Panels Correct Arrangement:
-    digitalWrite(statusGreen, HIGH);
-    digitalWrite(statusRed, LOW);
-    panelArrangement = 2;    
-  } else {
-    //Error! Not connected perhaps?:
-    digitalWrite(statusGreen, LOW);
-    digitalWrite(statusRed, HIGH);
-    panelArrangement = 0;
-  }
+![Jinx! Control Panel](/blog_images/odl_led_matrix/Jinx_Panel.png "The finished Jinx! Control Panel."){: style="max-width:500px;" }
+
+``` StartLED.bat
+START c:/jinx/jinx.exe -m c:/jinx/OutdoorLadsV3.jnx
+START c:/jinx/ScrollingTextUtility.exe
  ```
+ 
+## Custom Text
+
+## It's done!
+
+## Requirements Check-up
+
