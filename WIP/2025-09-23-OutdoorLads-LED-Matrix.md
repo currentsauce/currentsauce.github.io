@@ -369,18 +369,24 @@ And that's the Control Box done!
 
 ## Jinx!
 
-With the Matrix Panels now doing what I want 
+With the Matrix Panels now doing what I want, I need to sort the Windows 10 Tablet that drives these panels. As mentioned, I am using the Jinx! software. You can create effects, and merge effects together. It's very powerful - the instruction manual is very good too, it's worth a read if you're curious about Jinx!. Very conveniently, it comes with a bunch of effect that are totally awesome! When you have a bank of effects made, Jinx! allows you to create a "Show Mode" control panel. Many of the effects that come with Jinx! made it into my show mode control panel.
 
-![Jinx! Control Panel](/blog_images/odl_led_matrix/Jinx_Panel.png "The finished Jinx! Control Panel."){: style="max-width:500px;" }
+One nice feature of Jinx! is that it allows you to show scrolling text. But the annoying thing is, you cannot update the text when you're in show mode. What I wanted, was a way to display scrolling text, and be able to edit it from the show mode control panel. I came up with a neat work-around though - you can configure Jinx! to read in the text from a .txt file for the scrolling text, and I discovered that when the .txt file is updated, the scrolling text is also updated too. That's really exploitable! I used Visual C to make a little dialog box with four text boxes. When the enter key is pressed (or on-screen button tapped/clicked), four .txt files are updated accordingly. With Jinx! set to use these four .txt files, the text can be updated easily. I also made it so that this window automatically positions itself over some controls that are not needed, and also so that the dialog box is perpetually kept at the front (i.e. so it doesn't disappear behind Jinx!). I compiled this into an .exe file, and made a little wrapper .bat file on the desktop, so that the .exe and Jinx! are loaded together. Shown below:
 
-``` StartLED.bat
+```
 START c:/jinx/jinx.exe -m c:/jinx/OutdoorLadsV3.jnx
 START c:/jinx/ScrollingTextUtility.exe
  ```
- 
-## Custom Text
+Below is a screenshot from the tablet of the show mode control panel. I made the colour theme dark red for two reasons; firstly, it reduces brightness from the screen, you don't want a bright screen at your side when you're DJing, and secondly, it is very on-brand with OutdoorLads.
+
+![Jinx! Control Panel](/blog_images/odl_led_matrix/Jinx_Panel.png "The finished Jinx! Control Panel."){: style="max-width:500px;" }
+
+
+![Tablet Desktop](/blog_images/odl_led_matrix/Desktop.png "The desktop, with the shortcut to launch the software, and a shutdown shortcut. Also very on-brand too."){: style="max-width:500px;" }
 
 ## It's done!
+
+![Finished](/blog_images/odl_led_matrix/Finished.jpeg "It's finally finished!"){: style="max-width:500px;" }
 
 ## Requirements Check-up
 
