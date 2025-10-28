@@ -327,7 +327,45 @@ Up to now though, I am just using the OctoWS2811 library to drive the pixels, wh
 
 {% include vimeo.html video="1131090785" %}
 
+Rather than explain all the code here, It's probably best to go check it out on my GitHub Here - I've explained it all in the comments.
 
+## Finalising the Control Box
+
+Now that I know that it all works, the Control Box needs to be finished off. 
+
+For the Mains Input, I mounted a panel mount IEC C14 connector. The one I used had built-in fuse and was also an EMC filtered one. You guessed it, I had it amongst my collection of parts! I also fitted a panel mount flip-switch in series with the Live, to allow the power to be easily controlled - also from my collection of miscellaneous switches.
+
+For safety, I wanted to add fuses for the power to the panels - the PSU can supply 60 A after all! There's two power cables for the two panels, so I wanted two fuses, one for each panel. I wanted to use automotive blade fuses, since they are cheap and readily available, and changing them is tool-less. I wasn't able to find a dual blade fuse holder, so I bit the bullet and designed my own. The handy thing about blade fuses is that the terminals fit into fast-on spade type connectors, so I designed my fuse holder to use these. In a nut-shell, I took precise measurements of the fast-on spade receptacles I had, and made my design around that, such that the connectors fit in the fuse holder exactly. *Side note - fast-on spade crimps from Amazon are absolute junk! Scary when these are commonly used for mains. Thankfully I had some quality ones in my stores.* Below you can see the design I came up with, modelled in OnShape:
+
+![Fuse Holder Design](/blog_images/odl_led_matrix/Fuse_Holder.png "Fuse Holder Design for two blade fuses."){: style="max-width:500px;" }
+
+With the microcontroller board, since space was at a premium, I did not have much space to allow for mounting holes. I purposefully didn't even bother trying to accomodate mounting holes, and instead knew that I'd mount them with some 3D printed hardware. I created two mounts that hold the board by opposite corners - one of them is fixed and the board slots in, and the other one comprises of two parts, the board sits on top of the bottom fitting, and then is fixed in place by a top part. This means that the board can be removed with just one screw, if needed. Below is the design for these two board holder parts:
+
+![Board Mounts](/blog_images/odl_led_matrix/Board_Mounts.png "Board Holders"){: style="max-width:500px;" }
+
+After printing these, I fitted them into the control box:
+
+![Fittings Mounted](/blog_images/odl_led_matrix/Board_Mounts_Fitted.jpeg "All 3D Printed and Fitted!"){: style="max-width:500px;" }
+
+![Board Mounted](/blog_images/odl_led_matrix/Board_Mounted.jpeg "It sits and fits."){: style="max-width:500px;" }
+
+And let's not forget about the USB connector, that's pretty important! I decided to use a USB-B socket for connection, Mini-USB is dead, and Micro-USB is too flimsy. I probably should have put a USB-C connector on this, but when I was making it, I wasn't really in the USB-C bubble at the time, and I had one of these available to use:
+
+![USB Connector](/blog_images/odl_led_matrix/USB_Connector.png "USB B Connector Module."){: style="max-width:500px;" }
+
+It's not very panel mountable though, so I made a holder and facia for it in OnShape. I even got a bit fancy and made a model of the USB B Connector Module too!
+
+![USB Connector](/blog_images/odl_led_matrix/USB_Mounting_Design.png "USB B Connector Module Holder Design"){: style="max-width:500px;" }
+
+I decided to put a fan on the box, to aid with keeping the control box cool. The PSU already has a fan that kicks in when it gets hot, but it just vents within the box. I didn't like that, so I designed a duct assembly that will sit over the PSU Fan, and directs airflow to the outside.
+
+![Fan Duct](/blog_images/odl_led_matrix/Fan_Duct.png "Fan Duct Design"){: style="max-width:500px;" }
+
+![Fan Duct](/blog_images/odl_led_matrix/Finished_Control_Box.jpeg "This is the finished control box. Neat!"){: style="max-width:500px;" }
+
+## Jinx!
+
+With the Matrix Panels now doing what I want 
 
 ```cpp
 //Check Panel Arrangement:
