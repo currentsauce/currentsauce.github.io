@@ -11,7 +11,7 @@ image: /blog_images/a_page_heros/discobike.jpg
 
 ## Background
 
-[OutdoorLads](www.outdoorlads.com) are a UK group for gay and bisexual men to #getoutmore in the great outdoors, which I'm a member of. We regularly have "BIG Events", where we have an evening disco - usually themed! OutdoorLads has its own equipment for this, but it was over 10 years old and was due for a refresh. Since I seem to have inadvertently become known for knowing lots about tech, I was asked to take the lead on this. The whole refresh is a whole other story, so in a nutshell - with a very thorough spreadsheet we ended up with an absolutely awesome setup that is louder and better sounding than the old system, and much lighter too! And most importantly, within budget.
+[OutdoorLads](www.outdoorlads.com) are a UK group for gay and bisexual men to #GetOutMore in the great outdoors, which I'm a member of. We regularly have "BIG Events", where we have an evening disco - usually themed! OutdoorLads has its own equipment for this, but it was over 10 years old and was due for a refresh. Since I seem to have inadvertently become known for knowing lots about tech, I was asked to take the lead on this. The whole refresh is a whole other story, so in a nutshell - with a very thorough spreadsheet we ended up with an absolutely awesome setup that is louder and better sounding than the old system, and much lighter too! And most importantly, within budget.
 
 Part of this new setup was a new DJ Booth, which is a truss system - It's very light weight and is really easy to set up, but it looks so boring! I wasn't happy with this, and with my love for LEDs and visuals, I knew exactly what I wanted to to.
 
@@ -261,7 +261,7 @@ Temperature could be a concern in this control box enclosure - I can mitigate th
 
 ### Brightness Control
 
-The LED Pixels are quite bright! The brightness of the pixels can of course be controlled in firmware, but I did not want to hard-code this as a fixed value. A brightness control seemed a good idea. This is implemented very simply! I will have a rotary potentiometer that is connected across 3.3V and 0V (5V is a no no!), and the wiper of the potentiometer is readback on an anlogue input. This analogue readback can then be used change a brightness variable. 
+The LED Pixels are quite bright! The brightness of the pixels can of course be controlled in firmware, but I did not want to hard-code this as a fixed value. A brightness control seemed a good idea. This is implemented very simply! I will have a rotary potentiometer that is connected across 3.3V and 0V (5V is a no no!), and the wiper of the potentiometer is readback on an analogue input. This analogue readback can then be used change a brightness variable. 
 
 ### User Button
 
@@ -327,6 +327,7 @@ Up to now though, I am just using the OctoWS2811 library to drive the pixels, wh
 
 {% include vimeo.html video="1131090785" %}
 
+
 Rather than explain all the code here, It's probably best to go check it out on my GitHub Here - I've explained it all in the comments.
 
 Coming back to the data-line resistors, I observed the data arriving at the first pixel on an oscilloscope. I found that the signal was marginally better with 100Ω resistors. So these will stay. I soldered them into the sockets so that they won't become loose. Unfortunately I don't have a photo of the oscilloscope results, so you'll just have to trust me! Sorry.
@@ -341,7 +342,7 @@ For safety, I wanted to add fuses for the power to the panels - the PSU can supp
 
 ![Fuse Holder Design](/blog_images/odl_led_matrix/Fuse_Holder.png "Fuse Holder Design for two blade fuses."){: style="max-width:500px;" }
 
-With the microcontroller board, since space was at a premium, I did not have much space to allow for mounting holes. I purposefully didn't even bother trying to accomodate mounting holes, and instead knew that I'd mount them with some 3D printed hardware. I created two mounts that hold the board by opposite corners - one of them is fixed and the board slots in, and the other one comprises of two parts, the board sits on top of the bottom fitting, and then is fixed in place by a top part. This means that the board can be removed with just one screw, if needed. [OnShape Link to Part](https://cad.onshape.com/documents/fe02af1a10e50c1a86e0d518/w/207f03686ed023abed26966d/e/f717b127f89b1a030c79a2e2?renderMode=0&uiState=6901e9bc079b97f60cbdb04c)
+With the microcontroller board, since space was at a premium, I did not have much space to allow for mounting holes. I purposefully didn't even bother trying to accommodate mounting holes, and instead knew that I'd mount them with some 3D printed hardware. I created two mounts that hold the board by opposite corners - one of them is fixed and the board slots in, and the other one comprises of two parts, the board sits on top of the bottom fitting, and then is fixed in place by a top part. This means that the board can be removed with just one screw, if needed. [OnShape Link to Part](https://cad.onshape.com/documents/fe02af1a10e50c1a86e0d518/w/207f03686ed023abed26966d/e/f717b127f89b1a030c79a2e2?renderMode=0&uiState=6901e9bc079b97f60cbdb04c)
 
 ![Board Mounts](/blog_images/odl_led_matrix/Board_Mounts.png "Board Holders"){: style="max-width:500px;" }
 
@@ -388,21 +389,39 @@ Actually, before I made the text utility in Visual C, I made it in Python. It wo
 
 ## It's done!
 
+With all that, the project is nearly finished! The final thing to do was figure out a way to attach the panels to the DJ Booth Truss. I kept things simple here, and used some heavy-duty velcro straps. I cut them to size, used a sewing machine to tidy up the cut ends, and attached these to the panels with wood screws. Overall, it works really well, see below:
+
+![Velcro Straps](/blog_images/odl_led_matrix/Velcro.png "Velcro straps to attach it to the DJ Booth Truss"){: style="max-width:500px;" }
+
+Okay, *now* it is finished!
+
 ![Finished](/blog_images/odl_led_matrix/Finished.jpeg "It's finally finished!"){: style="max-width:500px;" }
 
-## Requirements Check-up
+## Version 2 Time...
 
-1. Must fill the whole front of the DJ Booth, and be able to be securely attached
+So, I'm really pleased with the result, it looks absolutely amazing. But I discovered two problems, which fortunately work together. When I was developing, I was using my Windows laptop to drive the panels using Jinx!. It worked absolutely fine, no problems. Unfortunately it was not plain sailing with the Windows 10 Tablet... For some reason, after what seemed like an arbitrary amount of time, the USB communications would die. There is a blue LED on the control box that shows when data is being received, and when the USB communications died, this LED was off. This was super annoying, it worked fine on my laptop!! Restarting the output in Jinx! would fix this, but it would always eventually die. I can only imagine that for some reason, the Tablet is putting the USB into standby, or something like that. I changed some settings on the USB Host on the Tablet, which I thought had fixed it, but it didn't.
 
-Yes!
+Damn! But that leads me onto the second problem - It hit me that I had over-engineered this with the tablet. One of my requirements was that it "Must be easy to setup by non tech-savvy people", and as much as I hated to admit it, I think the tablet just over-complicated things. Plus, who *really* wants Windows 10 to be part of a solution?! Although I'd made the operation of the tablet streamlined, it was still a bit faffy. And the tablet mounted to the side of the DJ booth was a bit clunky and just added another setup step.
 
-2. Must be able to fold up to aid in transportation and storage
+I made the decision that I should simplify this. This should just be a plug-and play system - plug the control box into the panels, plug in the power, turn it on, and it works. But the problem is that I have all these amazing effects that are generated by Jinx!, and I did not want to lose these.
 
-Yes!
+Well, here is where that micro-SD card slot on the Teensy 4.1 comes to the rescue! What I did, is create a Jinx! chase that cycles through all the effects, minus the ones with custom text, and redirected the output to record the serial stream to a file. I then changed the firmware so that instead of reading in the data from the TPM2 serial stream, it reads it in from the file on the SD card. When it gets to the end, it simply starts again from the beginning. This was perfect - I had the same fancy effects from Jinx!, but no need for the tablet - easy plug and play!
+
+Okay, *now* it is finished! :)
+
+## Requirements Check
+
+** Must fill the whole front of the DJ Booth, and be able to be securely attached**
+
+Yes! Fills the entire front, and is attached easily with heavy-duty Velcro straps.
+
+**Must be able to fold up to aid in transportation and storage*
+
+Yes! When folded up, it is 1150 × 605 × 50 mm. Folds on hinges, and secures closed with hasps.
 
 3. Must be rugged to withstand transportation and drunk people
 
-Yes, and so far, so good.
+Yes, I think it is rugged. As for drunk people, as of now it has been used for 2.5 years and no problems yet.
 
 4. Must be easy to setup by non tech-savvy people
 
@@ -410,7 +429,7 @@ First version, No. Second version, Yes.
 
 5. Must have a decent pixel density (bit of a wishy-washy requirement)
 
-Yes
+I think so. Design A was not dense enough, Design B was probably too dense. I think Design C struck a nice balance, and the finished matrix looks good to me.
 
 6. Must have a selection of kick-ass visualisation effects
 
@@ -422,8 +441,8 @@ Yes, and LEDs are 8mm diameter.
 
 8. LEDs must be able to be driven rapidly to sustain a video-quality refresh rate
 
-Yes - 50 FPS
+Yes - I think it managaes about 50 FPS. It looks very fluid and the refresh rate is not noticeable at all.
 
 9. Total cost of parts must be below £300
 
-Yes! Can you believe that? It cost a total of £275.22. *(I do wonder how much my time would have cost, haha)*
+Yes! Can you believe that? It cost a total of £275.22. Of course some of the parts were what I had in my collection, but these were not significantly expensive items. Annoyingly, I had to buy a special Dell PSU for the Tablet, which was £14.39, and the tablet mount was £17.50. Since scrapping the tablet, this is £31.89 of wasted cost - damn it! *(I do wonder how much my time would have cost, haha)*
