@@ -8,7 +8,7 @@ description: >
   How an idea to make a DJ Booth less boring turned into an LED matrix project for the OutdoorLads DJ booth — from concept to final design.
 hero_image: /blog_images/a_page_heros/ODL_Matrix_Hero.jpeg
 hero_darken: true
-image: /blog_images/a_page_heros/ODL_Matrix_Hero.jpeg
+image: /blog_images/odl_led_matrix/Design_C.png
 tags: [LED, matrix, design, concept, OutdoorLads]
 ---
 

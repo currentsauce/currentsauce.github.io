@@ -8,7 +8,7 @@ description: >
   Building the LED matrix: frame, power distribution, pixel wiring, and connectors.
 hero_image: /blog_images/a_page_heros/ODL_Matrix_Hero.jpeg
 hero_darken: true
-image: /blog_images/a_page_heros/ODL_Matrix_Hero.jpeg
+image: /blog_images/odl_led_matrix/Microcontroller_Board.jpeg
 tags: [LED, matrix, build, wiring, hardware]
 ---
 

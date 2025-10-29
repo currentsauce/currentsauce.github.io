@@ -8,7 +8,7 @@ description: >
   The brains behind the build — firmware, software setup, results, and lessons learned.
 hero_image: /blog_images/a_page_heros/ODL_Matrix_Hero.jpeg
 hero_darken: true
-image: /blog_images/a_page_heros/ODL_Matrix_Hero.jpeg
+image: /blog_images/odl_led_matrix/Finished_Control_Box.jpeg
 tags: [LED, matrix, firmware, software, OutdoorLads]
 ---
 
