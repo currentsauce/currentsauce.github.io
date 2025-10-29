@@ -411,38 +411,38 @@ Okay, *now* it is finished! :)
 
 ## Requirements Check
 
-** Must fill the whole front of the DJ Booth, and be able to be securely attached**
+**Must fill the whole front of the DJ Booth, and be able to be securely attached**
 
 Yes! Fills the entire front, and is attached easily with heavy-duty Velcro straps.
 
-**Must be able to fold up to aid in transportation and storage*
+**Must be able to fold up to aid in transportation and storage**
 
 Yes! When folded up, it is 1150 × 605 × 50 mm. Folds on hinges, and secures closed with hasps.
 
-3. Must be rugged to withstand transportation and drunk people
+**Must be rugged to withstand transportation and drunk people**
 
 Yes, I think it is rugged. As for drunk people, as of now it has been used for 2.5 years and no problems yet.
 
-4. Must be easy to setup by non tech-savvy people
+**Must be easy to setup by non tech-savvy people**
 
 First version, No. Second version, Yes.
 
-5. Must have a decent pixel density (bit of a wishy-washy requirement)
+**Must have a decent pixel density (bit of a wishy-washy requirement)**
 
 I think so. Design A was not dense enough, Design B was probably too dense. I think Design C struck a nice balance, and the finished matrix looks good to me.
 
-6. Must have a selection of kick-ass visualisation effects
+**Must have a selection of kick-ass visualisation effects**
 
 Yes - thanks, Jinx!!
 
-7. LEDs must be RGB, and be as big as possible
+**LEDs must be RGB, and be as big as possible**
 
 Yes, and LEDs are 8mm diameter.
 
-8. LEDs must be able to be driven rapidly to sustain a video-quality refresh rate
+**LEDs must be able to be driven rapidly to sustain a video-quality refresh rate**
 
 Yes - I think it managaes about 50 FPS. It looks very fluid and the refresh rate is not noticeable at all.
 
-9. Total cost of parts must be below £300
+**Total cost of parts must be below £300**
 
 Yes! Can you believe that? It cost a total of £275.22. Of course some of the parts were what I had in my collection, but these were not significantly expensive items. Annoyingly, I had to buy a special Dell PSU for the Tablet, which was £14.39, and the tablet mount was £17.50. Since scrapping the tablet, this is £31.89 of wasted cost - damn it! *(I do wonder how much my time would have cost, haha)*
