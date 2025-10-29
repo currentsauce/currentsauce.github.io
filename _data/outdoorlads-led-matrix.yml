@@ -2,6 +2,6 @@ title: OutdoorLads LED Matrix
 description: A three-part build exploring the design, hardware, and firmware behind a portable LED matrix for the OutdoorLads DJ booth.
 sections:
   - items:
-      - title: OutdoorLads LED Matrix (Part 1: Concept & Design)
-      - title: OutdoorLads LED Matrix (Part 2: Build & Hardware)
-      - title: OutdoorLads LED Matrix (Part 3: Firmware, Software & Showtime)
+      - title: "OutdoorLads LED Matrix (Part 1: Concept & Design)"
+      - title: "OutdoorLads LED Matrix (Part 2: Build & Hardware)"
+      - title: "OutdoorLads LED Matrix (Part 3: Firmware, Software & Showtime)"
