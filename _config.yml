@@ -29,7 +29,8 @@ defaults:
       layout: post
       show_sidebar: true
 
-disqus.shortname=<currentsauce.disqus.com>
+disqus:
+    shortname: currentsauce.disqus.com
     
 exclude:
   - NonJekyllStuff/
