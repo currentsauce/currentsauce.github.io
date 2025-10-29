@@ -6,6 +6,8 @@ date: 2025-10-22
 categories: blog
 description: >
   The brains behind the build — firmware, software setup, results, and lessons learned.
+hero_image: /blog_images/a_page_heros/ODL_Matrix_Hero.jpeg
+hero_darken: true
 image: /assets/images/outdoorlads-led-matrix/part3-hero.jpg
 tags: [LED, matrix, firmware, software, OutdoorLads]
 ---

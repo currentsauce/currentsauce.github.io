@@ -6,6 +6,8 @@ date: 2025-10-15
 categories: blog
 description: >
   Building the LED matrix: frame, power distribution, pixel wiring, and connectors.
+hero_image: /blog_images/a_page_heros/ODL_Matrix_Hero.jpeg
+hero_darken: true
 image: /assets/images/outdoorlads-led-matrix/part2-hero.jpg
 tags: [LED, matrix, build, wiring, hardware]
 ---
