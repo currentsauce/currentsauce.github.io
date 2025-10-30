@@ -130,3 +130,17 @@ body {
   transform: translateY(-2px);
   box-shadow: 0 6px 18px rgba(0, 0, 0, .08);
 }
+
+/* Remove the theme's top padding on the section that contains the banner */
+.section:has(> .fullwidth-banner) {
+  padding-top: 0;
+}
+
+/* Belt-and-braces: ensure the banner butts up tight to the next hero */
+.fullwidth-banner + .hero {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+/* Hide any hairline seam due to sub-pixel rounding */
+.site-banner { margin-bottom: -1px; }
