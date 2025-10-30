@@ -3,27 +3,28 @@ layout: default
 hide_hero: true
 ---
 
-<!-- Top hero banner in the same spot the theme uses -->
-<section class="hero is-primary is-medium site-banner">
-  <!-- scrolling background -->
-  <div class="hero-media hero-scroll">
-    <div class="scroll-track">
-      <img src="{{ '/assets/images/hero/hero1.jpg' | relative_url }}" alt="">
-      <img src="{{ '/assets/images/hero/hero2.jpg' | relative_url }}" alt="">
-      <img src="{{ '/assets/images/hero/hero3.jpg' | relative_url }}" alt="">
-      <!-- repeat first image for seamless loop -->
-      <img src="{{ '/assets/images/hero/hero1.jpg' | relative_url }}" alt="">
+<!-- Top full-width hero banner -->
+<div class="fullwidth-banner">
+  <section class="hero is-primary is-medium site-banner">
+    <div class="hero-media hero-scroll">
+      <div class="scroll-track">
+        <img src="{{ '/assets/images/hero/hero1.jpg' | relative_url }}" alt="">
+        <img src="{{ '/assets/images/hero/hero2.jpg' | relative_url }}" alt="">
+        <img src="{{ '/assets/images/hero/hero3.jpg' | relative_url }}" alt="">
+        <img src="{{ '/assets/images/hero/hero1.jpg' | relative_url }}" alt="">
+      </div>
     </div>
-  </div>
 
-  <!-- Banner text -->
-  <div class="hero-body has-text-centered">
-    <div class="container">
-      <h1 class="title is-1 has-text-white">Current Sauce</h1>
-      <h2 class="subtitle is-4 has-text-white">Electronics & Interactive Installations by James Kincell</h2>
+    <div class="hero-body has-text-centered">
+      <div class="container">
+        <h1 class="title is-1 has-text-white">Current Sauce</h1>
+        <h2 class="subtitle is-4 has-text-white">
+          Electronics & Interactive Installations by James Kincell
+        </h2>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+</div>
 
 <!-- Your main hero below -->
 <section class="hero is-dark is-medium">
