@@ -7,6 +7,57 @@ $primary-invert: #ffffff; // text colour on primary buttons
 
 @import "main";
 
+/* === HERO SCROLLING BACKGROUND === */
+.hero.has-hero-image {
+  position: relative;
+  overflow: hidden;
+  min-height: 52vh; /* hero height */
+}
+
+/* The scrolling container */
+.hero-scroll {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+/* Track of images */
+.hero-scroll .scroll-track {
+  display: flex;
+  width: calc(400%); /* 4 images; adjust if more */
+  animation: scroll-left 45s linear infinite;
+  height: 100%;
+}
+
+/* Individual images */
+.hero-scroll img {
+  flex: 0 0 25%; /* 4 images = 25% each */
+  height: 100%;
+  object-fit: cover; /* same height, auto-crop sides */
+  filter: brightness(0.9) saturate(1.1);
+}
+
+/* Animation loop */
+@keyframes scroll-left {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-25%); } /* move by one image width */
+}
+
+/* Dark overlay for readability */
+.hero.has-hero-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,.45), rgba(0,0,0,.35));
+  z-index: 1;
+}
+
+.hero .hero-body {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+}
+
 // Image cap on cards (home/blog)
 .card-image {
   max-width: 500px;
