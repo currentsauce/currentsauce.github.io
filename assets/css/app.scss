@@ -1,20 +1,49 @@
 ---
 ---
-$primary: #32174d;
+
+// Define Bulma variables *before* import
+$primary: #32174d;        // main accent (purple)
+$primary-invert: #ffffff; // text colour on primary buttons
+
 @import "main";
 
-/* Image cap on cards (home/blog) */
-.card-image { max-width: 500px; margin: 0 auto; }
-.card-image img { width: 100%; height: auto; border-radius: 10px; }
+// Image cap on cards (home/blog)
+.card-image {
+  max-width: 500px;
+  margin: 0 auto;
+}
+.card-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
 
-/* Tighter spacing & cleaner headings */
-.section .title { margin-bottom: .75rem; }
-.section .subtitle { margin-top: 0; color: #666; }
+// Tighter spacing & cleaner headings
+.section .title {
+  margin-bottom: .75rem;
+}
+.section .subtitle {
+  margin-top: 0;
+  color: #666;
+}
 
-/* Buttons: calmer accent */
-.button.is-primary { background-color: #32174d; border: none; }
-.button.is-primary:hover { background-color: #f07045; }
+// Buttons (re-enforce hover shade)
+.button.is-primary:hover,
+.button.is-primary.is-hovered,
+.button.is-primary:focus,
+.button.is-primary.is-focused,
+.button.is-primary:active,
+.button.is-primary.is-active {
+  background-color: darken(#32174d, 8%);
+  border-color: darken(#32174d, 8%);
+  color: #fff;
+}
 
-/* Card hover: very subtle */
-.card { transition: transform .12s ease, box-shadow .12s ease; }
-.card:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0,0,0,.08); }
+// 💨 Card hover: subtle lift
+.card {
+  transition: transform .12s ease, box-shadow .12s ease;
+}
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, .08);
+}
