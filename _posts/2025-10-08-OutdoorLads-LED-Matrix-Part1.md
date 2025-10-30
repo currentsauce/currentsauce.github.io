@@ -9,7 +9,7 @@ description: >
 hero_image: /blog_images/a_page_heros/ODL_Matrix_Hero.jpeg
 hero_darken: true
 image: /blog_images/odl_led_matrix/Design_C.png
-tags: [LED, matrix, design, concept, OutdoorLads]
+tags: [LED, matrix, design, concept, OutdoorLads, WS2811, Teensy]
 ---
 
 In this first part, I’ll cover how the idea came about, the design goals, and how the concept evolved through a potential versions before settling on something that would turn the DJ Booth into an awesome focus piece.
