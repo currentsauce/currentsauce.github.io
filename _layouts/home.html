@@ -2,18 +2,19 @@
 layout: default
 ---
 
-<section class="hero is-dark is-medium has-hero-image">
-  <!-- Scrolling image strip -->
-  <div class="hero-media hero-scroll">
-    <div class="scroll-track">
-      <img src="{{ '/assets/images/hero/hero1.jpg' | relative_url }}" alt="">
-      <img src="{{ '/assets/images/hero/hero2.jpg' | relative_url }}" alt="">
-      <img src="{{ '/assets/images/hero/hero3.jpg' | relative_url }}" alt="">
-      <!-- repeat first image for seamless loop -->
-      <img src="{{ '/assets/images/hero/hero4.jpg' | relative_url }}" alt="">
-    </div>
+<!-- Top scrolling banner strip -->
+<div class="top-scroll-strip">
+  <div class="scroll-track">
+    <img src="{{ '/assets/images/hero/hero1.jpg' | relative_url }}" alt="">
+    <img src="{{ '/assets/images/hero/hero2.jpg' | relative_url }}" alt="">
+    <img src="{{ '/assets/images/hero/hero3.jpg' | relative_url }}" alt="">
+    <!-- repeat first for seamless loop -->
+    <img src="{{ '/assets/images/hero/hero1.jpg' | relative_url }}" alt="">
   </div>
+</div>
 
+<!-- Your hero sits BELOW the strip, clean and readable -->
+<section class="hero is-dark is-medium">
   <div class="hero-body">
     <div class="container">
       <h1 class="title is-2">Electronics + Installations that actually work in the real world.</h1>

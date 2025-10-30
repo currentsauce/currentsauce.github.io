@@ -7,56 +7,37 @@ $primary-invert: #ffffff; // text colour on primary buttons
 
 @import "main";
 
-/* === HERO SCROLLING BACKGROUND === */
-.hero.has-hero-image {
+/* ===== Top scrolling banner (separate from hero) ===== */
+.top-scroll-strip {
+  width: 100%;
+  height: 220px;              /* strip height – tweak to taste */
+  overflow: hidden;
   position: relative;
-  overflow: hidden;
-  min-height: 52vh; /* hero height */
+  background: #000;           /* fallback behind images */
 }
 
-/* The scrolling container */
-.hero-scroll {
-  position: absolute;
-  inset: 0;
-  overflow: hidden;
-}
-
-/* Track of images */
-.hero-scroll .scroll-track {
+.top-scroll-strip .scroll-track {
   display: flex;
-  width: calc(400%); /* 4 images; adjust if more */
-  animation: scroll-left 45s linear infinite;
   height: 100%;
+  width: 400%;                /* 4 images: 4x width */
+  animation: strip-scroll 45s linear infinite;
 }
 
-/* Individual images */
-.hero-scroll img {
-  flex: 0 0 25%; /* 4 images = 25% each */
+.top-scroll-strip img {
+  flex: 0 0 25%;              /* 4 images -> each 25% */
   height: 100%;
-  object-fit: cover; /* same height, auto-crop sides */
-  filter: brightness(0.9) saturate(1.1);
+  width: auto;
+  object-fit: cover;          /* same height, cropped sides */
+  filter: brightness(0.95) saturate(1.1);
 }
 
-/* Animation loop */
-@keyframes scroll-left {
+@keyframes strip-scroll {
   from { transform: translateX(0); }
   to   { transform: translateX(-25%); } /* move by one image width */
 }
 
-/* Dark overlay for readability */
-.hero.has-hero-image::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(0,0,0,.45), rgba(0,0,0,.35));
-  z-index: 1;
-}
-
-.hero .hero-body {
-  position: relative;
-  z-index: 2;
-  color: #fff;
-}
+/* Optional: tighten space between strip and hero */
+.hero.is-dark.is-medium { margin-top: 0; }
 
 // Image cap on cards (home/blog)
 .card-image {
