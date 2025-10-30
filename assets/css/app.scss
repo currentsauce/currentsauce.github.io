@@ -102,3 +102,17 @@ body.home .section:first-of-type { padding-top: 0; }
 /* Card hover: subtle lift */
 .card { transition: transform .12s ease, box-shadow .12s ease; }
 .card:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0,0,0,.08); }
+
+/* --- Kill the top padding on the FIRST section for HOME only --- */
+body.home .section:first-of-type {
+  padding-top: 0 !important;
+}
+
+/* In case the theme adds any margin on the container, neutralise it */
+body.home .section:first-of-type > .container {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* If a hairline still shows due to sub-pixel rounding, hide it decisively */
+body.home .site-banner { margin-bottom: -2px; }
