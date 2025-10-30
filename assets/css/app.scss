@@ -7,6 +7,16 @@ $primary-invert: #ffffff;
 
 @import "main";
 
+/* ==== Make the fake hero span full viewport width ==== */
+.fullwidth-banner {
+  /* break out of the theme's centered container */
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+body { overflow-x: hidden; } /* avoid horizontal scrollbars */
+
 /* ===== Site banner (top hero area) with scrolling background ===== */
 .site-banner {
   position: relative;
