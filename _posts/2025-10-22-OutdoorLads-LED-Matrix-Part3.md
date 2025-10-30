@@ -9,10 +9,10 @@ description: >
 hero_image: /blog_images/a_page_heros/ODL_Matrix_Hero.jpeg
 hero_darken: true
 image: /blog_images/odl_led_matrix/Finished_Control_Box.jpeg
-tags: [LED, matrix, firmware, software, OutdoorLads]
+tags: [LED, matrix, build, firmware, software, OutdoorLads, WS2811, Teensy]
 ---
 
-With the hardware done, it’s time to make it *do something*.
+In [Part 2](https://currentsauce.co.uk/blog/2025/10/15/OutdoorLads-LED-Matrix-Part2.html), I built the Matrix frames and control box, it’s time to make it *do something*.
 
 ## Time to Code
 

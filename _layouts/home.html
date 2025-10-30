@@ -1,0 +1,80 @@
+---
+layout: default
+---
+
+<section class="hero is-dark is-medium">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title is-2">Electronics + Installations that actually work in the real world.</h1>
+      <p class="subtitle is-4">I design, build, and debug interactive systems — LEDs, audio, control — end-to-end.</p>
+      <div class="buttons">
+        <a class="button is-primary is-medium" href="{{ '/blog/' | relative_url }}">See projects</a>
+        <a class="button is-light is-medium" href="{{ '/about/' | relative_url }}">About me</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="title is-3">Featured projects</h2>
+    <div class="columns is-multiline">
+      {% assign featured = site.data.projects | default: empty %}
+      {% for p in featured limit:3 %}
+      <div class="column is-12-tablet is-4-desktop">
+        <div class="card">
+          {% if p.image %}<div class="card-image" style="max-width:500px;margin:0 auto;"><img src="{{ p.image | relative_url }}" alt="{{ p.title }}"></div>{% endif %}
+          <div class="card-content">
+            <p class="title is-5">{{ p.title }}</p>
+            <p class="content">{{ p.blurb }}</p>
+            <a class="button is-primary" href="{{ p.url | relative_url }}">Read case study</a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="title is-3">What I do</h2>
+    <div class="columns">
+      <div class="column">
+        <h3 class="title is-5">Electronics & Firmware</h3>
+        <ul class="content">
+          <li>Custom PCBs, power, drivers, reliability</li>
+          <li>ESP32/STM32, real-time control, tooling</li>
+          <li>Debug & bring-up, compliance mindset</li>
+        </ul>
+      </div>
+      <div class="column">
+        <h3 class="title is-5">Interactive Installs</h3>
+        <ul class="content">
+          <li>LED matrices, DMX/Art-Net, pixel mapping</li>
+          <li>Audio/AV integration, show control</li>
+          <li>Ruggedised for events & outdoors</li>
+        </ul>
+      </div>
+      <div class="column">
+        <h3 class="title is-5">Delivery</h3>
+        <ul class="content">
+          <li>Spec → design → build → test → docs</li>
+          <li>Field support & iteration</li>
+          <li>Clear comms, honest trade-offs</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container has-text-centered">
+    <h2 class="title is-3">Got a project?</h2>
+    <p class="subtitle is-5">I’m open to roles and collaborations in interactive installations / AV / electronics.</p>
+    <div class="buttons is-centered">
+      <a class="button is-primary is-medium" href="mailto:currentsauce1@gmail.com">Email me</a>
+      <a class="button is-light is-medium" href="{{ '/assets/James-Kincell-CV.pdf' | relative_url }}">Download CV</a>
+    </div>
+  </div>
+</section>

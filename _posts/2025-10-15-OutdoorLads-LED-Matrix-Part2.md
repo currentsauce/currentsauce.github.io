@@ -9,7 +9,7 @@ description: >
 hero_image: /blog_images/a_page_heros/ODL_Matrix_Hero.jpeg
 hero_darken: true
 image: /blog_images/odl_led_matrix/Microcontroller_Board.jpeg
-tags: [LED, matrix, build, wiring, hardware]
+tags: [LED, matrix, build, wiring, hardware, OutdoorLads, WS2811, Teensy]
 ---
 
 In [Part 1](https://currentsauce.co.uk/blog/2025/10/08/OutdoorLads-LED-Matrix-Part1.html) I covered the design journey. Now let’s get into the physical build — frame, panels, wiring, and power.
