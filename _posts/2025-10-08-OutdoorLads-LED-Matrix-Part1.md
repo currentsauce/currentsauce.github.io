@@ -128,3 +128,5 @@ With this design, when the LEDs are butt up to the edge of the frame in the midd
 It's probably no surprise that Design C is the winner! To justify this...
 
 Firstly, The LEDs for this design allow the frame to be a reasonable size, such that the frame is rigid yet not big and clunky. The smaller frame reduces the frame width in the middle, meaning the pixels can be reasonably dense. The reduced frame width means that the distance inter-pixel distance (between the pixel centres) in the middle of the panel are 48mm, while the rest of the pixels have an inter-pixel distance of 46.44mm. This means that there is only a marginal difference in pixel spacing at the middle, which shouldn't be noticeable. The pixels can be mounted in a panel of sheet wood, which has a more professional appearance than LED strips.
+
+That's all for this post, next up is building this and making it happen, check it out in [Part 2: Build & Hardware](https://currentsauce.co.uk/blog/2025/10/15/OutdoorLads-LED-Matrix-Part2.html).

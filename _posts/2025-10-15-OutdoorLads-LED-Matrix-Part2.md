@@ -12,7 +12,7 @@ image: /blog_images/odl_led_matrix/Microcontroller_Board.jpeg
 tags: [LED, matrix, build, wiring, hardware]
 ---
 
-In Part 1 I covered the design journey. Now let’s get into the physical build — frame, panels, wiring, and power.
+In [Part 1](https://currentsauce.co.uk/blog/2025/10/08/OutdoorLads-LED-Matrix-Part1.html) I covered the design journey. Now let’s get into the physical build — frame, panels, wiring, and power.
 
 ## Driving the Pixels
 
@@ -200,3 +200,5 @@ Built the board to my plan, no troubles there. For the connectors, I used [Molex
 The Teensy 4.1 isn't soldered directly to the board, since that's silly. The Teensy sits in a header socket.
 
 ![Finished Board](/blog_images/odl_led_matrix/Microcontroller_Board.jpeg "And here is the finished microcontroller board! Very minimal deviation from what was planned. The line matching resistors are in place here."){: style="max-width:500px;" }
+
+That brings me to a nice stopping point, in the final post in this series, I go into the firmware, software, and finalisation - check it out in [Part 3: Firmware, Software & Showtime](https://currentsauce.co.uk/blog/2025/10/22/OutdoorLads-LED-Matrix-Part3.html).
