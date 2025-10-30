@@ -1,5 +1,54 @@
 ---
 ---
-$primary: #32174d;
-// Import Main CSS file from theme
+// 1) (Optional) Bulma variable overrides go ABOVE the import, e.g.:
+// $primary: #ff4d00;
+
+// 2) Import the theme’s main stylesheet
 @import "main";
+
+// 3) Your custom CSS overrides go BELOW the import (they'll win in the cascade)
+
+/* Dark base + accent */
+body { color: #ddd; background-color: #0e0e0e; }
+a { color: #ff4d00; transition: color .2s ease; }
+a:hover { color: #ffa366; }
+
+/* Hero polish */
+.hero {
+  background: linear-gradient(135deg, #111, #000);
+  color: #fff;
+  padding: 6rem 1rem 5rem;
+  text-align: center;
+}
+.hero .title { font-weight: 700; font-size: 2.5rem; margin-bottom: .75rem; }
+.hero .subtitle { color: #ccc; font-size: 1.25rem; margin-bottom: 2rem; }
+.hero .button.is-primary { background-color: #ff4d00; border: none; }
+.hero .button.is-primary:hover { background-color: #ff6f33; }
+.hero .button.is-light { background: transparent; color:#fff; border:1px solid #fff; }
+.hero .button.is-light:hover { background:#fff; color:#111; }
+
+/* Cards + images (also applies to /blog/ listing) */
+.card {
+  background:#181818; border-radius:12px;
+  box-shadow:0 0 12px rgba(0,0,0,.4);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.card:hover { transform: translateY(-3px); box-shadow:0 0 18px rgba(255,77,0,.2); }
+.card-image { max-width: 500px; margin: 0 auto; border-radius:12px; overflow:hidden; }
+.card-image img { border-radius:12px; width:100%; height:auto; }
+.card-content .title { color:#fff; }
+.card-content .button.is-primary { background:#ff4d00; border:none; }
+.card-content .button.is-primary:hover { background:#ff6f33; }
+
+/* Section headings */
+.section .title.is-3 { border-left:4px solid #ff4d00; padding-left:.5rem; margin-bottom:1rem; color:#fff; }
+
+/* Footer */
+.footer { background:#0b0b0b; color:#999; padding:2rem 1rem; }
+.footer a { color:#ff4d00; }
+
+/* Mobile */
+@media (max-width: 768px){
+  .hero { padding: 4rem 1rem; }
+  .hero .title { font-size: 2rem; }
+}
