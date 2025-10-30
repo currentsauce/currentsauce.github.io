@@ -1,45 +1,67 @@
 ---
 ---
 
-// Define Bulma variables *before* import
-$primary: #32174d;        // main accent (purple)
-$primary-invert: #ffffff; // text colour on primary buttons
+// Brand colour (Bulma variable) – your purple
+$primary: #32174d;
+$primary-invert: #ffffff;
 
 @import "main";
 
-/* ===== Top scrolling banner (separate from hero) ===== */
-.top-scroll-strip {
-  width: 100%;
-  height: 220px;              /* strip height – tweak to taste */
-  overflow: hidden;
+/* ===== Site banner (top hero area) with scrolling background ===== */
+.site-banner {
   position: relative;
-  background: #000;           /* fallback behind images */
+  overflow: hidden;
+  color: #fff;
+  min-height: 380px; /* tweak height */
 }
 
-.top-scroll-strip .scroll-track {
+/* scrolling background container */
+.hero-scroll {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+}
+
+/* track with images */
+.hero-scroll .scroll-track {
   display: flex;
   height: 100%;
-  width: 400%;                /* 4 images: 4x width */
-  animation: strip-scroll 45s linear infinite;
+  width: 400%;                /* 4 images total (incl. repeated one) */
+  animation: banner-scroll 45s linear infinite;
 }
 
-.top-scroll-strip img {
-  flex: 0 0 25%;              /* 4 images -> each 25% */
+/* individual images */
+.hero-scroll img {
+  flex: 0 0 25%;              /* 4 images => 25% each */
   height: 100%;
-  width: auto;
-  object-fit: cover;          /* same height, cropped sides */
-  filter: brightness(0.95) saturate(1.1);
+  object-fit: cover;          /* uniform height, crop sides */
+  filter: brightness(0.9) saturate(1.1);
 }
 
-@keyframes strip-scroll {
+/* subtle overlay for text readability */
+.site-banner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,.40), rgba(0,0,0,.30));
+  z-index: 1;
+}
+
+.site-banner .hero-body {
+  position: relative;
+  z-index: 2;
+}
+
+/* animation */
+@keyframes banner-scroll {
   from { transform: translateX(0); }
   to   { transform: translateX(-25%); } /* move by one image width */
 }
 
-/* Optional: tighten space between strip and hero */
-.hero.is-dark.is-medium { margin-top: 0; }
+/* ===== Your existing light polish ===== */
 
-// Image cap on cards (home/blog)
+/* Image cap on cards (home/blog) */
 .card-image {
   max-width: 500px;
   margin: 0 auto;
@@ -50,16 +72,11 @@ $primary-invert: #ffffff; // text colour on primary buttons
   border-radius: 10px;
 }
 
-// Tighter spacing & cleaner headings
-.section .title {
-  margin-bottom: .75rem;
-}
-.section .subtitle {
-  margin-top: 0;
-  color: #666;
-}
+/* Tighter spacing & cleaner headings */
+.section .title { margin-bottom: .75rem; }
+.section .subtitle { margin-top: 0; color: #666; }
 
-// Buttons (re-enforce hover shade)
+/* Buttons: reinforce hover shade */
 .button.is-primary:hover,
 .button.is-primary.is-hovered,
 .button.is-primary:focus,
@@ -71,11 +88,6 @@ $primary-invert: #ffffff; // text colour on primary buttons
   color: #fff;
 }
 
-// 💨 Card hover: subtle lift
-.card {
-  transition: transform .12s ease, box-shadow .12s ease;
-}
-.card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, .08);
-}
+/* Card hover: subtle lift */
+.card { transition: transform .12s ease, box-shadow .12s ease; }
+.card:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0,0,0,.08); }
