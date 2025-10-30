@@ -17,6 +17,12 @@ $primary-invert: #ffffff;
 }
 body { overflow-x: hidden; } /* avoid horizontal scrollbars */
 
+/* Remove white gap between scrolling banner and next hero */
+.fullwidth-banner + .hero {
+  margin-top: 0;
+  padding-top: 0;
+}
+
 /* ===== Site banner (top hero area) with scrolling background ===== */
 .site-banner {
   position: relative;
