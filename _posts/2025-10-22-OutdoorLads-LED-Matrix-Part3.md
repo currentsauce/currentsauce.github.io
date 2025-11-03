@@ -157,3 +157,13 @@ Yes - I think it managaes about 50 FPS. It looks very fluid and the refresh rate
 **Total cost of parts must be below £300**
 
 Yes! Can you believe that? It cost a total of £275.22. Of course some of the parts were what I had in my collection, but these were not significantly expensive items. Annoyingly, I had to buy a special Dell PSU for the Tablet, which was £14.39, and the tablet mount was £17.50. Since scrapping the tablet, this is £31.89 of wasted cost - damn it! *(I do wonder how much my time would have cost, haha)*
+
+## Overall Impact
+
+I'm really proud of this build. When it was launched at the first Big Spring Camp event in 2023, I got informed by the OutdoorLads office that they'd heard many glowing comments about it. A lot of people were really surprised that I'd built it myself especially for OutdoorLads, and thought it was something that came with the DJ Booth, which is really nice. 
+
+I was also really humbled to receive an award at the AGM meeting that year, to thank me for all the hard work in re-vamping the equipment. 
+
+![AGM Award](/blog_images/odl_led_matrix/AGM_Award.png ""James has revolutionised the DJ kit and ensured that OutdoorLads can continue bopping away for many years to come. James has negotiated prices down, colour-coded every piece of equipment for others to set up, and even built a light wall!""){: style="max-width:500px;" }
+
+![Finished](/blog_images/odl_led_matrix/AGM_Award_Photo.png "Please excuse the moustache I had at the time. I had a reason!"){: style="max-width:500px;" }
