@@ -103,21 +103,23 @@ body.home .section:first-of-type { padding-top: 0; }
 .card { transition: transform .12s ease, box-shadow .12s ease; }
 .card:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0,0,0,.08); }
 
-/* === Kill ALL padding and margin on the first wrapper section for the home page === */
-body.home main > section.section:first-of-type {
+/* === Remove top padding and margin from the first section on the home page === */
+/* This targets any page where the fullwidth banner is the first element */
+.section:first-of-type:has(.fullwidth-banner),
+.section:first-of-type:has(.site-banner) {
   padding: 0 !important;
   margin: 0 !important;
 }
 
-/* Optional: also remove container padding inside it */
-body.home main > section.section:first-of-type > .container {
+.section:first-of-type:has(.fullwidth-banner) > .container,
+.section:first-of-type:has(.site-banner) > .container {
   padding: 0 !important;
   margin: 0 !important;
 }
 
-/* Ensure the banner sits flush with viewport edges */
+/* Flatten banner spacing completely */
 .fullwidth-banner {
-  width: 100vw;
+  width: 100vw !important;
   margin: 0 !important;
   padding: 0 !important;
   position: relative;
@@ -125,5 +127,5 @@ body.home main > section.section:first-of-type > .container {
   transform: translateX(-50%);
 }
 
-/* Safety: no sub-pixel seam */
-.site-banner { margin-bottom: -2px; }
+/* No sneaky seams */
+.site-banner { margin-bottom: -2px !important; }
