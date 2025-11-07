@@ -55,7 +55,9 @@ body { overflow-x: hidden; } /* avoid horizontal scrollbars */
 .hero-scroll img {
   flex: 0 0 25%;                /* 4 images => 25% each */
   height: 100%;
-  object-fit: cover;            /* uniform height, crop sides */
+  object-fit: contain;      /* scale entire image to fit height */
+  object-position: center;  /* centre it nicely */
+  background-color: #000;   /* black bars left/right if needed */
   filter: brightness(0.9) saturate(1.1);
 }
 
