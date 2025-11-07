@@ -7,14 +7,15 @@ hide_hero: true
 <div class="fullwidth-banner">
   <section class="hero is-primary is-medium site-banner">
 
-    {% assign heroes = "/assets/images/hero/hero1.jpg,/assets/images/hero/hero2.jpg,/assets/images/hero/hero3.jpg,/assets/images/hero/hero4.jpg,/assets/images/hero/hero5.jpg,/assets/images/hero/hero6.jpg,/assets/images/hero/hero7.jpg,/assets/images/hero/hero8.jpg" | split: "," %}
-    {% assign step = 6 %} {# seconds per slide (matches CSS total 48s) #}
-
     <div class="hero-media hero-gallery">
-      {% for src in heroes %}
-        <div class="slide" style="background-image:url('{{ src | relative_url }}'); animation-delay: {{ forloop.index0 | times: step }}s;"></div>
-      {% endfor %}
-    </div>
+		{% assign heroes = "/assets/images/hero/hero1.jpg,/assets/images/hero/hero2.jpg,/assets/images/hero/hero3.jpg,/assets/images/hero/hero4.jpg,/assets/images/hero/hero5.jpg,/assets/images/hero/hero6.jpg,/assets/images/hero/hero7.jpg,/assets/images/hero/hero8.jpg" | split: "," %}
+		{% assign step = 6 %}
+		{% for src in heroes %}
+			<div class="slide" style="--bg: url('{{ src | relative_url }}'); animation-delay: {{ forloop.index0 | times: step }}s;">
+				<img src="{{ src | relative_url }}" alt="">
+			</div>
+		{% endfor %}
+	</div>
 
     <noscript>
       <div class="hero-media" style="position:absolute;inset:0;background:url('{{ heroes[0] | relative_url }}') center/cover no-repeat;"></div>

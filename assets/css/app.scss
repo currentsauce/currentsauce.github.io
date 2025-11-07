@@ -18,18 +18,11 @@ $primary-invert: #ffffff;
   margin-right: -50vw;
   margin-top: -3rem; /* cancel theme’s first .section top padding */
 }
+body { overflow-x: hidden; }
 
-body { overflow-x: hidden; } /* prevent horizontal scrollbars */
+.fullwidth-banner + .hero { margin-top: 0; padding-top: 0; }
 
-/* Keep the next hero snug */
-.fullwidth-banner + .hero {
-  margin-top: 0;
-  padding-top: 0;
-}
-
-/* =================== Crossfade hero (simple, robust) =================== */
-/* Markup: use .hero-gallery with .slide divs ) */
-
+/* =================== Crossfade hero (blurred fill + sharp image) =================== */
 .site-banner {
   position: relative;
   overflow: hidden;
@@ -37,7 +30,7 @@ body { overflow-x: hidden; } /* prevent horizontal scrollbars */
   min-height: 380px;
 }
 
-/* the gallery container occupies the banner background */
+/* gallery container sits behind the hero text */
 .hero-gallery {
   position: absolute;
   inset: 0;
@@ -48,24 +41,37 @@ body { overflow-x: hidden; } /* prevent horizontal scrollbars */
 .hero-gallery .slide {
   position: absolute;
   inset: 0;
-  background-size: cover;      /* change to 'contain' for zero crop */
-  background-position: center;
-  background-repeat: no-repeat;
   opacity: 0;
-  animation: xfade 48s linear infinite; /* total cycle; delay set inline per slide */
+  animation: xfade 48s linear infinite; /* per-slide delay set inline */
   will-change: opacity;
 }
 
-/* Crossfade timing for 8 slides */
-@keyframes xfade {
-  0% { opacity: 0; }
-  4% { opacity: 1; }
-  12.5% { opacity: 1; }  /* visible for 1/8 of cycle */
-  16.5% { opacity: 0; }
-  100% { opacity: 0; }
+/* Blurred background fill */
+.hero-gallery .slide::before {
+  content: "";
+  position: absolute;
+  inset: -3%;                      /* hide blur edges */
+  background-image: var(--bg);
+  background-size: cover;
+  background-position: center;
+  filter: blur(14px) brightness(0.9) saturate(1.05);
+  transform: scale(1.03);          /* counter blur shrink */
+  z-index: 0;
+  pointer-events: none;
 }
 
-/* Overlay + text contrast */
+/* Sharp image on top, full height, no crop */
+.hero-gallery .slide > img {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  z-index: 1;
+}
+
+/* Overlay + text above gallery */
 .site-banner::after {
   content: "";
   position: absolute;
@@ -73,24 +79,29 @@ body { overflow-x: hidden; } /* prevent horizontal scrollbars */
   background: linear-gradient(180deg, rgba(0,0,0,.6), rgba(0,0,0,.35));
   z-index: 2;
 }
-
 .site-banner .hero-body {
   position: relative;
   z-index: 3;
   animation: hero-fadein 1.5s ease-out both;
 }
-
 .site-banner .hero-body h1,
-.site-banner .hero-body h2 {
-  text-shadow: 0 2px 6px rgba(0,0,0,.75);
+.site-banner .hero-body h2 { text-shadow: 0 2px 6px rgba(0,0,0,.75); }
+
+/* Crossfade timing for 8 slides */
+@keyframes xfade {
+  0% { opacity: 0; }
+  4% { opacity: 1; }
+  12.5% { opacity: 1; }  /* 1/8 of cycle visible */
+  16.5% { opacity: 0; }
+  100% { opacity: 0; }
 }
 
-/* Mobile: quicker cycle if desired */
+/* Mobile: slightly quicker cycle */
 @media (max-width: 768px) {
-  .hero-gallery .slide { animation-duration: 40s; } /* 8 slides × 5s each */
+  .hero-gallery .slide { animation-duration: 40s; } /* 8 × 5s */
 }
 
-/* Reduced motion: freeze on first image */
+/* Reduced motion: show first image only */
 @media (prefers-reduced-motion: reduce) {
   .hero-gallery .slide { animation: none; opacity: 0; }
   .hero-gallery .slide:first-child { opacity: 1; }
