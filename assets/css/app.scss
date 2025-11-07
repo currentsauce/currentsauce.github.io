@@ -48,28 +48,29 @@ body { overflow-x: hidden; } /* avoid horizontal scrollbars */
 
 .hero-scroll .scroll-track {
   display: flex;
-  width: 800%;
-  animation: banner-scroll 45s linear infinite;
+  width: 800%;                              /* 8 images total (no repeat) */
+  animation: banner-scroll 60s linear infinite; /* a touch faster than 45s */
+  will-change: transform;                   /* perf hint */
+  transform: translateZ(0);                 /* force GPU compositing */
 }
 
 .hero-scroll img {
-  flex: 0 0 12.5%;
+  flex: 0 0 12.5%;                          /* 100 / 8 */
   width: 100%;
   height: 100%;
-  object-fit: cover;     /* smoosh back in place */
+  object-fit: cover;     /* edge-to-edge, no black gaps */
   object-position: center;
-  filter: brightness(0.9) saturate(1.1);
+  /* removed per-image filter for mobile perf; darken via overlay instead */
 }
-
 
 .site-banner .hero-body { position: relative; z-index: 2; }
 
-/* readability overlay */
+/* readability overlay (slightly darker since image filter is removed) */
 .site-banner::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(0,0,0,.40), rgba(0,0,0,.30));
+  background: linear-gradient(180deg, rgba(0,0,0,.50), rgba(0,0,0,.35));
   z-index: 1;
 }
 
@@ -77,6 +78,18 @@ body { overflow-x: hidden; } /* avoid horizontal scrollbars */
 @keyframes banner-scroll {
   from { transform: translateX(0); }
   to   { transform: translateX(-12.5%); } /* move by one image width */
+}
+
+/* --- Mobile: perceptually faster scroll --- */
+@media (max-width: 768px) {
+  .hero-scroll .scroll-track {
+    animation-duration: 30s; /* ~2x speed on phones */
+  }
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .hero-scroll .scroll-track { animation: none; transform: translateX(0); }
 }
 
 /* =================== Light polish =================== */
@@ -103,4 +116,4 @@ body { overflow-x: hidden; } /* avoid horizontal scrollbars */
 
 /* Card hover: subtle lift */
 .card { transition: transform .12s ease, box-shadow .12s ease; }
-.card:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0,0,0,.08); }
+.card:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0, 0, 0, .08); }
