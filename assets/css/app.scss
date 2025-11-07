@@ -49,7 +49,7 @@ body { overflow-x: hidden; } /* avoid horizontal scrollbars */
 .hero-scroll .scroll-track {
   display: flex;
   width: 1600%;                              /* 8 images total (no repeat) */
-  animation: banner-scroll 45s linear infinite; /* a touch faster than 45s */
+  animation: banner-scroll 30s linear infinite; /* a touch faster than 45s */
   will-change: transform;                   /* perf hint */
   transform: translateZ(0);                 /* force GPU compositing */
 }
