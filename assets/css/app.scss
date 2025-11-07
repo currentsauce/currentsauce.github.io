@@ -30,7 +30,7 @@ body { overflow-x: hidden; } /* avoid horizontal scrollbars */
 /* Hide sub-pixel seam under the banner */
 .site-banner { margin-bottom: -1px; }
 
-/* ===== Scrolling banner internals ===== */
+/* ===== Scrolling banner internals (seamless) ===== */
 .site-banner {
   position: relative;
   overflow: hidden;
@@ -46,48 +46,35 @@ body { overflow-x: hidden; } /* avoid horizontal scrollbars */
   display: flex;
 }
 
+/* 16 images total: 8 + 8 (duplicated sequence) */
 .hero-scroll .scroll-track {
   display: flex;
-  width: 1600%;                              /* 8 images total (no repeat) */
-  animation: banner-scroll 30s linear infinite; /* a touch faster than 45s */
-  will-change: transform;                   /* perf hint */
-  transform: translateZ(0);                 /* force GPU compositing */
+  width: 1600%;                             /* 16 * 100% */
+  animation: banner-scroll-hero 60s linear infinite;
+  will-change: transform;
+  transform: translateZ(0);
 }
 
 .hero-scroll img {
-  flex: 0 0 6.25%;                          /* 100 / 8 */
+  flex: 0 0 6.25%;                          /* 100 / 16 */
   width: 100%;
   height: 100%;
-  object-fit: cover;     /* edge-to-edge, no black gaps */
+  object-fit: cover;
   object-position: center;
-  /* removed per-image filter for mobile perf; darken via overlay instead */
 }
 
-.site-banner .hero-body { position: relative; z-index: 2; }
-
-/* readability overlay (slightly darker since image filter is removed) */
-.site-banner::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(0,0,0,.50), rgba(0,0,0,.35));
-  z-index: 1;
-}
-
-/* animation */
-@keyframes banner-scroll {
+/* Move exactly one full sequence width (half the doubled strip) */
+@keyframes banner-scroll-hero {
   from { transform: translateX(0); }
-  to   { transform: translateX(-6.25%); } /* move by one image width */
+  to   { transform: translateX(-50%); }
 }
 
-/* --- Mobile: perceptually faster scroll --- */
+/* Mobile: make the perceived speed faster */
 @media (max-width: 768px) {
-  .hero-scroll .scroll-track {
-    animation-duration: 10s; /* ~2x speed on phones */
-  }
+  .hero-scroll .scroll-track { animation-duration: 10s; }
 }
 
-/* Respect users who prefer reduced motion */
+/* Respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .hero-scroll .scroll-track { animation: none; transform: translateX(0); }
 }
