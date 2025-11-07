@@ -30,28 +30,43 @@ body { overflow-x: hidden; } /* avoid horizontal scrollbars */
 /* Hide sub-pixel seam under the banner */
 .site-banner { margin-bottom: -1px; }
 
-/* ===== Scrolling banner internals (seamless, correct sizing) ===== */
-.hero-scroll { position: absolute; inset: 0; overflow: hidden; z-index: 0; display: flex; }
+/* ===== Scrolling banner internals (seamless, robust) ===== */
+.hero-scroll {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+  display: flex;
+  font-size: 0;                 /* kill inline whitespace just in case */
+}
+
 .hero-scroll .scroll-track {
   display: flex;
   gap: 0;
-  width: calc(100% * 16);          /* track = 16 viewports wide (8 + 8) */
   will-change: transform;
-  transform: translateZ(0);
+  transform: translateZ(0);     /* GPU compositing */
   animation: banner-scroll-hero 60s linear infinite;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
+
+/* Each slide is exactly one viewport wide */
 .hero-scroll img {
   display: block;
-  flex: 0 0 calc(100% / 16);       /* each = 1/16 of track = 1 viewport */
+  flex: 0 0 auto;               /* no percentage math */
+  min-width: 100%;              /* one full banner width per image */
   height: 100%;
   object-fit: cover;
   object-position: center;
 }
+
+/* Move exactly one sequence width (half the doubled strip) */
 @keyframes banner-scroll-hero {
   from { transform: translateX(0); }
-  to   { transform: translateX(-50%); } /* move exactly one 8-image sequence */
+  to   { transform: translateX(-50%); }
 }
-/* Mobile speed tweak (you liked fast) */
+
+/* Mobile speed tweak (you liked it fast) */
 @media (max-width: 768px) {
   .hero-scroll .scroll-track { animation-duration: 10s; }
 }
