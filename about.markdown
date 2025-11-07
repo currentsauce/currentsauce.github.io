@@ -51,28 +51,28 @@ August 2020, during the COVID-19 lockdown — what better time to start building
 - [KiCad](https://www.kicad.org/) - Schematic Capture and PCB Design
 - [DIYLC](https://diy-fever.com/software/diylc/) - Stripboard Design
 
-## Electronic Simulations
+### Electronic Simulations
 - [LTspice](https://www.analog.com/en/resources/design-tools-and-calculators/ltspice-simulator.html) - DC and AC SPICE Simulations
 - [QSPICE](https://www.qorvo.com/design-hub/design-tools/interactive/qspice) - DC and AC SPICE Simulations
 
-## Embedded Design
+### Embedded Design
 - [MPLABX](https://www.microchip.com/en-us/tools-resources/develop/mplab-x-ide) - Microchip PIC Development
 - [STM32CubeIDE](https://www.st.com/en/development-tools/stm32cubeide.html) - STM32 Development
 - [Arduino IDE](https://www.arduino.cc/en/software/) - Arduino & Teensy Development
 - [PlatformIO](https://platformio.org/) - Arduino & Teensy Development
 
-## Signal Analysis
+### Signal Analysis
 - [SigRok](https://sigrok.org/) - Logic Analyser
 
-## Software Design
+### Software Design
 - [Python](https://www.python.org/downloads/) - For general Python Scripting
 - [Microsoft Visual Studio](https://visualstudio.microsoft.com/) - Visual Basic and Visual C Applications
 
-## Graphics
+### Graphics
 - [GIMP](https://www.gimp.org/) - Image touch ups
 - [InkScape](https://inkscape.org/) - Vector Images
 
-## Misc
+### Misc
 - [Notepad++](https://notepad-plus-plus.org/) - Writing this website and miscellaneous editing
 
 ...Plus more that I have probably forgotten in this list!
