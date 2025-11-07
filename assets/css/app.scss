@@ -30,72 +30,59 @@ body { overflow-x: hidden; } /* avoid horizontal scrollbars */
 /* Hide sub-pixel seam under the banner */
 .site-banner { margin-bottom: -1px; }
 
-/* ===== Scrolling banner internals (seamless, robust) ===== */
-.hero-scroll {
+/* ==== Crossfade hero (no jumps, no maths) ==== */
+
+/* Container: sits where your old scroll container was */
+.hero-gallery {
   position: absolute;
   inset: 0;
   overflow: hidden;
   z-index: 0;
-  display: flex;
-  font-size: 0;                 /* kill inline whitespace just in case */
 }
 
-.hero-scroll .scroll-track {
-  display: flex;
-  gap: 0;
-  will-change: transform;
-  transform: translateZ(0);     /* GPU compositing */
-  animation: banner-scroll-hero 60s linear infinite;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-}
-
-.hero-scroll img {
-  display: block;
-  flex: 0 0 auto;     /* no percent maths */
-  min-width: 100%;    /* one full viewport wide */
-  height: 100%;
-  object-fit: contain;      /* no vertical crop */
-  object-position: center;
-  background: #000;         /* bars blend into banner */
-}
-
-/* Move exactly one sequence width (half the doubled strip) */
-@keyframes banner-scroll-hero {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
-}
-
-/* side fade to soften the contain bars */
-.site-banner::before {
-  content: "";
+/* Each slide fills the banner */
+.hero-gallery .slide {
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg,
-    rgba(0,0,0,0.35) 0%,
-    rgba(0,0,0,0) 8%,
-    rgba(0,0,0,0) 92%,
-    rgba(0,0,0,0.35) 100%);
-  z-index: 1;   /* stays below ::after */
+  background-size: cover;     /* use 'contain' if you truly want zero crop */
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  animation: xfade 48s linear infinite; /* total cycle; per-slide delay set inline */
+  will-change: opacity, transform;
 }
 
+/* Crossfade: quick fade up, hold, fade down */
+@keyframes xfade {
+  0%     { opacity: 0; }
+  4%     { opacity: 1; }
+  12.5%  { opacity: 1; }  /* visible window (1/8 of cycle) */
+  16.5%  { opacity: 0; }
+  100%   { opacity: 0; }
+}
+
+/* Optional: darker overlay & text shadow (keep yours if already present) */
 .site-banner::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.35) 100%);
-  z-index: 2;   /* above ::before, below text */
+  background: linear-gradient(180deg, rgba(0,0,0,.6), rgba(0,0,0,.35));
+  z-index: 2;
 }
+.site-banner .hero-body { position: relative; z-index: 3; }
+.site-banner .hero-body h1,
+.site-banner .hero-body h2 { text-shadow: 0 2px 6px rgba(0,0,0,.75); }
 
-.site-banner .hero-body {
-  position: relative;
-  z-index: 3;               /* ensure on top */
-  animation: hero-fadein 1.5s ease-out both;
-}
-
-/* Mobile speed tweak (you liked it fast) */
+/* Mobile: slightly faster if you like */
 @media (max-width: 768px) {
-  .hero-scroll .scroll-track { animation-duration: 10s; }
+  .hero-gallery .slide { animation-duration: 40s; } /* 8 imgs × 5s */
+}
+
+/* Reduced motion: show only the first image, no animation */
+@media (prefers-reduced-motion: reduce) {
+  .hero-gallery .slide { animation: none; opacity: 0; }
+  .hero-gallery .slide:first-child { opacity: 1; }
+}
 }
 
 /* =================== Light polish =================== */
