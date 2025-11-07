@@ -1,7 +1,7 @@
 ---
 ---
 
-// Brand colour (Bulma variable) – your purple
+// Brand colour (Bulma variable) – my purple
 $primary: #32174d;
 $primary-invert: #ffffff;
 
@@ -103,17 +103,27 @@ body.home .section:first-of-type { padding-top: 0; }
 .card { transition: transform .12s ease, box-shadow .12s ease; }
 .card:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0,0,0,.08); }
 
-/* === Kill top padding from Bulma Clean's wrapper section on home page === */
+/* === Kill ALL padding and margin on the first wrapper section for the home page === */
 body.home main > section.section:first-of-type {
-  padding-top: 0 !important;
-  margin-top: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
 }
 
-/* Also make sure the banner sits flush with the next hero */
-.fullwidth-banner + .hero {
-  margin-top: 0 !important;
-  padding-top: 0 !important;
+/* Optional: also remove container padding inside it */
+body.home main > section.section:first-of-type > .container {
+  padding: 0 !important;
+  margin: 0 !important;
 }
 
-/* Hide sub-pixel seam */
+/* Ensure the banner sits flush with viewport edges */
+.fullwidth-banner {
+  width: 100vw;
+  margin: 0 !important;
+  padding: 0 !important;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Safety: no sub-pixel seam */
 .site-banner { margin-bottom: -2px; }
