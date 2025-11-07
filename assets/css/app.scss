@@ -8,31 +8,36 @@ $primary-invert: #ffffff;
 @import "main";
 
 /* =================== Full-bleed banner =================== */
-/* ONE method only: negative viewport margins to bleed out of container */
 .fullwidth-banner {
   position: relative;
   width: 100vw;
   max-width: 100vw;
   left: 50%;
   right: 50%;
-  margin-left: -50vw;   /* bleed to left edge */
-  margin-right: -50vw;  /* bleed to right edge */
-  margin-top: -3rem;    /* kill the white gap from the section's top padding */
+  margin-left: -50vw;
+  margin-right: -50vw;
+  margin-top: -3rem; /* cancel theme’s first .section top padding */
 }
-body { overflow-x: hidden; } /* avoid horizontal scrollbars */
 
-/* Ensure no gap between banner and the next hero */
+body { overflow-x: hidden; } /* prevent horizontal scrollbars */
+
+/* Keep the next hero snug */
 .fullwidth-banner + .hero {
-  margin-top: 0 !important;
-  padding-top: 0 !important;
+  margin-top: 0;
+  padding-top: 0;
 }
 
-/* Hide sub-pixel seam under the banner */
-.site-banner { margin-bottom: -1px; }
+/* =================== Crossfade hero (simple, robust) =================== */
+/* Markup: use .hero-gallery with .slide divs ) */
 
-/* ==== Crossfade hero (no jumps, no maths) ==== */
+.site-banner {
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+  min-height: 380px;
+}
 
-/* Container: sits where your old scroll container was */
+/* the gallery container occupies the banner background */
 .hero-gallery {
   position: absolute;
   inset: 0;
@@ -40,28 +45,27 @@ body { overflow-x: hidden; } /* avoid horizontal scrollbars */
   z-index: 0;
 }
 
-/* Each slide fills the banner */
 .hero-gallery .slide {
   position: absolute;
   inset: 0;
-  background-size: cover;     /* use 'contain' if you truly want zero crop */
+  background-size: cover;      /* change to 'contain' for zero crop */
   background-position: center;
   background-repeat: no-repeat;
   opacity: 0;
-  animation: xfade 48s linear infinite; /* total cycle; per-slide delay set inline */
-  will-change: opacity, transform;
+  animation: xfade 48s linear infinite; /* total cycle; delay set inline per slide */
+  will-change: opacity;
 }
 
-/* Crossfade: quick fade up, hold, fade down */
+/* Crossfade timing for 8 slides */
 @keyframes xfade {
-  0%     { opacity: 0; }
-  4%     { opacity: 1; }
-  12.5%  { opacity: 1; }  /* visible window (1/8 of cycle) */
-  16.5%  { opacity: 0; }
-  100%   { opacity: 0; }
+  0% { opacity: 0; }
+  4% { opacity: 1; }
+  12.5% { opacity: 1; }  /* visible for 1/8 of cycle */
+  16.5% { opacity: 0; }
+  100% { opacity: 0; }
 }
 
-/* Optional: darker overlay & text shadow (keep yours if already present) */
+/* Overlay + text contrast */
 .site-banner::after {
   content: "";
   position: absolute;
@@ -69,33 +73,42 @@ body { overflow-x: hidden; } /* avoid horizontal scrollbars */
   background: linear-gradient(180deg, rgba(0,0,0,.6), rgba(0,0,0,.35));
   z-index: 2;
 }
-.site-banner .hero-body { position: relative; z-index: 3; }
-.site-banner .hero-body h1,
-.site-banner .hero-body h2 { text-shadow: 0 2px 6px rgba(0,0,0,.75); }
 
-/* Mobile: slightly faster if you like */
-@media (max-width: 768px) {
-  .hero-gallery .slide { animation-duration: 40s; } /* 8 imgs × 5s */
+.site-banner .hero-body {
+  position: relative;
+  z-index: 3;
+  animation: hero-fadein 1.5s ease-out both;
 }
 
-/* Reduced motion: show only the first image, no animation */
+.site-banner .hero-body h1,
+.site-banner .hero-body h2 {
+  text-shadow: 0 2px 6px rgba(0,0,0,.75);
+}
+
+/* Mobile: quicker cycle if desired */
+@media (max-width: 768px) {
+  .hero-gallery .slide { animation-duration: 40s; } /* 8 slides × 5s each */
+}
+
+/* Reduced motion: freeze on first image */
 @media (prefers-reduced-motion: reduce) {
   .hero-gallery .slide { animation: none; opacity: 0; }
   .hero-gallery .slide:first-child { opacity: 1; }
 }
+
+/* Subtle title fade-in */
+@keyframes hero-fadein {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 /* =================== Light polish =================== */
-
-/* Image cap on cards (home/blog) */
 .card-image { max-width: 500px; margin: 0 auto; }
 .card-image img { width: 100%; height: auto; border-radius: 10px; }
 
-/* Tighter spacing & cleaner headings */
 .section .title { margin-bottom: .75rem; }
 .section .subtitle { margin-top: 0; color: #666; }
 
-/* Buttons: reinforce hover shade */
 .button.is-primary:hover,
 .button.is-primary.is-hovered,
 .button.is-primary:focus,
@@ -107,41 +120,5 @@ body { overflow-x: hidden; } /* avoid horizontal scrollbars */
   color: #fff;
 }
 
-/* Card hover: subtle lift */
 .card { transition: transform .12s ease, box-shadow .12s ease; }
-.card:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0, 0, 0, .08); }
-
-/* === Strengthened overlay + text contrast fix === */
-.site-banner::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  /* darker fade from top to bottom for white text visibility */
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0.65) 0%,
-    rgba(0, 0, 0, 0.35) 100%
-  );
-  z-index: 1;
-}
-
-/* keep text above overlay and add soft shadow for readability */
-.site-banner .hero-body {
-  position: relative;
-  z-index: 2;
-}
-
-.site-banner .hero-body h1,
-.site-banner .hero-body h2 {
-  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.75);
-}
-
-/* optional: smooth fade-in when page loads */
-.site-banner .hero-body {
-  animation: hero-fadein 1.5s ease-out both;
-}
-
-@keyframes hero-fadein {
-  from { opacity: 0; transform: translateY(10px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
+.card:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0,0,0,.08); }
