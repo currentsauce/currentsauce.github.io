@@ -104,3 +104,38 @@ body { overflow-x: hidden; } /* avoid horizontal scrollbars */
 /* Card hover: subtle lift */
 .card { transition: transform .12s ease, box-shadow .12s ease; }
 .card:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0, 0, 0, .08); }
+
+/* === Strengthened overlay + text contrast fix === */
+.site-banner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  /* darker fade from top to bottom for white text visibility */
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.65) 0%,
+    rgba(0, 0, 0, 0.35) 100%
+  );
+  z-index: 1;
+}
+
+/* keep text above overlay and add soft shadow for readability */
+.site-banner .hero-body {
+  position: relative;
+  z-index: 2;
+}
+
+.site-banner .hero-body h1,
+.site-banner .hero-body h2 {
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.75);
+}
+
+/* optional: smooth fade-in when page loads */
+.site-banner .hero-body {
+  animation: hero-fadein 1.5s ease-out both;
+}
+
+@keyframes hero-fadein {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
