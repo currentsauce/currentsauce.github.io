@@ -83,7 +83,7 @@ body { overflow-x: hidden; } /* avoid horizontal scrollbars */
 /* --- Mobile: perceptually faster scroll --- */
 @media (max-width: 768px) {
   .hero-scroll .scroll-track {
-    animation-duration: 30s; /* ~2x speed on phones */
+    animation-duration: 10s; /* ~2x speed on phones */
   }
 }
 
