@@ -9,7 +9,7 @@ image: /blog_images/a_page_heros/AboutHero.jpg
 hero_darken: true
 ---
 
-**About Me**
+## About Me
 
 Hello there! 
 
@@ -18,19 +18,18 @@ I graduated from **The University of Manchester** with an **MEng in Electrical a
 
 Outside of work, I’m usually tinkering with side projects, snowboarding, climbing, or hiking around the Peaks. My Sprocker Spaniel, Oscar, supervises most of my projects and hobbies.
 
-**About Current Sauce**
+## About Current Sauce
 
 Over the years I’ve learnt a lot from other people’s blogs and open projects, and I’ve always wanted to give some of that back. **Current Sauce** is my place to share the things I make, fix and experiment with — partly to help others, and partly because writing things up helps me think them through.
 
 As for the name… I’m a sucker for a bad pun. _Current Sauce_ is a play on an **electrical current source** and **fruity currant sauce**. It’s the best I could come up with — and I’m sticking with it!
 
-**How it’s built**
+## How it’s built
 
 I didn’t want to use a drag-and-drop website builder — it felt too easy! So I put this together using **Jekyll**, hosted on **GitHub Pages**, and written in **Notepad++** on Windows. The theme is **Bulma Clean Theme** by C.S. Rhymes, which I love for its simplicity and clarity.
 
-**Launched**
+## Launched 
 
 August 2020, during the COVID-19 lockdown — what better time to start building things?
 
-Photo
-[Photo here] That’s me!
+![Me](/blog_images/a_about/me.jpg "That's me!"){: style="max-width:500px;" }
