@@ -1,7 +1,6 @@
 title: Current Sauce
 email: currentsauce1@gmail.com
-description: >- # this means to ignore newlines until "baseurl:"
-    I decided to make a website of the things I make and do. A website on electronic projects, hacks, and more by James Kincell.
+description: ""
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://www.currentsauce.co.uk"
 twitter_username: currentsauce
