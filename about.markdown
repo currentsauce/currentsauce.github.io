@@ -34,9 +34,9 @@ August 2020, during the COVID-19 lockdown — what better time to start building
 
 <div class="columns is-mobile is-multiline is-centered is-vcentered">
   <div class="column is-6-tablet is-5-desktop has-text-centered">
-    <img src="/blog_images/a_about/me.jpg" alt="Me" title="That's me!" style="max-width:500px;">
+    <img src="/blog_images/a_about/me.jpg" alt="Me" title="That's me!" style="height:300px;object-fit:cover;border-radius:6px;">
   </div>
   <div class="column is-6-tablet is-5-desktop has-text-centered">
-    <img src="/blog_images/a_about/Oscar.jpg" alt="That's Oscar!" title="This is Oscar, he's the goodest of boys!" style="max-width:500px;">
+    <img src="/blog_images/a_about/Oscar.jpg" alt="Oscar" title="This is Oscar, he's the goodest of boys!" style="height:300px;object-fit:cover;border-radius:6px;">
   </div>
 </div>
