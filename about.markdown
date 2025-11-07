@@ -33,3 +33,5 @@ I didn’t want to use a drag-and-drop website builder — it felt too easy! So 
 August 2020, during the COVID-19 lockdown — what better time to start building things?
 
 ![Me](/blog_images/a_about/me.jpg "That's me!"){: style="max-width:500px;" }
+
+<a href="/blog_images/a_about/me.jpg" class="glightbox">View hero image</a>
