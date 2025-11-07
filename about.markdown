@@ -26,7 +26,7 @@ As for the name… I’m a sucker for a bad pun. _Current Sauce_ is a play on an
 
 ## How it’s built
 
-I didn’t want to use a drag-and-drop website builder — it felt too easy! So I put this together using **Jekyll**, hosted on **GitHub Pages**, and written in **Notepad++** on Windows. The theme is **Bulma Clean Theme** by C.S. Rhymes, which I love for its simplicity and clarity.
+I didn’t want to use a drag-and-drop website builder — it felt too easy! So I put this together using **Jekyll**, hosted on **GitHub Pages**, and written in **Notepad++** on Windows. The theme is [**Bulma Clean Theme** by C.S. Rhymes](https://github.com/chrisrhymes/bulma-clean-theme), which I love for its simplicity and clarity.
 
 ## Launched 
 
