@@ -17,13 +17,9 @@ $primary-invert: #ffffff;
   right: 50%;
   margin-left: -50vw;   /* bleed to left edge */
   margin-right: -50vw;  /* bleed to right edge */
+  margin-top: -3rem;    /* kill the white gap from the section's top padding */
 }
 body { overflow-x: hidden; } /* avoid horizontal scrollbars */
-
-/* Remove ONLY the top gap on the first section (keep left/right gutters) */
-main > section.section:first-of-type {
-  padding-top: 0 !important;
-}
 
 /* Ensure no gap between banner and the next hero */
 .fullwidth-banner + .hero {
