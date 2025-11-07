@@ -50,20 +50,47 @@ body { overflow-x: hidden; } /* avoid horizontal scrollbars */
   backface-visibility: hidden;
 }
 
-/* Each slide is exactly one viewport wide */
 .hero-scroll img {
   display: block;
-  flex: 0 0 auto;               /* no percentage math */
-  min-width: 100%;              /* one full banner width per image */
+  flex: 0 0 auto;     /* no percent maths */
+  min-width: 100%;    /* one full viewport wide */
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;      /* no vertical crop */
   object-position: center;
+  background: #000;         /* bars blend into banner */
 }
 
 /* Move exactly one sequence width (half the doubled strip) */
 @keyframes banner-scroll-hero {
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }
+}
+
+/* side fade to soften the contain bars */
+.site-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg,
+    rgba(0,0,0,0.35) 0%,
+    rgba(0,0,0,0) 8%,
+    rgba(0,0,0,0) 92%,
+    rgba(0,0,0,0.35) 100%);
+  z-index: 1;   /* stays below ::after */
+}
+
+.site-banner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.35) 100%);
+  z-index: 2;   /* above ::before, below text */
+}
+
+.site-banner .hero-body {
+  position: relative;
+  z-index: 3;               /* ensure on top */
+  animation: hero-fadein 1.5s ease-out both;
 }
 
 /* Mobile speed tweak (you liked it fast) */
