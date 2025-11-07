@@ -40,3 +40,40 @@ August 2020, during the COVID-19 lockdown — what better time to start building
     <img src="/blog_images/a_about/Oscar.jpg" alt="Oscar" title="This is Oscar, he's the goodest of boys!" style="height:300px;object-fit:cover;border-radius:6px;">
   </div>
 </div>
+
+## Software I Use For My Projects & Current Sauce
+### 2D & 3D Design
+- [Microsoft Visio](https://www.microsoft.com/en-us/microsoft-365/visio) - 2D Designs and Diagrams
+- [OnShape](https://www.onshape.com/) - 3D Design for Additive Manufacturing (3D Printing)
+- [UltiMaker Cura](https://ultimaker.com/software/ultimaker-cura) - Slicing of 3D Designs for 3D Printing
+
+### Electronic Design
+- [KiCad](https://www.kicad.org/) - Schematic Capture and PCB Design
+- [DIYLC](https://diy-fever.com/software/diylc/) - Stripboard Design
+
+## Electronic Simulations
+- [LTspice](https://www.analog.com/en/resources/design-tools-and-calculators/ltspice-simulator.html) - DC and AC SPICE Simulations
+- [QSPICE](https://www.qorvo.com/design-hub/design-tools/interactive/qspice) - DC and AC SPICE Simulations
+
+## Embedded Design
+- [MPLABX](https://www.microchip.com/en-us/tools-resources/develop/mplab-x-ide) - Microchip PIC Development
+- [STM32CubeIDE](https://www.st.com/en/development-tools/stm32cubeide.html) - STM32 Development
+- [Arduino IDE](https://www.arduino.cc/en/software/) - Arduino & Teensy Development
+- [PlatformIO](https://platformio.org/) - Arduino & Teensy Development
+
+## Signal Analysis
+- [SigRok](https://sigrok.org/) - Logic Analyser
+
+## Software Design
+- [Python](https://www.python.org/downloads/) - For general Python Scripting
+- [Microsoft Visual Studio](https://visualstudio.microsoft.com/) - Visual Basic and Visual C Applications
+
+## Graphics
+- [GIMP](https://www.gimp.org/) - Image touch ups
+- [InkScape](https://inkscape.org/) - Vector Images
+
+## Misc
+- [Notepad++](https://notepad-plus-plus.org/) - Writing this website and miscellaneous editing
+
+...Plus more that I have probably forgotten in this list!
+
