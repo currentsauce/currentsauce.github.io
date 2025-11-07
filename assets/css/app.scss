@@ -30,12 +30,12 @@ body { overflow-x: hidden; } /* avoid horizontal scrollbars */
 /* Hide sub-pixel seam under the banner */
 .site-banner { margin-bottom: -1px; }
 
-/* ===== Scrolling banner internals (seamless) ===== */
+/* ===== Scrolling banner internals (seamless, no gaps) ===== */
 .site-banner {
   position: relative;
   overflow: hidden;
   color: #fff;
-  min-height: 380px; /* tweak height */
+  min-height: 380px;
 }
 
 .hero-scroll {
@@ -46,37 +46,33 @@ body { overflow-x: hidden; } /* avoid horizontal scrollbars */
   display: flex;
 }
 
-/* 16 images total: 8 + 8 (duplicated sequence) */
 .hero-scroll .scroll-track {
   display: flex;
-  width: 1600%;                             /* 16 * 100% */
-  animation: banner-scroll-hero 60s linear infinite;
+  gap: 0;                                   /* no inter-item gap */
+  width: 1600%;                              /* 16 images total */
   will-change: transform;
   transform: translateZ(0);
+  animation: banner-scroll-hero 60s linear infinite;
 }
 
 .hero-scroll img {
-  flex: 0 0 6.25%;                          /* 100 / 16 */
-  width: 100%;
+  display: block;                            /* no inline whitespace issues */
+  flex: 0 0 6.25%;                           /* 100 / 16 */
+  min-width: 0;                              /* allow exact flex-basis */
   height: 100%;
   object-fit: cover;
   object-position: center;
 }
 
-/* Move exactly one full sequence width (half the doubled strip) */
+/* Move exactly one sequence width (half the doubled strip) */
 @keyframes banner-scroll-hero {
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }
 }
 
-/* Mobile: make the perceived speed faster */
+/* Mobile: faster so it *looks* right */
 @media (max-width: 768px) {
   .hero-scroll .scroll-track { animation-duration: 10s; }
-}
-
-/* Respect reduced motion */
-@media (prefers-reduced-motion: reduce) {
-  .hero-scroll .scroll-track { animation: none; transform: translateX(0); }
 }
 
 /* =================== Light polish =================== */
