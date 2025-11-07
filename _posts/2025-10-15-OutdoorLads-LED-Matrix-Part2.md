@@ -108,7 +108,7 @@ The idea is to have a "control box", which houses the PSU and the Microcontrolle
 
 ![Enclosure](/blog_images/odl_led_matrix/Enclosure.png "This is the enclosure I chose. Nice, isn't it? [sarcasm]"){: style="max-width:500px;" }
 
-On the face of it, this is big enough for the PSU, however it has noggins (correct term?!) in the corners for the lid screws to go into - this means that the PSU cannot butt-up right to the edge. All is not lost though - I realised that I can cut a notch out of one of the  noggins, and modify the connector-end of the PSU enclosure to be able to accommodate the PSU, since it is below the screw depth. This is more clear in the following photo of the PSU mounted in the enclosure:
+On the face of it, this is big enough for the PSU, however it has noggins (correct term?!) in the corners for the lid screws to go into - this means that the PSU cannot butt-up right to the edge. All is not lost though - I realised that I can cut a notch out of one of the  noggins, and modify the connector-end of the PSU to be able to fit the PSU in nicely, since it is below the screw depth. This is more clear in the following photo of the PSU mounted in the enclosure:
 
 ![PSU Mounted](/blog_images/odl_led_matrix/PSU_Mounted.jpeg "PSU mounted in the enclosure nicely. If you look carefully at the bottom left, you can see that I trimmed the top bit of the PSU enclosure off, and made a little notch in the main enclosure to make it fit."){: style="max-width:500px;" }
 
@@ -141,19 +141,19 @@ I decided to put some status LEDs on the control box. These being:
 4. Matrix Power - Green
 5. Microcontroller Power - Green
 
-The latter two are sourced from power rails, but the first three will be driven by the Teensy, i.e. 5 outputs. The Teensy GPIO pins cannot output the required current for the LEDs, so will need buffering. I decided to use some NPN transistors that I had in my box of bits, allowing me to wire these up with common anode to the 5V rail. Standard 2N3904 NPN transistors are used, with 1k on the base input.
+The latter two are sourced from power rails, but the first three will be driven by the Teensy, i.e. five outputs. The Teensy GPIO pins cannot output the required current for the LEDs, so will need buffering. I decided to use some NPN transistors that I had in my box of bits, allowing me to wire these LEDs up with common anode to the 5V rail. Standard 2N3904 NPN transistors are used, with 1k on the base input.
 
 ### Panel Detect Functionality
 
-This is a nifty feature that I decided to add in - I had some spare cores in the data cable, so I decided to make it so that the microcontroller can detect which panel is connected to each output plug, since they're both the same. It's quite simple really, there are two analogue inputs that are pulled low by a 1k resistor. These two input lines go to the panels. One of the panels has this line to 5 V via a 1k resistor, meaning this panel cause a 2.5 V reading (Remember, the Teensy is a 3.3V device so we cannot put more than 3.3V into an input). The other panel has the line to 5 V via a 3k resistor, meaning this panel will cause a 1.25 V reading. If the connector is not connected to a panel, 0 V will be read. 
+This is a nifty feature that I decided to add in - I had some spare cores in the data cable, so I decided to make it so that the microcontroller can detect which panel is connected to each output plug, since they're both the same. It's quite simple really, there are two analogue inputs that are pulled low by a 1k resistor. These two input lines go to the panels. One of the panels has this line to 5 V via a 1k resistor, meaning this panel will cause a 2.5 V reading (Remember, the Teensy is a 3.3V device so we cannot put more than 3.3V into an input). The other panel has the line to 5 V via a 3k resistor, meaning this panel will cause a 1.25 V reading. If the connector is not connected to a panel, 0 V will be read. 
 
 ### Temperature Readback
 
-Temperature could be a concern in this control box enclosure - I can mitigate this vents and fans should it be a problem, but I thought it was a good idea to put in some way of measuring the ambient temperature in the control box. Two reasons for this; during development and testing, I can use it to keep an eye on the temperature and make amendments as necessary. The second reason, is one that I hoped I would not need, but if temperature was a real problem, then I could add functionality in the code to throttle down the brightness should the temperature be too high, to reduce the demand on the PSU. Speaking of brightness control...
+Temperature could be a concern in this control box enclosure - I can mitigate this with vents and fans should it be a problem, but I thought it was a good idea to put in some way of measuring the ambient temperature in the control box. Two reasons for this; during development and testing, I can use it to keep an eye on the temperature and make amendments as necessary. The second reason, is one that I hoped I would not need, but if temperature was a real problem, then I could add functionality in the code to throttle down the brightness should the temperature be too high, to reduce the demand on the PSU. Speaking of brightness control...
 
 ### Brightness Control
 
-The LED Pixels are quite bright! The brightness of the pixels can of course be controlled in firmware, but I did not want to hard-code this as a fixed value. A brightness control seemed a good idea. This is implemented very simply! I will have a rotary potentiometer that is connected across 3.3V and 0V (5V is a no no!), and the wiper of the potentiometer is readback on an analogue input. This analogue readback can then be used change a brightness variable. 
+The LED Pixels are quite bright! The brightness of the pixels can of course be controlled in firmware, but I did not want to hard-code this as a fixed value. A brightness control seemed a good idea. This is implemented very simply! I will have a rotary potentiometer that is connected across 3.3V and 0V (5V is a no no!), and the wiper of the potentiometer is readback on an analogue input. This analogue readback can then be used to scale a brightness variable. 
 
 ### User Button
 
