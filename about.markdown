@@ -32,9 +32,11 @@ I didn’t want to use a drag-and-drop website builder — it felt too easy! So 
 
 August 2020, during the COVID-19 lockdown — what better time to start building things?
 
-<div style="text-align:center">
-  <img src="/blog_images/a_about/me.jpg" alt="That's Me" title="That's me!"
-       style="max-width:400px;display:inline-block!important;vertical-align:top;margin:0 0 0 0;">
-  <img src="/blog_images/a_about/Oscar.jpg" alt="That's Oscar!" title="This is Oscar, he's the goodest of boys!"
-       style="max-width:400px;display:inline-block!important;vertical-align:top;margin-left:1rem;">
+<div class="columns is-mobile is-multiline is-centered is-vcentered">
+  <div class="column is-6-tablet is-5-desktop has-text-centered">
+    <img src="/blog_images/a_about/me.jpg" alt="Me" title="That's me!" style="max-width:500px;">
+  </div>
+  <div class="column is-6-tablet is-5-desktop has-text-centered">
+    <img src="/blog_images/a_about/Oscar.jpg" alt="That's Oscar!" title="This is Oscar, he's the goodest of boys!" style="max-width:500px;">
+  </div>
 </div>
