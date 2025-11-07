@@ -1,7 +1,7 @@
 ---
 layout: page
 title: About
-subtitle: So you want to know more, huh!
+subtitle: About Current Sauce
 permalink: /about/
 hide_footer: true
 hero_image: /blog_images/a_page_heros/AboutHero.jpg
@@ -9,33 +9,28 @@ image: /blog_images/a_page_heros/AboutHero.jpg
 hero_darken: true
 ---
 
+**About Me**
+
 Hello there! 
 
-**What is this?**
-Over the years, I have learnt a lot from various sources on the internet. I've always said that I'd like to create a website of my own to blog about the things that I do, as i'd like to try help others out in the same way I have been helped out. So, this is that website!
+I’m **James Kincell**, an **Electronics Design Engineer** based in Manchester, UK. I love designing and building things that _work_ — from custom electronics and embedded systems to interactive lighting and creative installations.
+I graduated from **The University of Manchester** with an **MEng in Electrical and Electronic Engineering** in 2014, and since then I’ve worked on everything from mass spectrometry hardware to interactive lighting builds. These days I’m focusing my energy on the crossover between **engineering and experience design** — building the electronics that bring creative ideas to life.
 
-**Why Current Sauce?**
-I love a good pun! It's a play on words between an electrical current source, and fruity currant sauce. Truthfully, this is the best that I could come up with! :rofl:
+Outside of work, I’m usually tinkering with side projects, snowboarding, climbing, or hiking around the Peaks. My Sprocker Spaniel, Oscar, supervises most of my projects and hobbies.
 
-**When did this start?**
-I launched this website in August 2020 amidst the COVID-19 pandemic, what a time to be creative!
+**About Current Sauce**
 
-**Who am I?**
-I'm James. I'm a 34 year old Electronic Design Engineer in Manchester, UK.
-I graduated with an M.Eng. in *Electrical and Electronic Engineering* at The University of Manchester in 2014, but I tend to ignore the first 'E' as I did very few *Electrical* modules and have forgotten what I did learn, and I'm at peace with that! I moved to Manchester from Doncaster, South Yorkshire and ended up settling in Manchester where I live with my partner.
+Over the years I’ve learnt a lot from other people’s blogs and open projects, and I’ve always wanted to give some of that back. **Current Sauce** is my place to share the things I make, fix and experiment with — partly to help others, and partly because writing things up helps me think them through.
 
-![Me](/blog_images/a_about/me.jpg "Thats me!"){: style="max-width:500px;" }
+As for the name… I’m a sucker for a bad pun. _Current Sauce_ is a play on an **electrical current source** and **fruity currant sauce**. It’s the best I could come up with — and I’m sticking with it!
 
-Electronics is one of my hobbies, though I also enjoy Snowboarding, Rock Climbing (and bouldering too I guess) and Hiking to name a few. I'm also a massive softy for cats and dogs. We have a very silly yet very lovely Sprocker Spaniel called Oscar, he's ace!
+**How it’s built**
 
-**What about this website?**
-I spent far too long trying to decide how to build a website. I'm no web designer[^1], but I didn't want to use a WYSIWYG platform [^2] - just seemed like cheating to me, I wanted something that I had to work on!
-So I eventually settled on building something using [Jekyll](https://jekyllrb.com), which is super convenient as I can host the site <sub><sup>(for free)</sup></sub> using [GitHub pages](https://pages.github.com). Fabulous! I write it all in Notepad++ (on Windows ~~10~~ 11), and the theme that I am using is called [Bulma Clean Theme](https://github.com/chrisrhymes/bulma-clean-theme) by [C.S. Rhymes](https://www.csrhymes.com). I really love it, it is so clean and nice (clue was in the name I suppose), I definitely could't have Jekyll'd this level of detail myself and am so grateful that the author made it open for use.
+I didn’t want to use a drag-and-drop website builder — it felt too easy! So I put this together using **Jekyll**, hosted on **GitHub Pages**, and written in **Notepad++** on Windows. The theme is **Bulma Clean Theme** by C.S. Rhymes, which I love for its simplicity and clarity.
 
-I hope you enjoy this website as much as I am enjoying building it. :smile:
+**Launched**
 
+August 2020, during the COVID-19 lockdown — what better time to start building things?
 
-
----
-[^1]: Okay, I'll admit that when I was 14 I learnt HTML 4 and made some okay to shambolic websites. I'm not wanting to go there again.
-[^2]: I know i'd get frustrated with it too. I wrote my 3rd year dissertation in *LaTeX* and it was wonderful. Ah, memories.
+Photo
+[Photo here] That’s me!
