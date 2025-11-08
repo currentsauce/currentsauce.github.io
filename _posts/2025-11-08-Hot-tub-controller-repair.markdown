@@ -85,6 +85,8 @@ Whipped off the old relay, and fitted the new one:
 ## Testing It
 
 Put the board back into the controller housing, reconnected it, and hoped for the best. And it works! The low pump comes on automatically when power is applied, part of its start up checks. And then once it detects the flow, it starts heating the water. And now, the _cold tub_ is a hot tub! So happy!
+
+The great thing about doing this, is if we'd got a hot tub technician out for this, I think the verdict would have been "buy a new controller" - costing money for the techician, and about £300 for the new controller. This fix cost just shy of £4 for a new relay - so a very pleasing result.
  
 Another little bit of information, this hot tub comes as "Plug-and-Play" with a 13A UK Plug, but in this configuration the heater can only be operated when the pump is at low speed. When at high speed, the heater will not operate, to restrict current on the 13A supply. Thankfully though, you can change a the "Low Level Configuration" to put it into high-current mode which allows the heater to operate while at high speed. So, I removed the cable with the 13A plug, and hard-wired it into an isolator switch with some new 6mm H07RN-F cable. With it in the high-current configuration, the water temperature never drops while using it.
 
