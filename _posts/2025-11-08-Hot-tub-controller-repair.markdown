@@ -36,6 +36,8 @@ Now onto opening the controller, the bit I was excited about! Very conveniently,
 |Blue| Neutral|
 |Green-Yellow| Earth|
 
+![Controller Legend](/blog_images/hot_tub_relay/controller_information_panel.jpeg "This is the information panel on the controller."){: style="max-width:500px;" }
+
 Blue is normally neutral, but to make no assumptions, we can see that the blue wire goes to a relay, and the other contact of the relay goes to a _NEUTRAL_ connector on the PCB. And again with the Green-Yellow, this goes to a grounding lug. It's obvious, yes, but I've seen lots of dodgy equipment before where common colours are not used for their common use, so it's good to never assume!
 
 So, we have a black and brown wire, one of them is the low pump, and one of them is the high pump. There are three possible causes for the problem:
