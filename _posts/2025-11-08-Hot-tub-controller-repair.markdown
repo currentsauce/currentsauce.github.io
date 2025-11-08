@@ -74,7 +74,7 @@ I took the control board out of the blue unit, and took it inside to my home-lab
 
 So, I ordered four [Panasonic ALF1T12](https://industry.panasonic.com/ap/en/products/control/relay/power/number/alf1t12) relays from RS - one to replace the broken one, and three as spares. I removed the old relay, and, curiosity got the better of me (c'mon, I'm an engineer!) - I opened it up to have a look at the contacts, and yes, as suspected, the contacts are completely jiggered:
 
-![Relay Contacts](/blog_images/hot_tub_relay/broken_contacts.jpeg "Those contacts have seen better days..."){: style="max-width:500px;" }
+![Relay Contacts](/blog_images/hot_tub_relay/broken_contacts.jpg "Those contacts have seen better days..."){: style="max-width:500px;" }
 
 Whipped off the old relay, and fitted the new one:
 
