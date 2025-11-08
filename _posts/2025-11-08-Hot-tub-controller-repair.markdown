@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Hot Tub Controller Repair"
-date:   2025-11-08 21:00:00 +0100
+date: 2025-11-08
 categories: blog
 hero_image: /blog_images/hot_tub_relay/FLO_Error.png
 hero_darken: true
