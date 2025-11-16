@@ -11,12 +11,15 @@ hero_darken: true
 
 ## About Me
 
-Hello there! 
+## About Me
 
-I’m **James Kincell**, an **Electronics Design Engineer** based in Manchester, UK. I love designing and building things that _work_ — from custom electronics and embedded systems to interactive lighting and creative installations.
-I graduated from **The University of Manchester** with an **MEng in Electrical and Electronic Engineering** in 2014, and since then I’ve worked on everything from mass spectrometry hardware to interactive lighting builds. These days I’m focusing my energy on the crossover between **engineering and experience design** — building the electronics that bring creative ideas to life.
+Hello there!
 
-Outside of work, I’m usually tinkering with side projects, snowboarding, climbing, or hiking around the Peaks. My Sprocker Spaniel, Oscar, supervises most of my projects and hobbies.
+I’m **James Kincell**, a **Creative Technologist and Electronics Design Engineer** based in Manchester, UK. I design and build interactive systems, embedded electronics, lighting, IoT devices and prototypes that bring creative ideas to life.
+
+I graduated from **The University of Manchester** with an **MEng in Electrical and Electronic Engineering** in 2014, and since then I’ve worked on everything from high-reliability instrumentation and FPGA-based hardware to large-format LED installations, sensor-driven systems and outdoor event tech. I enjoy turning ideas into real, testable hardware — especially when the solution involves some mix of electronics, lighting, software and a bit of playful invention.
+
+When I’m not designing or building things, I’m usually climbing, hiking, snowboarding, or tinkering with another daft side project. My Sprocker Spaniel, Oscar, supervises most activities and takes the credit when things work.
 
 ## About Current Sauce
 
