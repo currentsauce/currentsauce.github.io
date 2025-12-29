@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Denon MC4000 Repair"
-date: 2025-12-23
+date: 2025-12-31
 categories: blog
 hero_image: /blog_images/hot_tub_relay/FLO_Error.png
 hero_darken: true

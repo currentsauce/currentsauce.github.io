@@ -8,7 +8,7 @@ hero_darken: true
 image: /blog_images/sbc210d/SBC_210D.png
 ---
 
-A few months back, I rescued a [ASRock SBC-210D]{https://www.asrockind.com/en-gb/SBC-210D} from a WEEE bin. I'm a bit of a skip-diver when it comes to decent 
+A few months back, I rescued a [ASRock SBC-210D](https://www.asrockind.com/en-gb/SBC-210D) from a WEEE bin. I'm a bit of a skip-diver when it comes to decent 
 electronics that have been thrown away, because most of the time, I can repair broken things, and I _really hate_ the amount of electronics that end up going to 
 landfill (aka Silicon Heaven). And to put my money where my mouth is, I volunteer every month at a local repair cafe, where people bring in their broken electricals and electronics, and I repair these things for people. It's nice to help out and do a little bit for the environment.
 
@@ -24,7 +24,7 @@ Since it was not doing anything when power was applied, I verified that all the 
 
 Okay, so the voltage rails were fine. I'd removed the SSD drive, and fitted known working RAM. But I was getting no Power On Self Test - POST. I knew this because I was getting nothing on any of the video outputs, and the system buzzer was not beeping at me to tell me what was wrong. Even a basic POST failure normally results in a beep code or video initialisation. So, it looked like the BIOS was not doing its job in bringing up the processor and peripherals. 
 
-The BIOS is on a [Winbond W25Q64FW]{https://www.winbond.com/hq/product/code-storage-flash-memory/serial-nor-flash/?__locale=en&partNo=W25Q64FW} 64Mbit 1.8V Serial Flash Memory. It's a SPI NOR Flash, and very conveniently, not only is it a nice SOIC-8 package, but it is also not soldered to the board - it is in a SOIC-8 IC socket. I wondered if there was something wrong with the SPI preventing the BIOS from being loaded. I used my Oscilloscope to check this - Clock was present, CS was asserted during reads, and MOSI/MISO activity matched a valid SPI transaction.
+The BIOS is on a [Winbond W25Q64FW](https://www.winbond.com/hq/product/code-storage-flash-memory/serial-nor-flash/?__locale=en&partNo=W25Q64FW) 64Mbit 1.8V Serial Flash Memory. It's a SPI NOR Flash, and very conveniently, not only is it a nice SOIC-8 package, but it is also not soldered to the board - it is in a SOIC-8 IC socket. I wondered if there was something wrong with the SPI preventing the BIOS from being loaded. I used my Oscilloscope to check this - Clock was present, CS was asserted during reads, and MOSI/MISO activity matched a valid SPI transaction.
 
 So maybe the BIOS is corrupted? I have an XGecu T48 programmer that is able to read and write to the BIOS chip, so I tried looking for a BIOS dump for the SBC-210D. I came up empty handed. ASRock don't provide the raw BIOS files, and although a few websites claimed to have it, I was not able to get a download of it. 
 
@@ -42,5 +42,5 @@ At this point, the most likely causes are a fault in the SoC, chipset, or power-
 
 Since I was not able to find a SBC-210D BIOS dump and ended up getting one on my own, I thought it would be good to share this BIOS dump in the hope that maybe it will help someone else out there, and hopefully have a better outcome than me!
 
-[ASRock SBC-210D BIOS Dump]{/downloads/SBC-210D_WORKING_DUMP.BIN}
+[ASRock SBC-210D BIOS Dump](/downloads/SBC-210D_WORKING_DUMP.BIN)
 
